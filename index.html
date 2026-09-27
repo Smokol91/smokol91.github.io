@@ -54,13 +54,12 @@
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(160, 0, 0, 0.18),
+          rgba(200, 0, 0, 0.18),
           transparent 32%
         ),
         var(--black);
 
       color: var(--text);
-
       line-height: 1.6;
     }
 
@@ -87,19 +86,14 @@
         sans-serif;
 
       font-weight: 900;
-
       text-transform: uppercase;
-
       letter-spacing: 1px;
-
       line-height: 1.02;
 
       display: inline-block;
-
       position: relative;
 
       color: #ffffff;
-
       -webkit-text-fill-color: #ffffff;
 
       text-shadow:
@@ -134,15 +128,13 @@
         );
 
       box-shadow:
-        0 0 8px
-        rgba(160, 0, 0, 0.35);
+        0 0 8px rgba(160, 0, 0, 0.35);
 
       opacity: 0.9;
     }
 
     .smokol-red {
       color: var(--red);
-
       -webkit-text-fill-color: var(--red);
 
       text-shadow:
@@ -160,9 +152,7 @@
 
     nav {
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
 
       background:
@@ -180,10 +170,7 @@
       min-height: 76px;
 
       display: flex;
-
-      justify-content:
-        space-between;
-
+      justify-content: space-between;
       align-items: center;
 
       gap: 25px;
@@ -196,11 +183,9 @@
 
     .brand-logo {
       width: 155px;
-
       max-height: 58px;
 
       object-fit: contain;
-
       display: block;
 
       transition: 0.2s;
@@ -218,7 +203,6 @@
 
     .nav-links {
       display: flex;
-
       align-items: center;
 
       gap: 22px;
@@ -228,7 +212,6 @@
 
     .nav-links a {
       color: #dddddd;
-
       font-weight: 700;
 
       transition: 0.2s;
@@ -247,7 +230,6 @@
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
 
       padding: 80px 0;
@@ -296,9 +278,7 @@
 
     .buttons {
       display: flex;
-
       justify-content: center;
-
       align-items: center;
 
       gap: 14px;
@@ -308,9 +288,7 @@
 
     .btn {
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
 
       gap: 10px;
@@ -364,7 +342,6 @@
 
     .social-btn img {
       width: 31px;
-
       height: 31px;
 
       object-fit:
@@ -735,6 +712,39 @@
 
 
     /* =========================
+       NAGŁÓWEK SMOKOL HUB
+    ========================= */
+
+    .hub-heading {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      flex-wrap:
+        wrap;
+    }
+
+    .hub-heading-logo {
+      width:
+        42px;
+
+      height:
+        42px;
+
+      object-fit:
+        contain;
+
+      display:
+        block;
+    }
+
+
+    /* =========================
        BAZA SMOKOLA
     ========================= */
 
@@ -888,6 +898,16 @@
           center;
       }
 
+      .hub-heading {
+        justify-content:
+          center;
+      }
+
+      .baza-heading {
+        justify-content:
+          center;
+      }
+
       .live-card,
       .feature-box {
         padding:
@@ -915,11 +935,6 @@
           78px;
       }
 
-      .baza-heading {
-        justify-content:
-          center;
-      }
-
     }
 
   </style>
@@ -944,7 +959,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=6"
+          src="napis-smokol.png?v=7"
           alt="Smokol"
           class="brand-logo"
         >
@@ -991,7 +1006,7 @@
 
 
       <img
-        src="logo-smokol.png?v=6"
+        src="logo-smokol.png?v=7"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1459,8 +1474,19 @@
 
           <div>
 
-            <h3>
-              🐲 Dołącz do Smokol Hub
+
+            <h3 class="hub-heading">
+
+              <img
+                src="logo-discord.png"
+                alt="Discord"
+                class="hub-heading-logo"
+              >
+
+              <span>
+                Dołącz do Smokol Hub
+              </span>
+
             </h3>
 
 
