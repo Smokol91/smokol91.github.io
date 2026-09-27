@@ -22,10 +22,6 @@
 
   <style>
 
-    /* =========================
-       PODSTAWY
-    ========================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -37,11 +33,7 @@
     }
 
     body {
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
 
       background:
         radial-gradient(
@@ -52,7 +44,6 @@
         #080808;
 
       color: #ffffff;
-
       line-height: 1.6;
     }
 
@@ -62,12 +53,7 @@
     }
 
     .container {
-
-      width: min(
-        1180px,
-        92%
-      );
-
+      width: min(1180px, 92%);
       margin: auto;
     }
 
@@ -77,89 +63,55 @@
     ========================= */
 
     nav {
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
 
-      background:
-        rgba(
-          7,
-          7,
-          7,
-          0.96
-        );
-
-      backdrop-filter:
-        blur(12px);
+      background: rgba(7, 7, 7, 0.96);
+      backdrop-filter: blur(12px);
 
       border-bottom:
         1px solid
-        rgba(
-          220,
-          0,
-          0,
-          0.35
-        );
+        rgba(220, 0, 0, 0.35);
     }
 
     .nav {
-
       min-height: 76px;
 
       display: flex;
-
-      justify-content:
-        space-between;
-
+      justify-content: space-between;
       align-items: center;
 
       gap: 25px;
     }
 
     .brand {
-
       display: flex;
-
       align-items: center;
     }
 
     .brand-logo {
-
       width: 155px;
-
       max-height: 58px;
 
       object-fit: contain;
-
       display: block;
 
       transition: 0.2s;
     }
 
     .brand-logo:hover {
-
-      transform:
-        scale(1.04);
+      transform: scale(1.04);
 
       filter:
         drop-shadow(
           0 0 10px
-          rgba(
-            255,
-            0,
-            0,
-            0.35
-          )
+          rgba(255, 0, 0, 0.35)
         );
     }
 
     .nav-links {
-
       display: flex;
-
       align-items: center;
 
       gap: 22px;
@@ -168,16 +120,13 @@
     }
 
     .nav-links a {
-
       color: #dddddd;
-
       font-weight: 700;
 
       transition: 0.2s;
     }
 
     .nav-links a:hover {
-
       color: #ff3030;
     }
 
@@ -187,11 +136,9 @@
     ========================= */
 
     .hero {
-
       min-height: 88vh;
 
       display: flex;
-
       align-items: center;
 
       padding: 80px 0;
@@ -200,55 +147,35 @@
     }
 
     .hero-logo {
-
-      width:
-        min(
-          470px,
-          86vw
-        );
+      width: min(470px, 86vw);
 
       margin-bottom: 25px;
 
       filter:
         drop-shadow(
           0 0 30px
-          rgba(
-            255,
-            0,
-            0,
-            0.25
-          )
+          rgba(255, 0, 0, 0.25)
         );
     }
 
     .hero h1 {
-
-      font-size:
-        clamp(
-          2.5rem,
-          7vw,
-          5.3rem
-        );
+      font-size: clamp(2.5rem, 7vw, 5.3rem);
 
       line-height: 1;
 
       margin-bottom: 18px;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
     }
 
     .hero h1 span {
-
       color: #e21b1b;
     }
 
     .hero p {
-
       max-width: 760px;
 
-      margin:
-        0 auto 30px;
+      margin: 0 auto 30px;
 
       color: #bbbbbb;
 
@@ -261,11 +188,8 @@
     ========================= */
 
     .buttons {
-
       display: flex;
-
       justify-content: center;
-
       align-items: center;
 
       gap: 14px;
@@ -274,32 +198,22 @@
     }
 
     .btn {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
 
       gap: 10px;
 
       min-height: 56px;
 
-      padding:
-        12px 22px;
+      padding: 12px 22px;
 
-      border-radius:
-        10px;
+      border-radius: 10px;
 
-      border:
-        1px solid
-        #333333;
+      border: 1px solid #333333;
 
-      background:
-        #151515;
-
-      color:
-        #ffffff;
+      background: #151515;
+      color: #ffffff;
 
       font-weight: 900;
 
@@ -307,40 +221,27 @@
     }
 
     .btn:hover {
+      transform: translateY(-2px);
 
-      transform:
-        translateY(-2px);
+      border-color: #ff3030;
 
-      border-color:
-        #ff3030;
-
-      background:
-        #1d1d1d;
+      background: #1d1d1d;
     }
 
     .btn-main {
-
-      background:
-        #e21b1b;
-
-      border-color:
-        #e21b1b;
+      background: #e21b1b;
+      border-color: #e21b1b;
     }
 
     .btn-main:hover {
-
-      background:
-        #ff2424;
+      background: #ff2424;
     }
 
     .social-btn img {
-
       width: 31px;
-
       height: 31px;
 
-      object-fit:
-        contain;
+      object-fit: contain;
 
       display: block;
     }
@@ -351,43 +252,27 @@
     ========================= */
 
     section {
-
-      padding:
-        85px 0;
+      padding: 85px 0;
     }
 
     .section-title {
+      text-align: center;
 
-      text-align:
-        center;
-
-      margin-bottom:
-        42px;
+      margin-bottom: 42px;
     }
 
     .section-title h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
 
-      font-size:
-        clamp(
-          2rem,
-          5vw,
-          3rem
-        );
-
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
     }
 
     .section-title h2 span {
-
-      color:
-        #e21b1b;
+      color: #e21b1b;
     }
 
     .section-title p {
-
-      color:
-        #999999;
+      color: #999999;
     }
 
 
@@ -397,256 +282,160 @@
 
     .live-card,
     .feature-box {
+      max-width: 1050px;
 
-      max-width:
-        1050px;
+      margin: auto;
 
-      margin:
-        auto;
-
-      border-radius:
-        20px;
+      border-radius: 20px;
 
       background:
-
         linear-gradient(
           135deg,
-          rgba(
-            220,
-            0,
-            0,
-            0.12
-          ),
+          rgba(220, 0, 0, 0.12),
           transparent 55%
         ),
-
         #121212;
 
       border:
         1px solid
-        rgba(
-          230,
-          30,
-          30,
-          0.4
-        );
+        rgba(230, 30, 30, 0.4);
 
-      padding:
-        36px;
+      padding: 36px;
 
       box-shadow:
         0 20px 60px
-        rgba(
-          0,
-          0,
-          0,
-          0.35
-        );
+        rgba(0, 0, 0, 0.35);
     }
 
     .live-layout {
-
       display: grid;
 
       grid-template-columns:
-        minmax(
-          360px,
-          46%
-        )
+        minmax(360px, 46%)
         1fr;
 
-      gap:
-        32px;
+      gap: 32px;
 
-      align-items:
-        center;
+      align-items: center;
     }
 
     .live-thumb-link {
-
       display: block;
 
-      border-radius:
-        14px;
+      border-radius: 14px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
     }
 
     .live-thumbnail {
-
       display: block;
 
       width: 100%;
 
-      aspect-ratio:
-        16 / 9;
+      aspect-ratio: 16 / 9;
 
-      object-fit:
-        cover;
+      object-fit: cover;
 
-      border-radius:
-        14px;
+      border-radius: 14px;
 
       border:
         1px solid
-        rgba(
-          255,
-          30,
-          30,
-          0.5
-        );
+        rgba(255, 30, 30, 0.5);
 
       box-shadow:
-
         0 10px 35px
-        rgba(
-          0,
-          0,
-          0,
-          0.45
-        ),
-
+        rgba(0, 0, 0, 0.45),
         0 0 20px
-        rgba(
-          220,
-          0,
-          0,
-          0.12
-        );
+        rgba(220, 0, 0, 0.12);
 
-      transition:
-        0.25s;
+      transition: 0.25s;
     }
 
     .live-thumbnail:hover {
+      transform: scale(1.025);
 
-      transform:
-        scale(1.025);
-
-      filter:
-        brightness(1.08);
+      filter: brightness(1.08);
     }
 
     .live-info {
-
       text-align: left;
     }
 
     .live-badge {
+      display: inline-block;
 
-      display:
-        inline-block;
+      background: #df0011;
 
-      background:
-        #df0011;
+      padding: 6px 13px;
 
-      padding:
-        6px 13px;
+      border-radius: 8px;
 
-      border-radius:
-        8px;
+      margin-bottom: 16px;
 
-      margin-bottom:
-        16px;
-
-      font-weight:
-        900;
+      font-weight: 900;
     }
 
     .live-info h3 {
+      font-size: 2rem;
 
-      font-size:
-        2rem;
+      line-height: 1.25;
 
-      line-height:
-        1.25;
-
-      margin-bottom:
-        14px;
+      margin-bottom: 14px;
     }
 
     .live-info p {
+      color: #bbbbbb;
 
-      color:
-        #bbbbbb;
-
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
     }
 
 
     /* =========================
-       KARTY SERII
+       KARTY
     ========================= */
 
     .grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(
           auto-fit,
-          minmax(
-            230px,
-            1fr
-          )
+          minmax(230px, 1fr)
         );
 
-      gap:
-        20px;
+      gap: 20px;
     }
 
     .card {
+      background: #121212;
 
-      background:
-        #121212;
+      border: 1px solid #252525;
 
-      border:
-        1px solid
-        #252525;
+      border-radius: 16px;
 
-      border-radius:
-        16px;
+      padding: 28px;
 
-      padding:
-        28px;
-
-      transition:
-        0.25s;
+      transition: 0.25s;
     }
 
     .card:hover {
+      transform: translateY(-5px);
 
-      transform:
-        translateY(-5px);
-
-      border-color:
-        #e21b1b;
+      border-color: #e21b1b;
 
       box-shadow:
         0 15px 35px
-        rgba(
-          0,
-          0,
-          0,
-          0.35
-        );
+        rgba(0, 0, 0, 0.35);
     }
 
     .card h3 {
-
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
     }
 
     .card p {
+      color: #999999;
 
-      color:
-        #999999;
-
-      font-size:
-        0.95rem;
+      font-size: 0.95rem;
     }
 
 
@@ -655,62 +444,36 @@
     ========================= */
 
     .series-logo-wrap {
+      height: 105px;
 
-      height:
-        105px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      display:
-        flex;
-
-      justify-content:
-        center;
-
-      align-items:
-        center;
-
-      margin-bottom:
-        18px;
+      margin-bottom: 18px;
     }
 
     .series-logo {
+      max-width: 175px;
+      max-height: 90px;
 
-      max-width:
-        175px;
+      width: auto;
+      height: auto;
 
-      max-height:
-        90px;
+      object-fit: contain;
 
-      width:
-        auto;
+      display: block;
 
-      height:
-        auto;
-
-      object-fit:
-        contain;
-
-      display:
-        block;
-
-      transition:
-        0.25s ease;
+      transition: 0.25s ease;
     }
 
-    .card:hover
-    .series-logo {
-
-      transform:
-        scale(1.07);
+    .card:hover .series-logo {
+      transform: scale(1.07);
 
       filter:
         drop-shadow(
           0 0 12px
-          rgba(
-            255,
-            40,
-            40,
-            0.35
-          )
+          rgba(255, 40, 40, 0.35)
         );
     }
 
@@ -720,89 +483,81 @@
     ========================= */
 
     .community {
-
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
         300px 1fr;
 
-      gap:
-        45px;
+      gap: 45px;
 
-      align-items:
-        center;
+      align-items: center;
     }
 
     .community-logo {
+      width: 100%;
 
-      width:
-        100%;
+      max-width: 300px;
 
-      max-width:
-        300px;
-
-      margin:
-        auto;
+      margin: auto;
 
       filter:
         drop-shadow(
           0 0 24px
-          rgba(
-            255,
-            100,
-            0,
-            0.22
-          )
+          rgba(255, 100, 0, 0.22)
         );
     }
 
     .community h3 {
+      font-size: 2rem;
 
-      font-size:
-        2rem;
-
-      margin-bottom:
-        14px;
+      margin-bottom: 14px;
     }
 
     .community p {
+      color: #aaaaaa;
 
-      color:
-        #aaaaaa;
-
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
     }
 
     .hub-section {
-
       background:
         radial-gradient(
           circle at center,
-          rgba(
-            255,
-            100,
-            0,
-            0.13
-          ),
+          rgba(255, 100, 0, 0.13),
           transparent 45%
         );
     }
 
     .baza-section {
-
       background:
         radial-gradient(
           circle at center,
-          rgba(
-            180,
-            0,
-            0,
-            0.12
-          ),
+          rgba(180, 0, 0, 0.12),
           transparent 45%
         );
+    }
+
+
+    /* =========================
+       BAZA SMOKOLA
+    ========================= */
+
+    .baza-heading {
+      display: flex;
+      align-items: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .baza-heading-logo {
+      width: 105px;
+      max-height: 42px;
+
+      object-fit: contain;
+
+      display: block;
     }
 
 
@@ -811,36 +566,24 @@
     ========================= */
 
     .social {
-
-      text-align:
-        center;
+      text-align: center;
     }
 
     .social-icon {
+      width: 55px;
+      height: 55px;
 
-      width:
-        55px;
+      object-fit: contain;
 
-      height:
-        55px;
+      display: block;
 
-      object-fit:
-        contain;
-
-      display:
-        block;
-
-      margin:
-        0 auto 15px;
+      margin: 0 auto 15px;
     }
 
     .social a {
+      color: #ff3b3b;
 
-      color:
-        #ff3b3b;
-
-      font-weight:
-        800;
+      font-weight: 800;
     }
 
 
@@ -849,22 +592,15 @@
     ========================= */
 
     footer {
+      padding: 35px 0;
 
-      padding:
-        35px 0;
+      text-align: center;
 
-      text-align:
-        center;
+      border-top: 1px solid #222222;
 
-      border-top:
-        1px solid
-        #222222;
+      background: #050505;
 
-      background:
-        #050505;
-
-      color:
-        #777777;
+      color: #777777;
     }
 
 
@@ -872,98 +608,68 @@
        MOBILE
     ========================= */
 
-    @media
-    (max-width: 760px) {
+    @media (max-width: 760px) {
 
       .nav {
+        flex-direction: column;
 
-        flex-direction:
-          column;
-
-        padding:
-          16px 0;
+        padding: 16px 0;
       }
 
       .brand-logo {
-
-        width:
-          145px;
+        width: 145px;
       }
 
       .nav-links {
+        justify-content: center;
 
-        justify-content:
-          center;
-
-        gap:
-          13px;
+        gap: 13px;
       }
 
       .hero {
-
-        min-height:
-          auto;
+        min-height: auto;
       }
 
       .hero-logo {
-
-        width:
-          min(
-            390px,
-            88vw
-          );
+        width: min(390px, 88vw);
       }
 
       .live-layout {
-
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .live-info {
-
-        text-align:
-          left;
+        text-align: left;
       }
 
       .community {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:
-          1fr;
-
-        text-align:
-          center;
+        text-align: center;
       }
 
       .live-card,
       .feature-box {
-
-        padding:
-          24px;
+        padding: 24px;
       }
 
       .btn {
+        width: 100%;
 
-        width:
-          100%;
-
-        max-width:
-          310px;
+        max-width: 310px;
       }
 
       .series-logo-wrap {
-
-        height:
-          90px;
+        height: 90px;
       }
 
       .series-logo {
+        max-width: 150px;
+        max-height: 78px;
+      }
 
-        max-width:
-          150px;
-
-        max-height:
-          78px;
+      .baza-heading {
+        justify-content: center;
       }
 
     }
@@ -1068,8 +774,6 @@
       <div class="buttons">
 
 
-        <!-- YOUTUBE -->
-
         <a
           class="btn btn-main social-btn"
           href="https://www.youtube.com/c/smokol"
@@ -1089,8 +793,6 @@
         </a>
 
 
-        <!-- DISCORD -->
-
         <a
           class="btn social-btn"
           href="https://discord.gg/UYxzAhdEFy"
@@ -1109,8 +811,6 @@
 
         </a>
 
-
-        <!-- FACEBOOK -->
 
         <a
           class="btn social-btn"
@@ -1170,12 +870,8 @@
         </div>
 
 
-        <div
-          class="live-card live-layout"
-        >
+        <div class="live-card live-layout">
 
-
-          <!-- MINIATURA -->
 
           <a
             href="https://www.youtube.com/live/JZfk7nXXrPI?si=2bRROyo8lM3mERBF"
@@ -1193,8 +889,6 @@
 
           </a>
 
-
-          <!-- INFORMACJE -->
 
           <div class="live-info">
 
@@ -1287,8 +981,6 @@
         <div class="grid">
 
 
-          <!-- OMSI 2 -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1318,8 +1010,6 @@
           </div>
 
 
-          <!-- ETS2 -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1348,8 +1038,6 @@
           </div>
 
 
-          <!-- ATS -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1377,8 +1065,6 @@
 
           </div>
 
-
-          <!-- FERNBUS -->
 
           <div class="card">
 
@@ -1409,8 +1095,6 @@
           </div>
 
 
-          <!-- THE BUS -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1439,8 +1123,6 @@
           </div>
 
 
-          <!-- EA SPORTS FC -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1468,8 +1150,6 @@
 
           </div>
 
-
-          <!-- GAMING -->
 
           <div class="card">
 
@@ -1539,9 +1219,7 @@
         </div>
 
 
-        <div
-          class="feature-box community"
-        >
+        <div class="feature-box community">
 
 
           <img
@@ -1629,18 +1307,14 @@
           </h2>
 
           <p>
-
             Wirtualna spedycja
             i wspólne kilometry.
-
           </p>
 
         </div>
 
 
-        <div
-          class="feature-box community"
-        >
+        <div class="feature-box community">
 
 
           <img
@@ -1653,23 +1327,32 @@
           <div>
 
 
-            <h3>
-              🚛 Baza Smokola
+            <h3 class="baza-heading">
+
+              <img
+                src="logo-truckbook.png"
+                alt="TrucksBook"
+                class="baza-heading-logo"
+              >
+
+              <span>
+                Baza Smokola
+              </span>
+
             </h3>
 
 
             <p>
 
               Wirtualna spedycja
-              związana ze społecznością
-              Smokol.
+              związana ze społecznością Smokol.
 
-              Euro Truck Simulator 2,
-
-              American Truck Simulator,
+              Euro Truck Simulator 2
+              oraz American Truck Simulator,
 
               wspólne trasy,
-              statystyki
+              statystyki,
+              przejechane kilometry
               i transportowy klimat.
 
             </p>
@@ -1677,18 +1360,18 @@
 
             <a
               class="btn social-btn"
-              href="https://discord.gg/UYxzAhdEFy"
+              href="https://trucksbook.eu/company/157785"
               target="_blank"
               rel="noopener noreferrer"
             >
 
               <img
-                src="logo-discord.png"
-                alt="Discord"
+                src="logo-tb.png"
+                alt="TrucksBook"
               >
 
               <span>
-                Zobacz na Smokol Hub
+                Zobacz Bazę na TrucksBook
               </span>
 
             </a>
@@ -1731,8 +1414,6 @@
         <div class="grid">
 
 
-          <!-- YOUTUBE -->
-
           <div class="card social">
 
             <img
@@ -1746,10 +1427,8 @@
             </h3>
 
             <p>
-
               Kanał Smokol
               i wszystkie transmisje.
-
             </p>
 
             <a
@@ -1762,8 +1441,6 @@
 
           </div>
 
-
-          <!-- DISCORD -->
 
           <div class="card social">
 
@@ -1778,10 +1455,8 @@
             </h3>
 
             <p>
-
               Discord społeczności
               Smokola.
-
             </p>
 
             <a
@@ -1794,8 +1469,6 @@
 
           </div>
 
-
-          <!-- FACEBOOK -->
 
           <div class="card social">
 
@@ -1810,11 +1483,9 @@
             </h3>
 
             <p>
-
               Posty,
               aktualności
               i zapowiedzi.
-
             </p>
 
             <a
@@ -1827,8 +1498,6 @@
 
           </div>
 
-
-          <!-- TIPPLY -->
 
           <div class="card social">
 
@@ -1846,10 +1515,8 @@
             </h3>
 
             <p>
-
               Wsparcie kanału
               podczas transmisji.
-
             </p>
 
             <a
