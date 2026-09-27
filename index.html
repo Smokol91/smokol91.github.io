@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Smokol | Symulacja to moja pasja</title>
-  <meta name="description" content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, Smokol Hub i Baza Smokola.">
+
+  <meta
+    name="description"
+    content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, Smokol Hub i Baza Smokola."
+  >
 
   <style>
     * {
@@ -21,7 +25,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at 50% 0%, rgba(200,0,0,.18), transparent 32%),
+        radial-gradient(circle at 50% 0%, rgba(200, 0, 0, 0.18), transparent 32%),
         #080808;
       color: white;
       line-height: 1.6;
@@ -37,17 +41,21 @@
       margin: auto;
     }
 
+    /* =========================
+       MENU
+    ========================= */
+
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7,7,7,.94);
+      background: rgba(7, 7, 7, 0.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(220,0,0,.35);
+      border-bottom: 1px solid rgba(220, 0, 0, 0.35);
     }
 
     .nav {
-      min-height: 72px;
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -55,12 +63,21 @@
     }
 
     .brand {
-      font-size: 1.5rem;
-      font-weight: 900;
+      display: flex;
+      align-items: center;
     }
 
-    .brand span {
-      color: #e21b1b;
+    .brand-logo {
+      width: 155px;
+      max-height: 58px;
+      object-fit: contain;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.04);
+      filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.35));
     }
 
     .nav-links {
@@ -70,13 +87,18 @@
     }
 
     .nav-links a {
-      color: #ddd;
+      color: #dddddd;
       font-weight: 700;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
       color: #ff3b3b;
     }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 88vh;
@@ -89,7 +111,7 @@
     .hero-logo {
       width: min(470px, 86vw);
       margin-bottom: 25px;
-      filter: drop-shadow(0 0 30px rgba(255,0,0,.25));
+      filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.25));
     }
 
     .hero h1 {
@@ -106,7 +128,7 @@
     .hero p {
       max-width: 760px;
       margin: 0 auto 30px;
-      color: #bbb;
+      color: #bbbbbb;
       font-size: 1.15rem;
     }
 
@@ -122,8 +144,8 @@
       padding: 14px 23px;
       border-radius: 10px;
       font-weight: 900;
-      transition: .2s;
-      border: 1px solid #333;
+      transition: 0.2s;
+      border: 1px solid #333333;
       background: #151515;
     }
 
@@ -137,6 +159,14 @@
       color: white;
       border-color: #e21b1b;
     }
+
+    .btn-main:hover {
+      background: #ff3030;
+    }
+
+    /* =========================
+       SEKCJE
+    ========================= */
 
     section {
       padding: 85px 0;
@@ -157,8 +187,12 @@
     }
 
     .section-title p {
-      color: #999;
+      color: #999999;
     }
+
+    /* =========================
+       LIVE
+    ========================= */
 
     .live-card,
     .feature-box {
@@ -166,11 +200,15 @@
       margin: auto;
       border-radius: 20px;
       background:
-        linear-gradient(135deg, rgba(220,0,0,.12), transparent 55%),
+        linear-gradient(
+          135deg,
+          rgba(220, 0, 0, 0.12),
+          transparent 55%
+        ),
         #121212;
-      border: 1px solid rgba(230,30,30,.4);
+      border: 1px solid rgba(230, 30, 30, 0.4);
       padding: 36px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
     }
 
     .live-badge {
@@ -189,9 +227,13 @@
 
     .live-card p,
     .feature-box p {
-      color: #bbb;
+      color: #bbbbbb;
       margin-bottom: 22px;
     }
+
+    /* =========================
+       KARTY
+    ========================= */
 
     .grid {
       display: grid;
@@ -204,7 +246,7 @@
       border: 1px solid #252525;
       border-radius: 16px;
       padding: 28px;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     .card:hover {
@@ -222,9 +264,13 @@
     }
 
     .card p {
-      color: #999;
-      font-size: .95rem;
+      color: #999999;
+      font-size: 0.95rem;
     }
+
+    /* =========================
+       SMOKOL HUB / BAZA
+    ========================= */
 
     .community {
       display: grid;
@@ -237,7 +283,7 @@
       width: 100%;
       max-width: 300px;
       margin: auto;
-      filter: drop-shadow(0 0 24px rgba(255,100,0,.22));
+      filter: drop-shadow(0 0 24px rgba(255, 100, 0, 0.22));
     }
 
     .community h3 {
@@ -246,19 +292,31 @@
     }
 
     .community p {
-      color: #aaa;
+      color: #aaaaaa;
       margin-bottom: 22px;
     }
 
     .hub-section {
       background:
-        radial-gradient(circle at center, rgba(255,100,0,.13), transparent 45%);
+        radial-gradient(
+          circle at center,
+          rgba(255, 100, 0, 0.13),
+          transparent 45%
+        );
     }
 
     .baza-section {
       background:
-        radial-gradient(circle at center, rgba(180,0,0,.12), transparent 45%);
+        radial-gradient(
+          circle at center,
+          rgba(180, 0, 0, 0.12),
+          transparent 45%
+        );
     }
+
+    /* =========================
+       LINKI
+    ========================= */
 
     .social {
       text-align: center;
@@ -269,18 +327,30 @@
       font-weight: 800;
     }
 
+    /* =========================
+       STOPKA
+    ========================= */
+
     footer {
       padding: 35px 0;
       text-align: center;
-      border-top: 1px solid #222;
+      border-top: 1px solid #222222;
       background: #050505;
-      color: #777;
+      color: #777777;
     }
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 760px) {
       .nav {
         flex-direction: column;
         padding: 16px 0;
+      }
+
+      .brand-logo {
+        width: 145px;
       }
 
       .nav-links {
@@ -307,311 +377,475 @@
 
 <body>
 
-<nav>
-  <div class="container nav">
-    <a href="#" class="brand">SMOKOL<span>.</span></a>
+  <!-- MENU -->
 
-    <div class="nav-links">
-      <a href="#live">Live</a>
-      <a href="#serie">Serie</a>
-      <a href="#hub">Smokol Hub</a>
-      <a href="#baza">Baza Smokola</a>
-      <a href="#linki">Linki</a>
-    </div>
-  </div>
-</nav>
+  <nav>
+    <div class="container nav">
 
-
-<header class="hero">
-  <div class="container">
-
-    <img
-      src="logo-smokol.png"
-      alt="Logo kanału Smokol"
-      class="hero-logo"
-    >
-
-    <h1>SYMULACJA TO <span>MOJA PASJA</span></h1>
-
-    <p>
-      Oficjalna strona kanału Smokol.
-      Symulatory, gaming, transmisje na żywo i społeczność
-      skupiona wokół wspólnej pasji do gier.
-    </p>
-
-    <div class="buttons">
-
-      <a
-        class="btn btn-main"
-        href="http://www.youtube.com/c/smokol"
-        target="_blank"
-      >
-        ▶ YouTube
+      <a href="#" class="brand">
+        <img
+          src="napis-smokol.png"
+          alt="Smokol"
+          class="brand-logo"
+        >
       </a>
 
-      <a
-        class="btn"
-        href="https://discord.gg/UYxzAhdEFy"
-        target="_blank"
-      >
-        🐲 Smokol Hub
-      </a>
-
-      <a
-        class="btn"
-        href="https://www.facebook.com/smokol91"
-        target="_blank"
-      >
-        Facebook
-      </a>
-
-    </div>
-  </div>
-</header>
-
-
-<main>
-
-<section id="live">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Najnowszy <span>live</span></h2>
-      <p>Sprawdź najbliższą transmisję na kanale Smokol.</p>
-    </div>
-
-    <div class="live-card">
-
-      <span class="live-badge">🔴 TRANSMISJA</span>
-
-      <h3>OMSI 2 #190 — Projekt Wrocław | Linia 119</h3>
-
-      <p>
-        Wracamy na mapę Projekt Wrocław.
-        Solaris Urbino 18 III generacji w malowaniu MZK Wrocław
-        i linia 119 w relacji Nowy Dwór Pętla → Sołtysowice.
-      </p>
-
-      <a
-        class="btn btn-main"
-        href="https://www.youtube.com/live/JZfk7nXXrPI?si=2bRROyo8lM3mERBF"
-        target="_blank"
-      >
-        ▶ Oglądaj na YouTube
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section id="serie">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Serie na <span>kanale</span></h2>
-      <p>Symulatory, sport, wyścigi i gry fabularne.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <div class="icon">🚌</div>
-        <h3>OMSI 2</h3>
-        <p>
-          Flagowa seria kanału Smokol.
-          Autobusy, mapy, linie i klimat komunikacji miejskiej.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🚛</div>
-        <h3>Euro Truck Simulator 2</h3>
-        <p>
-          Trasy, ciężarówki, mapy, mody i kolejne kilometry po Europie.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🇺🇸</div>
-        <h3>American Truck Simulator</h3>
-        <p>
-          Amerykańskie drogi i dalekie trasy za kierownicą ciężarówki.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🚌</div>
-        <h3>Fernbus / The Bus</h3>
-        <p>
-          Autokary, komunikacja miejska i autobusowe klimaty.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚽</div>
-        <h3>EA SPORTS FC</h3>
-        <p>
-          Piłkarskie emocje, kariery i komentarz po smokolowemu.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🎮</div>
-        <h3>Gaming</h3>
-        <p>
-          Gry wyścigowe, sportowe, fabularne i inne produkcje.
-        </p>
+      <div class="nav-links">
+        <a href="#live">Live</a>
+        <a href="#serie">Serie</a>
+        <a href="#hub">Smokol Hub</a>
+        <a href="#baza">Baza Smokola</a>
+        <a href="#linki">Linki</a>
       </div>
 
     </div>
-
-  </div>
-</section>
+  </nav>
 
 
-<section id="hub" class="hub-section">
-  <div class="container">
+  <!-- GŁÓWNA SEKCJA -->
 
-    <div class="section-title">
-      <h2>Smokol <span>Hub</span></h2>
-      <p>Jedna społeczność. Wiele pasji.</p>
-    </div>
-
-    <div class="feature-box community">
+  <header class="hero">
+    <div class="container">
 
       <img
-        src="logo-smokol-hub.png"
-        alt="Smokol Hub"
-        class="community-logo"
+        src="logo-smokol.png?v=2"
+        alt="Logo kanału Smokol"
+        class="hero-logo"
       >
 
-      <div>
-        <h3>🐲 Dołącz do Smokol Hub</h3>
+      <h1>
+        SYMULACJA TO
+        <span>MOJA PASJA</span>
+      </h1>
 
-        <p>
-          Smokol Hub to miejsce dla fanów symulatorów,
-          gamingu, twórców i społeczności kanału Smokol.
-          Rozmawiaj, dziel się screenami, śledź aktualności,
-          zdobywaj poziomy i poznawaj innych graczy.
-        </p>
+      <p>
+        Oficjalna strona kanału Smokol.
+        Symulatory, gaming, transmisje na żywo i społeczność
+        skupiona wokół wspólnej pasji do gier.
+      </p>
+
+      <div class="buttons">
 
         <a
           class="btn btn-main"
-          href="https://discord.gg/UYxzAhdEFy"
+          href="http://www.youtube.com/c/smokol"
           target="_blank"
         >
-          Dołącz na Discord
+          ▶ YouTube
         </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section id="baza" class="baza-section">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Baza <span>Smokola</span></h2>
-      <p>Wirtualna spedycja i wspólne kilometry.</p>
-    </div>
-
-    <div class="feature-box community">
-
-      <img
-        src="logo-baza-smokola.png"
-        alt="Baza Smokola"
-        class="community-logo"
-      >
-
-      <div>
-        <h3>🚛 Baza Smokola</h3>
-
-        <p>
-          Wirtualna spedycja związana ze społecznością Smokol.
-          Euro Truck Simulator 2, American Truck Simulator,
-          wspólne trasy, statystyki i transportowy klimat.
-        </p>
 
         <a
           class="btn"
           href="https://discord.gg/UYxzAhdEFy"
           target="_blank"
         >
-          Zobacz na Smokol Hub
+          🐲 Smokol Hub
         </a>
+
+        <a
+          class="btn"
+          href="https://www.facebook.com/smokol91"
+          target="_blank"
+        >
+          Facebook
+        </a>
+
       </div>
 
     </div>
-
-  </div>
-</section>
+  </header>
 
 
-<section id="linki">
-  <div class="container">
+  <main>
 
-    <div class="section-title">
-      <h2>Ważne <span>linki</span></h2>
+    <!-- LIVE -->
+
+    <section id="live">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>
+            Najnowszy <span>live</span>
+          </h2>
+
+          <p>
+            Sprawdź najbliższą transmisję na kanale Smokol.
+          </p>
+        </div>
+
+        <div class="live-card">
+
+          <span class="live-badge">
+            🔴 TRANSMISJA
+          </span>
+
+          <h3>
+            OMSI 2 #190 — Projekt Wrocław | Linia 119
+          </h3>
+
+          <p>
+            Wracamy na mapę Projekt Wrocław.
+            Solaris Urbino 18 III generacji w malowaniu MZK Wrocław
+            i linia 119 w relacji Nowy Dwór Pętla → Sołtysowice.
+          </p>
+
+          <a
+            class="btn btn-main"
+            href="https://www.youtube.com/live/JZfk7nXXrPI?si=2bRROyo8lM3mERBF"
+            target="_blank"
+          >
+            ▶ Oglądaj na YouTube
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERIE -->
+
+    <section id="serie">
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Serie na <span>kanale</span>
+          </h2>
+
+          <p>
+            Symulatory, sport, wyścigi i gry fabularne.
+          </p>
+
+        </div>
+
+        <div class="grid">
+
+          <div class="card">
+            <div class="icon">🚌</div>
+
+            <h3>OMSI 2</h3>
+
+            <p>
+              Flagowa seria kanału Smokol.
+              Autobusy, mapy, linie i klimat komunikacji miejskiej.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">🚛</div>
+
+            <h3>Euro Truck Simulator 2</h3>
+
+            <p>
+              Trasy, ciężarówki, mapy, mody i kolejne kilometry po Europie.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">🇺🇸</div>
+
+            <h3>American Truck Simulator</h3>
+
+            <p>
+              Amerykańskie drogi i dalekie trasy za kierownicą ciężarówki.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">🚌</div>
+
+            <h3>Fernbus / The Bus</h3>
+
+            <p>
+              Autokary, komunikacja miejska i autobusowe klimaty.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">⚽</div>
+
+            <h3>EA SPORTS FC</h3>
+
+            <p>
+              Piłkarskie emocje, kariery i komentarz po smokolowemu.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="icon">🎮</div>
+
+            <h3>Gaming</h3>
+
+            <p>
+              Gry wyścigowe, sportowe, fabularne i inne produkcje.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SMOKOL HUB -->
+
+    <section
+      id="hub"
+      class="hub-section"
+    >
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Smokol <span>Hub</span>
+          </h2>
+
+          <p>
+            Jedna społeczność. Wiele pasji.
+          </p>
+
+        </div>
+
+        <div class="feature-box community">
+
+          <img
+            src="logo-smokol-hub.png"
+            alt="Smokol Hub"
+            class="community-logo"
+          >
+
+          <div>
+
+            <h3>
+              🐲 Dołącz do Smokol Hub
+            </h3>
+
+            <p>
+              Smokol Hub to miejsce dla fanów symulatorów,
+              gamingu, twórców i społeczności kanału Smokol.
+
+              Rozmawiaj, dziel się screenami, śledź aktualności,
+              zdobywaj poziomy i poznawaj innych graczy.
+            </p>
+
+            <a
+              class="btn btn-main"
+              href="https://discord.gg/UYxzAhdEFy"
+              target="_blank"
+            >
+              Dołącz na Discord
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BAZA SMOKOLA -->
+
+    <section
+      id="baza"
+      class="baza-section"
+    >
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Baza <span>Smokola</span>
+          </h2>
+
+          <p>
+            Wirtualna spedycja i wspólne kilometry.
+          </p>
+
+        </div>
+
+        <div class="feature-box community">
+
+          <img
+            src="logo-baza-smokola.png"
+            alt="Baza Smokola"
+            class="community-logo"
+          >
+
+          <div>
+
+            <h3>
+              🚛 Baza Smokola
+            </h3>
+
+            <p>
+              Wirtualna spedycja związana ze społecznością Smokol.
+
+              Euro Truck Simulator 2,
+              American Truck Simulator,
+              wspólne trasy, statystyki
+              i transportowy klimat.
+            </p>
+
+            <a
+              class="btn"
+              href="https://discord.gg/UYxzAhdEFy"
+              target="_blank"
+            >
+              Zobacz na Smokol Hub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LINKI -->
+
+    <section id="linki">
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Ważne <span>linki</span>
+          </h2>
+
+        </div>
+
+        <div class="grid">
+
+
+          <div class="card social">
+
+            <div class="icon">
+              ▶️
+            </div>
+
+            <h3>
+              YouTube
+            </h3>
+
+            <p>
+              Kanał Smokol i wszystkie transmisje.
+            </p>
+
+            <a
+              href="http://www.youtube.com/c/smokol"
+              target="_blank"
+            >
+              Przejdź do kanału
+            </a>
+
+          </div>
+
+
+          <div class="card social">
+
+            <div class="icon">
+              🐲
+            </div>
+
+            <h3>
+              Smokol Hub
+            </h3>
+
+            <p>
+              Discord społeczności Smokola.
+            </p>
+
+            <a
+              href="https://discord.gg/UYxzAhdEFy"
+              target="_blank"
+            >
+              Dołącz
+            </a>
+
+          </div>
+
+
+          <div class="card social">
+
+            <div class="icon">
+              📘
+            </div>
+
+            <h3>
+              Facebook
+            </h3>
+
+            <p>
+              Posty, aktualności i zapowiedzi.
+            </p>
+
+            <a
+              href="https://www.facebook.com/smokol91"
+              target="_blank"
+            >
+              Odwiedź profil
+            </a>
+
+          </div>
+
+
+          <div class="card social">
+
+            <div class="icon">
+              💸
+            </div>
+
+            <h3>
+              Tipply
+            </h3>
+
+            <p>
+              Wsparcie kanału podczas transmisji.
+            </p>
+
+            <a
+              href="https://tipply.pl/u/smokol"
+              target="_blank"
+            >
+              Wesprzyj kanał
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- STOPKA -->
+
+  <footer>
+
+    <div class="container">
+
+      🐲 Smokol — Symulacja to moja pasja
+
+      <br>
+
+      © 2026 Smokol
+
     </div>
 
-    <div class="grid">
-
-      <div class="card social">
-        <div class="icon">▶️</div>
-        <h3>YouTube</h3>
-        <p>Kanał Smokol i wszystkie transmisje.</p>
-        <a href="http://www.youtube.com/c/smokol" target="_blank">
-          Przejdź do kanału
-        </a>
-      </div>
-
-      <div class="card social">
-        <div class="icon">🐲</div>
-        <h3>Smokol Hub</h3>
-        <p>Discord społeczności Smokola.</p>
-        <a href="https://discord.gg/UYxzAhdEFy" target="_blank">
-          Dołącz
-        </a>
-      </div>
-
-      <div class="card social">
-        <div class="icon">📘</div>
-        <h3>Facebook</h3>
-        <p>Posty, aktualności i zapowiedzi.</p>
-        <a href="https://www.facebook.com/smokol91" target="_blank">
-          Odwiedź profil
-        </a>
-      </div>
-
-      <div class="card social">
-        <div class="icon">💸</div>
-        <h3>Tipply</h3>
-        <p>Wsparcie kanału podczas transmisji.</p>
-        <a href="https://tipply.pl/u/smokol" target="_blank">
-          Wesprzyj kanał
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-
-<footer>
-  <div class="container">
-    🐲 Smokol — Symulacja to moja pasja
-    <br>
-    © 2026 Smokol
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
