@@ -10,9 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Smokol | Symulacja to moja pasja
-  </title>
+  <title>Smokol | Symulacja to moja pasja</title>
 
   <meta
     name="description"
@@ -20,6 +18,21 @@
   >
 
   <style>
+
+    /* =========================
+       KOLORY
+    ========================= */
+
+    :root {
+      --red: #c9151b;
+      --red-light: #e34b4f;
+      --red-dark: #8f0d12;
+      --black: #080808;
+      --card: #121212;
+      --text: #ffffff;
+      --muted: #aaaaaa;
+    }
+
 
     /* =========================
        PODSTAWY
@@ -36,20 +49,17 @@
     }
 
     body {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
 
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(200, 0, 0, 0.18),
+          rgba(160, 0, 0, 0.18),
           transparent 32%
         ),
-        #080808;
+        var(--black);
 
-      color: #ffffff;
+      color: var(--text);
 
       line-height: 1.6;
     }
@@ -66,7 +76,7 @@
 
 
     /* =========================
-       STYL NAGŁÓWKÓW SMOKOL
+       NAGŁÓWKI SMOKOL
     ========================= */
 
     .smokol-heading {
@@ -88,27 +98,16 @@
 
       position: relative;
 
-      background:
-        linear-gradient(
-          to bottom,
-          #ffffff 0%,
-          #ffffff 25%,
-          #eeeeee 45%,
-          #d7d7d7 68%,
-          #aaaaaa 100%
-        );
+      color: #ffffff;
 
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: #ffffff;
 
       text-shadow:
-        0 2px 0 rgba(255, 255, 255, 0.15),
-        0 4px 0 rgba(150, 150, 150, 0.15),
-        0 7px 0 rgba(0, 0, 0, 0.45),
-        0 10px 18px rgba(0, 0, 0, 0.8),
-        0 0 18px rgba(255, 0, 0, 0.14);
+        0 2px 0 #f2f2f2,
+        0 4px 0 #cfcfcf,
+        0 7px 0 rgba(0, 0, 0, 0.55),
+        0 10px 18px rgba(0, 0, 0, 0.85),
+        0 0 12px rgba(160, 0, 0, 0.12);
     }
 
     .smokol-heading::after {
@@ -128,34 +127,30 @@
         linear-gradient(
           to right,
           transparent,
-          rgba(255, 0, 0, 0.35),
-          #ff1616,
-          rgba(255, 0, 0, 0.35),
+          rgba(143, 13, 18, 0.25),
+          var(--red),
+          rgba(143, 13, 18, 0.25),
           transparent
         );
 
       box-shadow:
-        0 0 8px rgba(255, 0, 0, 0.45);
+        0 0 8px
+        rgba(160, 0, 0, 0.35);
 
       opacity: 0.9;
     }
 
     .smokol-red {
-      background: none;
+      color: var(--red);
 
-      -webkit-background-clip: initial;
-      background-clip: initial;
-
-      -webkit-text-fill-color: #f21f24;
-
-      color: #f21f24;
+      -webkit-text-fill-color: var(--red);
 
       text-shadow:
-        0 1px 0 #ff7878,
-        0 3px 0 #a90000,
-        0 5px 0 rgba(60, 0, 0, 0.8),
-        0 7px 15px rgba(0, 0, 0, 0.8),
-        0 0 14px rgba(255, 0, 0, 0.4);
+        0 1px 0 var(--red-light),
+        0 3px 0 var(--red-dark),
+        0 5px 0 rgba(50, 0, 0, 0.85),
+        0 7px 15px rgba(0, 0, 0, 0.85),
+        0 0 12px rgba(160, 0, 0, 0.3);
     }
 
 
@@ -165,23 +160,30 @@
 
     nav {
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
-      background: rgba(7, 7, 7, 0.96);
+      background:
+        rgba(7, 7, 7, 0.96);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter:
+        blur(12px);
 
       border-bottom:
         1px solid
-        rgba(220, 0, 0, 0.35);
+        rgba(160, 0, 0, 0.35);
     }
 
     .nav {
       min-height: 76px;
 
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       align-items: center;
 
       gap: 25px;
@@ -194,6 +196,7 @@
 
     .brand-logo {
       width: 155px;
+
       max-height: 58px;
 
       object-fit: contain;
@@ -209,12 +212,13 @@
       filter:
         drop-shadow(
           0 0 10px
-          rgba(255, 0, 0, 0.35)
+          rgba(160, 0, 0, 0.35)
         );
     }
 
     .nav-links {
       display: flex;
+
       align-items: center;
 
       gap: 22px;
@@ -231,7 +235,7 @@
     }
 
     .nav-links a:hover {
-      color: #ff3030;
+      color: var(--red-light);
     }
 
 
@@ -243,6 +247,7 @@
       min-height: 88vh;
 
       display: flex;
+
       align-items: center;
 
       padding: 80px 0;
@@ -258,7 +263,7 @@
       filter:
         drop-shadow(
           0 0 30px
-          rgba(255, 0, 0, 0.25)
+          rgba(160, 0, 0, 0.25)
         );
     }
 
@@ -291,7 +296,9 @@
 
     .buttons {
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       gap: 14px;
@@ -301,24 +308,30 @@
 
     .btn {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
 
       min-height: 56px;
 
-      padding: 12px 22px;
+      padding:
+        12px 22px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
       border:
         1px solid
         #333333;
 
-      background: #151515;
+      background:
+        #151515;
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
       font-weight: 900;
 
@@ -326,28 +339,36 @@
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
 
-      border-color: #ff3030;
+      border-color:
+        var(--red);
 
-      background: #1d1d1d;
+      background:
+        #1d1d1d;
     }
 
     .btn-main {
-      background: #e21b1b;
+      background:
+        var(--red);
 
-      border-color: #e21b1b;
+      border-color:
+        var(--red);
     }
 
     .btn-main:hover {
-      background: #ff2424;
+      background:
+        #dd1b22;
     }
 
     .social-btn img {
       width: 31px;
+
       height: 31px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
       display: block;
     }
@@ -358,13 +379,16 @@
     ========================= */
 
     section {
-      padding: 85px 0;
+      padding:
+        85px 0;
     }
 
     .section-title {
-      text-align: center;
+      text-align:
+        center;
 
-      margin-bottom: 50px;
+      margin-bottom:
+        50px;
     }
 
     .section-title h2 {
@@ -375,11 +399,13 @@
           3.2rem
         );
 
-      margin-bottom: 22px;
+      margin-bottom:
+        22px;
     }
 
     .section-title p {
-      color: #999999;
+      color:
+        #999999;
     }
 
 
@@ -389,25 +415,29 @@
 
     .live-card,
     .feature-box {
-      max-width: 1050px;
+      max-width:
+        1050px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      border-radius: 20px;
+      border-radius:
+        20px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(220, 0, 0, 0.12),
+          rgba(150, 0, 0, 0.12),
           transparent 55%
         ),
-        #121212;
+        var(--card);
 
       border:
         1px solid
-        rgba(230, 30, 30, 0.4);
+        rgba(180, 20, 20, 0.4);
 
-      padding: 36px;
+      padding:
+        36px;
 
       box-shadow:
         0 20px 60px
@@ -429,9 +459,11 @@
     .live-thumb-link {
       display: block;
 
-      border-radius: 14px;
+      border-radius:
+        14px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
     }
 
     .live-thumbnail {
@@ -439,62 +471,79 @@
 
       width: 100%;
 
-      aspect-ratio: 16 / 9;
+      aspect-ratio:
+        16 / 9;
 
-      object-fit: cover;
+      object-fit:
+        cover;
 
-      border-radius: 14px;
+      border-radius:
+        14px;
 
       border:
         1px solid
-        rgba(255, 30, 30, 0.5);
+        rgba(190, 20, 25, 0.5);
 
       box-shadow:
         0 10px 35px
         rgba(0, 0, 0, 0.45),
-
         0 0 20px
-        rgba(220, 0, 0, 0.12);
+        rgba(150, 0, 0, 0.12);
 
-      transition: 0.25s;
+      transition:
+        0.25s;
     }
 
     .live-thumbnail:hover {
-      transform: scale(1.025);
+      transform:
+        scale(1.025);
 
-      filter: brightness(1.08);
+      filter:
+        brightness(1.08);
     }
 
     .live-info {
-      text-align: left;
+      text-align:
+        left;
     }
 
     .live-badge {
-      display: inline-block;
+      display:
+        inline-block;
 
-      background: #df0011;
+      background:
+        var(--red);
 
-      padding: 6px 13px;
+      padding:
+        6px 13px;
 
-      border-radius: 8px;
+      border-radius:
+        8px;
 
-      margin-bottom: 16px;
+      margin-bottom:
+        16px;
 
-      font-weight: 900;
+      font-weight:
+        900;
     }
 
     .live-info h3 {
-      font-size: 2rem;
+      font-size:
+        2rem;
 
-      line-height: 1.25;
+      line-height:
+        1.25;
 
-      margin-bottom: 14px;
+      margin-bottom:
+        14px;
     }
 
     .live-info p {
-      color: #bbbbbb;
+      color:
+        #bbbbbb;
 
-      margin-bottom: 22px;
+      margin-bottom:
+        22px;
     }
 
 
@@ -511,25 +560,34 @@
           minmax(230px, 1fr)
         );
 
-      gap: 20px;
+      gap:
+        20px;
     }
 
     .card {
-      background: #121212;
+      background:
+        var(--card);
 
-      border: 1px solid #252525;
+      border:
+        1px solid
+        #252525;
 
-      border-radius: 16px;
+      border-radius:
+        16px;
 
-      padding: 28px;
+      padding:
+        28px;
 
-      transition: 0.25s;
+      transition:
+        0.25s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform:
+        translateY(-5px);
 
-      border-color: #e21b1b;
+      border-color:
+        var(--red);
 
       box-shadow:
         0 15px 35px
@@ -537,13 +595,16 @@
     }
 
     .card h3 {
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
     }
 
     .card p {
-      color: #999999;
+      color:
+        #999999;
 
-      font-size: 0.95rem;
+      font-size:
+        0.95rem;
     }
 
 
@@ -552,36 +613,53 @@
     ========================= */
 
     .series-logo-wrap {
-      height: 105px;
+      height:
+        105px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display:
+        flex;
 
-      margin-bottom: 18px;
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      margin-bottom:
+        18px;
     }
 
     .series-logo {
-      max-width: 175px;
-      max-height: 90px;
+      max-width:
+        175px;
 
-      width: auto;
-      height: auto;
+      max-height:
+        90px;
 
-      object-fit: contain;
+      width:
+        auto;
 
-      display: block;
+      height:
+        auto;
 
-      transition: 0.25s ease;
+      object-fit:
+        contain;
+
+      display:
+        block;
+
+      transition:
+        0.25s ease;
     }
 
     .card:hover .series-logo {
-      transform: scale(1.07);
+      transform:
+        scale(1.07);
 
       filter:
         drop-shadow(
           0 0 12px
-          rgba(255, 40, 40, 0.35)
+          rgba(180, 20, 20, 0.35)
         );
     }
 
@@ -591,47 +669,57 @@
     ========================= */
 
     .community {
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         300px 1fr;
 
-      gap: 45px;
+      gap:
+        45px;
 
-      align-items: center;
+      align-items:
+        center;
     }
 
     .community-logo {
-      width: 100%;
+      width:
+        100%;
 
-      max-width: 300px;
+      max-width:
+        300px;
 
-      margin: auto;
+      margin:
+        auto;
 
       filter:
         drop-shadow(
           0 0 24px
-          rgba(255, 100, 0, 0.22)
+          rgba(160, 0, 0, 0.20)
         );
     }
 
     .community h3 {
-      font-size: 2rem;
+      font-size:
+        2rem;
 
-      margin-bottom: 14px;
+      margin-bottom:
+        14px;
     }
 
     .community p {
-      color: #aaaaaa;
+      color:
+        #aaaaaa;
 
-      margin-bottom: 22px;
+      margin-bottom:
+        22px;
     }
 
     .hub-section {
       background:
         radial-gradient(
           circle at center,
-          rgba(255, 100, 0, 0.13),
+          rgba(160, 60, 0, 0.12),
           transparent 45%
         );
     }
@@ -640,7 +728,7 @@
       background:
         radial-gradient(
           circle at center,
-          rgba(180, 0, 0, 0.12),
+          rgba(140, 0, 0, 0.12),
           transparent 45%
         );
     }
@@ -651,23 +739,31 @@
     ========================= */
 
     .baza-heading {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 14px;
+      gap:
+        14px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
     }
 
     .baza-heading-logo {
-      width: 105px;
+      width:
+        105px;
 
-      max-height: 42px;
+      max-height:
+        42px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
-      display: block;
+      display:
+        block;
     }
 
 
@@ -676,25 +772,33 @@
     ========================= */
 
     .social {
-      text-align: center;
+      text-align:
+        center;
     }
 
     .social-icon {
-      width: 55px;
-      height: 55px;
+      width:
+        55px;
 
-      object-fit: contain;
+      height:
+        55px;
 
-      display: block;
+      object-fit:
+        contain;
+
+      display:
+        block;
 
       margin:
         0 auto 15px;
     }
 
     .social a {
-      color: #ff3b3b;
+      color:
+        var(--red-light);
 
-      font-weight: 800;
+      font-weight:
+        800;
     }
 
 
@@ -703,17 +807,21 @@
     ========================= */
 
     footer {
-      padding: 35px 0;
+      padding:
+        35px 0;
 
-      text-align: center;
+      text-align:
+        center;
 
       border-top:
         1px solid
         #222222;
 
-      background: #050505;
+      background:
+        #050505;
 
-      color: #777777;
+      color:
+        #777777;
     }
 
 
@@ -724,23 +832,29 @@
     @media (max-width: 760px) {
 
       .nav {
-        flex-direction: column;
+        flex-direction:
+          column;
 
-        padding: 16px 0;
+        padding:
+          16px 0;
       }
 
       .brand-logo {
-        width: 145px;
+        width:
+          145px;
       }
 
       .nav-links {
-        justify-content: center;
+        justify-content:
+          center;
 
-        gap: 13px;
+        gap:
+          13px;
       }
 
       .hero {
-        min-height: auto;
+        min-height:
+          auto;
       }
 
       .hero-logo {
@@ -752,46 +866,58 @@
       }
 
       .hero h1 {
-        font-size: 2.5rem;
+        font-size:
+          2.5rem;
       }
 
       .live-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
       .live-info {
-        text-align: left;
+        text-align:
+          left;
       }
 
       .community {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
-        text-align: center;
+        text-align:
+          center;
       }
 
       .live-card,
       .feature-box {
-        padding: 24px;
+        padding:
+          24px;
       }
 
       .btn {
-        width: 100%;
+        width:
+          100%;
 
-        max-width: 310px;
+        max-width:
+          310px;
       }
 
       .series-logo-wrap {
-        height: 90px;
+        height:
+          90px;
       }
 
       .series-logo {
-        max-width: 150px;
+        max-width:
+          150px;
 
-        max-height: 78px;
+        max-height:
+          78px;
       }
 
       .baza-heading {
-        justify-content: center;
+        justify-content:
+          center;
       }
 
     }
@@ -818,7 +944,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=5"
+          src="napis-smokol.png?v=6"
           alt="Smokol"
           class="brand-logo"
         >
@@ -865,7 +991,7 @@
 
 
       <img
-        src="logo-smokol.png?v=5"
+        src="logo-smokol.png?v=6"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1029,8 +1155,7 @@
 
             <p>
 
-              Wracamy na mapę
-              Projekt Wrocław.
+              Wracamy na mapę Projekt Wrocław.
 
               Solaris Urbino 18 III generacji
               w malowaniu MZK Wrocław
@@ -1489,7 +1614,7 @@
 
 
     <!-- =========================
-         LINKI
+         WAŻNE LINKI
     ========================= -->
 
     <section id="linki">
