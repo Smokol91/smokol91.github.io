@@ -19,8 +19,11 @@
     content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, Smokol Hub i Baza Smokola."
   >
 
-
   <style>
+
+    /* =========================
+       PODSTAWY
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -33,7 +36,10 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       background:
         radial-gradient(
@@ -44,6 +50,7 @@
         #080808;
 
       color: #ffffff;
+
       line-height: 1.6;
     }
 
@@ -59,6 +66,100 @@
 
 
     /* =========================
+       STYL NAGŁÓWKÓW SMOKOL
+    ========================= */
+
+    .smokol-heading {
+      font-family:
+        Arial Black,
+        Impact,
+        Arial,
+        sans-serif;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      line-height: 1.02;
+
+      display: inline-block;
+
+      position: relative;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #ffffff 0%,
+          #ffffff 25%,
+          #eeeeee 45%,
+          #d7d7d7 68%,
+          #aaaaaa 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      text-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.15),
+        0 4px 0 rgba(150, 150, 150, 0.15),
+        0 7px 0 rgba(0, 0, 0, 0.45),
+        0 10px 18px rgba(0, 0, 0, 0.8),
+        0 0 18px rgba(255, 0, 0, 0.14);
+    }
+
+    .smokol-heading::after {
+      content: "";
+
+      position: absolute;
+
+      left: 8%;
+      right: 8%;
+      bottom: -9px;
+
+      height: 4px;
+
+      border-radius: 100%;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 0, 0, 0.35),
+          #ff1616,
+          rgba(255, 0, 0, 0.35),
+          transparent
+        );
+
+      box-shadow:
+        0 0 8px rgba(255, 0, 0, 0.45);
+
+      opacity: 0.9;
+    }
+
+    .smokol-red {
+      background: none;
+
+      -webkit-background-clip: initial;
+      background-clip: initial;
+
+      -webkit-text-fill-color: #f21f24;
+
+      color: #f21f24;
+
+      text-shadow:
+        0 1px 0 #ff7878,
+        0 3px 0 #a90000,
+        0 5px 0 rgba(60, 0, 0, 0.8),
+        0 7px 15px rgba(0, 0, 0, 0.8),
+        0 0 14px rgba(255, 0, 0, 0.4);
+    }
+
+
+    /* =========================
        MENU
     ========================= */
 
@@ -68,6 +169,7 @@
       z-index: 1000;
 
       background: rgba(7, 7, 7, 0.96);
+
       backdrop-filter: blur(12px);
 
       border-bottom:
@@ -95,6 +197,7 @@
       max-height: 58px;
 
       object-fit: contain;
+
       display: block;
 
       transition: 0.2s;
@@ -121,6 +224,7 @@
 
     .nav-links a {
       color: #dddddd;
+
       font-weight: 700;
 
       transition: 0.2s;
@@ -149,7 +253,7 @@
     .hero-logo {
       width: min(470px, 86vw);
 
-      margin-bottom: 25px;
+      margin-bottom: 32px;
 
       filter:
         drop-shadow(
@@ -159,23 +263,21 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 5.3rem);
+      font-size:
+        clamp(
+          2.8rem,
+          7vw,
+          5.5rem
+        );
 
-      line-height: 1;
-
-      margin-bottom: 18px;
-
-      text-transform: uppercase;
-    }
-
-    .hero h1 span {
-      color: #e21b1b;
+      margin-bottom: 35px;
     }
 
     .hero p {
       max-width: 760px;
 
-      margin: 0 auto 30px;
+      margin:
+        0 auto 30px;
 
       color: #bbbbbb;
 
@@ -210,9 +312,12 @@
 
       border-radius: 10px;
 
-      border: 1px solid #333333;
+      border:
+        1px solid
+        #333333;
 
       background: #151515;
+
       color: #ffffff;
 
       font-weight: 900;
@@ -230,6 +335,7 @@
 
     .btn-main {
       background: #e21b1b;
+
       border-color: #e21b1b;
     }
 
@@ -258,17 +364,18 @@
     .section-title {
       text-align: center;
 
-      margin-bottom: 42px;
+      margin-bottom: 50px;
     }
 
     .section-title h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size:
+        clamp(
+          2.1rem,
+          5vw,
+          3.2rem
+        );
 
-      margin-bottom: 8px;
-    }
-
-    .section-title h2 span {
-      color: #e21b1b;
+      margin-bottom: 22px;
     }
 
     .section-title p {
@@ -345,6 +452,7 @@
       box-shadow:
         0 10px 35px
         rgba(0, 0, 0, 0.45),
+
         0 0 20px
         rgba(220, 0, 0, 0.12);
 
@@ -544,6 +652,7 @@
 
     .baza-heading {
       display: flex;
+
       align-items: center;
 
       gap: 14px;
@@ -553,6 +662,7 @@
 
     .baza-heading-logo {
       width: 105px;
+
       max-height: 42px;
 
       object-fit: contain;
@@ -577,7 +687,8 @@
 
       display: block;
 
-      margin: 0 auto 15px;
+      margin:
+        0 auto 15px;
     }
 
     .social a {
@@ -596,7 +707,9 @@
 
       text-align: center;
 
-      border-top: 1px solid #222222;
+      border-top:
+        1px solid
+        #222222;
 
       background: #050505;
 
@@ -631,7 +744,15 @@
       }
 
       .hero-logo {
-        width: min(390px, 88vw);
+        width:
+          min(
+            390px,
+            88vw
+          );
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
       }
 
       .live-layout {
@@ -665,6 +786,7 @@
 
       .series-logo {
         max-width: 150px;
+
         max-height: 78px;
       }
 
@@ -696,7 +818,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=4"
+          src="napis-smokol.png?v=5"
           alt="Smokol"
           class="brand-logo"
         >
@@ -741,18 +863,19 @@
 
     <div class="container">
 
+
       <img
-        src="logo-smokol.png?v=4"
+        src="logo-smokol.png?v=5"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
 
 
-      <h1>
+      <h1 class="smokol-heading">
 
         SYMULACJA TO
 
-        <span>
+        <span class="smokol-red">
           MOJA PASJA
         </span>
 
@@ -852,12 +975,12 @@
 
         <div class="section-title">
 
-          <h2>
+          <h2 class="smokol-heading">
 
-            Najnowszy
+            NAJNOWSZY
 
-            <span>
-              live
+            <span class="smokol-red">
+              LIVE
             </span>
 
           </h2>
@@ -912,11 +1035,7 @@
               Solaris Urbino 18 III generacji
               w malowaniu MZK Wrocław
               i linia 119 w relacji
-
-              Nowy Dwór Pętla
-              →
-
-              Sołtysowice.
+              Nowy Dwór Pętla → Sołtysowice.
 
             </p>
 
@@ -950,7 +1069,7 @@
 
 
     <!-- =========================
-         SERIE NA KANALE
+         SERIE
     ========================= -->
 
     <section id="serie">
@@ -960,12 +1079,12 @@
 
         <div class="section-title">
 
-          <h2>
+          <h2 class="smokol-heading">
 
-            Serie na
+            SERIE NA
 
-            <span>
-              kanale
+            <span class="smokol-red">
+              KANALE
             </span>
 
           </h2>
@@ -998,13 +1117,10 @@
             </h3>
 
             <p>
-
               Flagowa seria kanału Smokol.
-
               Autobusy, mapy,
               linie i klimat
               komunikacji miejskiej.
-
             </p>
 
           </div>
@@ -1027,12 +1143,10 @@
             </h3>
 
             <p>
-
               Trasy, ciężarówki,
               mapy, mody
               i kolejne kilometry
               po Europie.
-
             </p>
 
           </div>
@@ -1055,12 +1169,10 @@
             </h3>
 
             <p>
-
               Amerykańskie drogi,
               ciężarówki
               i dalekie trasy
               przez kolejne stany USA.
-
             </p>
 
           </div>
@@ -1083,13 +1195,11 @@
             </h3>
 
             <p>
-
               Autokary,
               długie trasy,
               miasta
               i podróże
               po europejskich drogach.
-
             </p>
 
           </div>
@@ -1112,12 +1222,9 @@
             </h3>
 
             <p>
-
-              Nowoczesna
-              komunikacja miejska,
+              Nowoczesna komunikacja miejska,
               autobusy
               i wirtualny Berlin.
-
             </p>
 
           </div>
@@ -1140,12 +1247,10 @@
             </h3>
 
             <p>
-
               Piłkarskie emocje,
               kariery
               i rozgrywka
               po smokolowemu.
-
             </p>
 
           </div>
@@ -1168,13 +1273,11 @@
             </h3>
 
             <p>
-
               Gry fabularne,
               wyścigowe,
               sportowe
               i inne produkcje
               poza symulatorami.
-
             </p>
 
           </div>
@@ -1201,12 +1304,12 @@
 
         <div class="section-title">
 
-          <h2>
+          <h2 class="smokol-heading">
 
-            Smokol
+            SMOKOL
 
-            <span>
-              Hub
+            <span class="smokol-red">
+              HUB
             </span>
 
           </h2>
@@ -1241,15 +1344,13 @@
               Smokol Hub to miejsce
               dla fanów symulatorów,
               gamingu, twórców
-              i społeczności
-              kanału Smokol.
+              i społeczności kanału Smokol.
 
               Rozmawiaj,
               dziel się screenami,
               śledź aktualności,
               zdobywaj poziomy
-              i poznawaj
-              innych graczy.
+              i poznawaj innych graczy.
 
             </p>
 
@@ -1296,12 +1397,12 @@
 
         <div class="section-title">
 
-          <h2>
+          <h2 class="smokol-heading">
 
-            Baza
+            BAZA
 
-            <span>
-              Smokola
+            <span class="smokol-red">
+              SMOKOLA
             </span>
 
           </h2>
@@ -1388,7 +1489,7 @@
 
 
     <!-- =========================
-         WAŻNE LINKI
+         LINKI
     ========================= -->
 
     <section id="linki">
@@ -1398,12 +1499,12 @@
 
         <div class="section-title">
 
-          <h2>
+          <h2 class="smokol-heading">
 
-            Ważne
+            WAŻNE
 
-            <span>
-              linki
+            <span class="smokol-red">
+              LINKI
             </span>
 
           </h2>
