@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Smokol | Symulacja to moja pasja</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Smokol | Symulacja to moja pasja
+  </title>
 
   <meta
     name="description"
     content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, Smokol Hub i Baza Smokola."
   >
 
+
   <style>
+
+    /* =========================
+       PODSTAWY
+    ========================= */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,7 +37,12 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background:
         radial-gradient(
           circle at 50% 0%,
@@ -33,167 +52,254 @@
         #080808;
 
       color: #ffffff;
+
       line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      width: min(1180px, 92%);
+
+      width: min(
+        1180px,
+        92%
+      );
+
       margin: auto;
     }
+
 
     /* =========================
        MENU
     ========================= */
 
     nav {
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
-      background: rgba(7, 7, 7, 0.96);
-      backdrop-filter: blur(12px);
+      background:
+        rgba(
+          7,
+          7,
+          7,
+          0.96
+        );
 
-      border-bottom: 1px solid rgba(220, 0, 0, 0.35);
+      backdrop-filter:
+        blur(12px);
+
+      border-bottom:
+        1px solid
+        rgba(
+          220,
+          0,
+          0,
+          0.35
+        );
     }
 
     .nav {
+
       min-height: 76px;
 
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       align-items: center;
 
       gap: 25px;
     }
 
     .brand {
+
       display: flex;
+
       align-items: center;
     }
 
     .brand-logo {
+
       width: 155px;
+
       max-height: 58px;
 
       object-fit: contain;
+
       display: block;
 
       transition: 0.2s;
     }
 
     .brand-logo:hover {
-      transform: scale(1.04);
+
+      transform:
+        scale(1.04);
 
       filter:
         drop-shadow(
           0 0 10px
-          rgba(255, 0, 0, 0.35)
+          rgba(
+            255,
+            0,
+            0,
+            0.35
+          )
         );
     }
 
     .nav-links {
+
       display: flex;
+
+      align-items: center;
+
       gap: 22px;
+
       flex-wrap: wrap;
     }
 
     .nav-links a {
+
       color: #dddddd;
+
       font-weight: 700;
 
       transition: 0.2s;
     }
 
     .nav-links a:hover {
+
       color: #ff3030;
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
+
       min-height: 88vh;
 
       display: flex;
+
       align-items: center;
 
-      text-align: center;
-
       padding: 80px 0;
+
+      text-align: center;
     }
 
     .hero-logo {
-      width: min(470px, 86vw);
+
+      width:
+        min(
+          470px,
+          86vw
+        );
 
       margin-bottom: 25px;
 
       filter:
         drop-shadow(
           0 0 30px
-          rgba(255, 0, 0, 0.25)
+          rgba(
+            255,
+            0,
+            0,
+            0.25
+          )
         );
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 5.3rem);
+
+      font-size:
+        clamp(
+          2.5rem,
+          7vw,
+          5.3rem
+        );
 
       line-height: 1;
 
       margin-bottom: 18px;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
     }
 
     .hero h1 span {
+
       color: #e21b1b;
     }
 
     .hero p {
+
       max-width: 760px;
 
-      margin: 0 auto 30px;
+      margin:
+        0 auto 30px;
 
       color: #bbbbbb;
 
       font-size: 1.15rem;
     }
 
+
     /* =========================
        PRZYCISKI
     ========================= */
 
     .buttons {
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       gap: 14px;
+
       flex-wrap: wrap;
     }
 
     .btn {
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 10px;
 
       min-height: 56px;
 
-      padding: 12px 22px;
+      padding:
+        12px 22px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
-      border: 1px solid #333333;
+      border:
+        1px solid
+        #333333;
 
-      background: #151515;
-      color: #ffffff;
+      background:
+        #151515;
+
+      color:
+        #ffffff;
 
       font-weight: 900;
 
@@ -201,58 +307,89 @@
     }
 
     .btn:hover {
-      transform: translateY(-2px);
 
-      border-color: #ff3030;
+      transform:
+        translateY(-2px);
 
-      background: #1d1d1d;
+      border-color:
+        #ff3030;
+
+      background:
+        #1d1d1d;
     }
 
     .btn-main {
-      background: #e21b1b;
-      border-color: #e21b1b;
+
+      background:
+        #e21b1b;
+
+      border-color:
+        #e21b1b;
     }
 
     .btn-main:hover {
-      background: #ff2424;
+
+      background:
+        #ff2424;
     }
 
     .social-btn img {
+
       width: 31px;
+
       height: 31px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
       display: block;
     }
+
 
     /* =========================
        SEKCJE
     ========================= */
 
     section {
-      padding: 85px 0;
+
+      padding:
+        85px 0;
     }
 
     .section-title {
-      text-align: center;
 
-      margin-bottom: 42px;
+      text-align:
+        center;
+
+      margin-bottom:
+        42px;
     }
 
     .section-title h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
 
-      margin-bottom: 8px;
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3rem
+        );
+
+      margin-bottom:
+        8px;
     }
 
     .section-title h2 span {
-      color: #e21b1b;
+
+      color:
+        #e21b1b;
     }
 
     .section-title p {
-      color: #999999;
+
+      color:
+        #999999;
     }
+
 
     /* =========================
        LIVE
@@ -260,296 +397,516 @@
 
     .live-card,
     .feature-box {
-      max-width: 1050px;
 
-      margin: auto;
+      max-width:
+        1050px;
 
-      border-radius: 20px;
+      margin:
+        auto;
+
+      border-radius:
+        20px;
 
       background:
+
         linear-gradient(
           135deg,
-          rgba(220, 0, 0, 0.12),
+          rgba(
+            220,
+            0,
+            0,
+            0.12
+          ),
           transparent 55%
         ),
+
         #121212;
 
       border:
         1px solid
-        rgba(230, 30, 30, 0.4);
+        rgba(
+          230,
+          30,
+          30,
+          0.4
+        );
 
-      padding: 36px;
+      padding:
+        36px;
 
       box-shadow:
         0 20px 60px
-        rgba(0, 0, 0, 0.35);
+        rgba(
+          0,
+          0,
+          0,
+          0.35
+        );
     }
 
     .live-layout {
+
       display: grid;
 
       grid-template-columns:
-        minmax(360px, 46%)
+        minmax(
+          360px,
+          46%
+        )
         1fr;
 
-      gap: 32px;
+      gap:
+        32px;
 
-      align-items: center;
+      align-items:
+        center;
     }
 
     .live-thumb-link {
+
       display: block;
 
-      overflow: hidden;
+      border-radius:
+        14px;
 
-      border-radius: 14px;
+      overflow:
+        hidden;
     }
 
     .live-thumbnail {
+
       display: block;
 
       width: 100%;
 
-      aspect-ratio: 16 / 9;
+      aspect-ratio:
+        16 / 9;
 
-      object-fit: cover;
+      object-fit:
+        cover;
 
-      border-radius: 14px;
+      border-radius:
+        14px;
 
       border:
         1px solid
-        rgba(255, 30, 30, 0.5);
+        rgba(
+          255,
+          30,
+          30,
+          0.5
+        );
 
       box-shadow:
-        0 10px 35px
-        rgba(0, 0, 0, 0.45),
-        0 0 20px
-        rgba(220, 0, 0, 0.12);
 
-      transition: 0.25s;
+        0 10px 35px
+        rgba(
+          0,
+          0,
+          0,
+          0.45
+        ),
+
+        0 0 20px
+        rgba(
+          220,
+          0,
+          0,
+          0.12
+        );
+
+      transition:
+        0.25s;
     }
 
     .live-thumbnail:hover {
-      transform: scale(1.025);
 
-      filter: brightness(1.08);
+      transform:
+        scale(1.025);
+
+      filter:
+        brightness(1.08);
     }
 
     .live-info {
+
       text-align: left;
     }
 
     .live-badge {
-      display: inline-block;
 
-      background: #df0011;
+      display:
+        inline-block;
 
-      border-radius: 8px;
+      background:
+        #df0011;
 
-      padding: 6px 13px;
+      padding:
+        6px 13px;
 
-      margin-bottom: 16px;
+      border-radius:
+        8px;
 
-      font-weight: 900;
+      margin-bottom:
+        16px;
+
+      font-weight:
+        900;
     }
 
     .live-info h3 {
-      font-size: 2rem;
 
-      line-height: 1.25;
+      font-size:
+        2rem;
 
-      margin-bottom: 14px;
+      line-height:
+        1.25;
+
+      margin-bottom:
+        14px;
     }
 
     .live-info p {
-      color: #bbbbbb;
 
-      margin-bottom: 22px;
+      color:
+        #bbbbbb;
+
+      margin-bottom:
+        22px;
     }
 
+
     /* =========================
-       KARTY
+       KARTY SERII
     ========================= */
 
     .grid {
+
       display: grid;
 
       grid-template-columns:
         repeat(
           auto-fit,
-          minmax(230px, 1fr)
+          minmax(
+            230px,
+            1fr
+          )
         );
 
-      gap: 20px;
+      gap:
+        20px;
     }
 
     .card {
-      background: #121212;
+
+      background:
+        #121212;
 
       border:
         1px solid
         #252525;
 
-      border-radius: 16px;
+      border-radius:
+        16px;
 
-      padding: 28px;
+      padding:
+        28px;
 
-      transition: 0.2s;
+      transition:
+        0.25s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
 
-      border-color: #e21b1b;
-    }
+      transform:
+        translateY(-5px);
 
-    .card .icon {
-      font-size: 2.3rem;
+      border-color:
+        #e21b1b;
 
-      margin-bottom: 12px;
+      box-shadow:
+        0 15px 35px
+        rgba(
+          0,
+          0,
+          0,
+          0.35
+        );
     }
 
     .card h3 {
-      margin-bottom: 8px;
+
+      margin-bottom:
+        8px;
     }
 
     .card p {
-      color: #999999;
 
-      font-size: 0.95rem;
+      color:
+        #999999;
+
+      font-size:
+        0.95rem;
     }
+
+
+    /* =========================
+       LOGA SERII
+    ========================= */
+
+    .series-logo-wrap {
+
+      height:
+        105px;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      margin-bottom:
+        18px;
+    }
+
+    .series-logo {
+
+      max-width:
+        175px;
+
+      max-height:
+        90px;
+
+      width:
+        auto;
+
+      height:
+        auto;
+
+      object-fit:
+        contain;
+
+      display:
+        block;
+
+      transition:
+        0.25s ease;
+    }
+
+    .card:hover
+    .series-logo {
+
+      transform:
+        scale(1.07);
+
+      filter:
+        drop-shadow(
+          0 0 12px
+          rgba(
+            255,
+            40,
+            40,
+            0.35
+          )
+        );
+    }
+
 
     /* =========================
        SMOKOL HUB / BAZA
     ========================= */
 
     .community {
-      display: grid;
+
+      display:
+        grid;
 
       grid-template-columns:
-        300px
-        1fr;
+        300px 1fr;
 
-      gap: 45px;
+      gap:
+        45px;
 
-      align-items: center;
+      align-items:
+        center;
     }
 
     .community-logo {
-      width: 100%;
 
-      max-width: 300px;
+      width:
+        100%;
 
-      margin: auto;
+      max-width:
+        300px;
+
+      margin:
+        auto;
 
       filter:
         drop-shadow(
           0 0 24px
-          rgba(255, 100, 0, 0.22)
+          rgba(
+            255,
+            100,
+            0,
+            0.22
+          )
         );
     }
 
     .community h3 {
-      font-size: 2rem;
 
-      margin-bottom: 14px;
+      font-size:
+        2rem;
+
+      margin-bottom:
+        14px;
     }
 
     .community p {
-      color: #aaaaaa;
 
-      margin-bottom: 22px;
+      color:
+        #aaaaaa;
+
+      margin-bottom:
+        22px;
     }
 
     .hub-section {
+
       background:
         radial-gradient(
           circle at center,
-          rgba(255, 100, 0, 0.13),
+          rgba(
+            255,
+            100,
+            0,
+            0.13
+          ),
           transparent 45%
         );
     }
 
     .baza-section {
+
       background:
         radial-gradient(
           circle at center,
-          rgba(180, 0, 0, 0.12),
+          rgba(
+            180,
+            0,
+            0,
+            0.12
+          ),
           transparent 45%
         );
     }
+
 
     /* =========================
        WAŻNE LINKI
     ========================= */
 
     .social {
-      text-align: center;
+
+      text-align:
+        center;
     }
 
     .social-icon {
-      width: 55px;
-      height: 55px;
 
-      object-fit: contain;
+      width:
+        55px;
 
-      display: block;
+      height:
+        55px;
+
+      object-fit:
+        contain;
+
+      display:
+        block;
 
       margin:
         0 auto 15px;
     }
 
     .social a {
-      color: #ff3b3b;
 
-      font-weight: 800;
+      color:
+        #ff3b3b;
+
+      font-weight:
+        800;
     }
+
 
     /* =========================
        STOPKA
     ========================= */
 
     footer {
-      padding: 35px 0;
 
-      text-align: center;
+      padding:
+        35px 0;
+
+      text-align:
+        center;
 
       border-top:
         1px solid
         #222222;
 
-      background: #050505;
+      background:
+        #050505;
 
-      color: #777777;
+      color:
+        #777777;
     }
 
+
     /* =========================
-       TELEFONY
+       MOBILE
     ========================= */
 
-    @media (max-width: 760px) {
+    @media
+    (max-width: 760px) {
 
       .nav {
-        flex-direction: column;
 
-        padding: 16px 0;
+        flex-direction:
+          column;
+
+        padding:
+          16px 0;
       }
 
       .brand-logo {
-        width: 145px;
+
+        width:
+          145px;
       }
 
       .nav-links {
-        justify-content: center;
 
-        gap: 13px;
+        justify-content:
+          center;
+
+        gap:
+          13px;
       }
 
       .hero {
-        min-height: auto;
+
+        min-height:
+          auto;
       }
 
       .hero-logo {
+
         width:
           min(
             390px,
@@ -558,38 +915,70 @@
       }
 
       .live-layout {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
       }
 
       .live-info {
-        text-align: left;
+
+        text-align:
+          left;
       }
 
       .community {
-        grid-template-columns: 1fr;
 
-        text-align: center;
+        grid-template-columns:
+          1fr;
+
+        text-align:
+          center;
       }
 
       .live-card,
       .feature-box {
-        padding: 24px;
+
+        padding:
+          24px;
       }
 
       .btn {
-        width: 100%;
 
-        max-width: 310px;
+        width:
+          100%;
+
+        max-width:
+          310px;
       }
+
+      .series-logo-wrap {
+
+        height:
+          90px;
+      }
+
+      .series-logo {
+
+        max-width:
+          150px;
+
+        max-height:
+          78px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
   <!-- =========================
        MENU
-  ========================== -->
+  ========================= -->
 
   <nav>
 
@@ -601,12 +990,13 @@
       >
 
         <img
-          src="napis-smokol.png?v=3"
+          src="napis-smokol.png?v=4"
           alt="Smokol"
           class="brand-logo"
         >
 
       </a>
+
 
       <div class="nav-links">
 
@@ -638,8 +1028,8 @@
 
 
   <!-- =========================
-       STRONA GŁÓWNA
-  ========================== -->
+       HERO
+  ========================= -->
 
   <header class="hero">
 
@@ -651,6 +1041,7 @@
         class="hero-logo"
       >
 
+
       <h1>
 
         SYMULACJA TO
@@ -661,17 +1052,23 @@
 
       </h1>
 
+
       <p>
+
         Oficjalna strona kanału Smokol.
+
         Symulatory, gaming,
         transmisje na żywo
         i społeczność skupiona
         wokół wspólnej pasji do gier.
+
       </p>
 
 
       <div class="buttons">
 
+
+        <!-- YOUTUBE -->
 
         <a
           class="btn btn-main social-btn"
@@ -692,6 +1089,8 @@
         </a>
 
 
+        <!-- DISCORD -->
+
         <a
           class="btn social-btn"
           href="https://discord.gg/UYxzAhdEFy"
@@ -710,6 +1109,8 @@
 
         </a>
 
+
+        <!-- FACEBOOK -->
 
         <a
           class="btn social-btn"
@@ -739,13 +1140,15 @@
 
   <main>
 
+
     <!-- =========================
          LIVE
-    ========================== -->
+    ========================= -->
 
     <section id="live">
 
       <div class="container">
+
 
         <div class="section-title">
 
@@ -767,7 +1170,9 @@
         </div>
 
 
-        <div class="live-card live-layout">
+        <div
+          class="live-card live-layout"
+        >
 
 
           <!-- MINIATURA -->
@@ -806,12 +1211,19 @@
 
 
             <p>
-              Wracamy na mapę Projekt Wrocław.
+
+              Wracamy na mapę
+              Projekt Wrocław.
 
               Solaris Urbino 18 III generacji
               w malowaniu MZK Wrocław
               i linia 119 w relacji
-              Nowy Dwór Pętla → Sołtysowice.
+
+              Nowy Dwór Pętla
+              →
+
+              Sołtysowice.
+
             </p>
 
 
@@ -835,6 +1247,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -843,12 +1256,13 @@
 
 
     <!-- =========================
-         SERIE
-    ========================== -->
+         SERIE NA KANALE
+    ========================= -->
 
     <section id="serie">
 
       <div class="container">
+
 
         <div class="section-title">
 
@@ -873,10 +1287,18 @@
         <div class="grid">
 
 
+          <!-- OMSI 2 -->
+
           <div class="card">
 
-            <div class="icon">
-              🚌
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-omsi2.png"
+                alt="OMSI 2"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
@@ -884,18 +1306,30 @@
             </h3>
 
             <p>
+
               Flagowa seria kanału Smokol.
-              Autobusy, mapy, linie
-              i klimat komunikacji miejskiej.
+
+              Autobusy, mapy,
+              linie i klimat
+              komunikacji miejskiej.
+
             </p>
 
           </div>
 
 
+          <!-- ETS2 -->
+
           <div class="card">
 
-            <div class="icon">
-              🚛
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-ets2.png"
+                alt="Euro Truck Simulator 2"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
@@ -903,18 +1337,29 @@
             </h3>
 
             <p>
+
               Trasy, ciężarówki,
               mapy, mody
-              i kolejne kilometry po Europie.
+              i kolejne kilometry
+              po Europie.
+
             </p>
 
           </div>
 
 
+          <!-- ATS -->
+
           <div class="card">
 
-            <div class="icon">
-              🇺🇸
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-ats.png"
+                alt="American Truck Simulator"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
@@ -922,37 +1367,90 @@
             </h3>
 
             <p>
-              Amerykańskie drogi
+
+              Amerykańskie drogi,
+              ciężarówki
               i dalekie trasy
-              za kierownicą ciężarówki.
+              przez kolejne stany USA.
+
             </p>
 
           </div>
 
 
+          <!-- FERNBUS -->
+
           <div class="card">
 
-            <div class="icon">
-              🚌
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-fernbus.png"
+                alt="Fernbus Simulator"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
-              Fernbus / The Bus
+              Fernbus Simulator
             </h3>
 
             <p>
+
               Autokary,
-              komunikacja miejska
-              i autobusowe klimaty.
+              długie trasy,
+              miasta
+              i podróże
+              po europejskich drogach.
+
             </p>
 
           </div>
 
 
+          <!-- THE BUS -->
+
           <div class="card">
 
-            <div class="icon">
-              ⚽
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-the-bus.png"
+                alt="The Bus"
+                class="series-logo"
+              >
+
+            </div>
+
+            <h3>
+              The Bus
+            </h3>
+
+            <p>
+
+              Nowoczesna
+              komunikacja miejska,
+              autobusy
+              i wirtualny Berlin.
+
+            </p>
+
+          </div>
+
+
+          <!-- EA SPORTS FC -->
+
+          <div class="card">
+
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-ea-fc.png"
+                alt="EA SPORTS FC"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
@@ -960,18 +1458,29 @@
             </h3>
 
             <p>
+
               Piłkarskie emocje,
-              kariery i komentarz
+              kariery
+              i rozgrywka
               po smokolowemu.
+
             </p>
 
           </div>
 
 
+          <!-- GAMING -->
+
           <div class="card">
 
-            <div class="icon">
-              🎮
+            <div class="series-logo-wrap">
+
+              <img
+                src="logo-pc-gamer.png"
+                alt="Gaming"
+                class="series-logo"
+              >
+
             </div>
 
             <h3>
@@ -979,10 +1488,13 @@
             </h3>
 
             <p>
-              Gry wyścigowe,
-              sportowe,
-              fabularne
-              i inne produkcje.
+
+              Gry fabularne,
+              wyścigowe,
+              sportowe
+              i inne produkcje
+              poza symulatorami.
+
             </p>
 
           </div>
@@ -997,7 +1509,7 @@
 
     <!-- =========================
          SMOKOL HUB
-    ========================== -->
+    ========================= -->
 
     <section
       id="hub"
@@ -1005,6 +1517,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-title">
 
@@ -1026,7 +1539,9 @@
         </div>
 
 
-        <div class="feature-box community">
+        <div
+          class="feature-box community"
+        >
 
 
           <img
@@ -1044,16 +1559,20 @@
 
 
             <p>
+
               Smokol Hub to miejsce
               dla fanów symulatorów,
               gamingu, twórców
-              i społeczności kanału Smokol.
+              i społeczności
+              kanału Smokol.
 
               Rozmawiaj,
               dziel się screenami,
               śledź aktualności,
               zdobywaj poziomy
-              i poznawaj innych graczy.
+              i poznawaj
+              innych graczy.
+
             </p>
 
 
@@ -1077,6 +1596,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -1086,7 +1606,7 @@
 
     <!-- =========================
          BAZA SMOKOLA
-    ========================== -->
+    ========================= -->
 
     <section
       id="baza"
@@ -1094,6 +1614,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-title">
 
@@ -1108,14 +1629,18 @@
           </h2>
 
           <p>
+
             Wirtualna spedycja
             i wspólne kilometry.
+
           </p>
 
         </div>
 
 
-        <div class="feature-box community">
+        <div
+          class="feature-box community"
+        >
 
 
           <img
@@ -1127,19 +1652,26 @@
 
           <div>
 
+
             <h3>
               🚛 Baza Smokola
             </h3>
 
+
             <p>
+
               Wirtualna spedycja
-              związana ze społecznością Smokol.
+              związana ze społecznością
+              Smokol.
 
               Euro Truck Simulator 2,
+
               American Truck Simulator,
+
               wspólne trasy,
               statystyki
               i transportowy klimat.
+
             </p>
 
 
@@ -1161,7 +1693,9 @@
 
             </a>
 
+
           </div>
+
 
         </div>
 
@@ -1172,11 +1706,12 @@
 
     <!-- =========================
          WAŻNE LINKI
-    ========================== -->
+    ========================= -->
 
     <section id="linki">
 
       <div class="container">
+
 
         <div class="section-title">
 
@@ -1196,6 +1731,8 @@
         <div class="grid">
 
 
+          <!-- YOUTUBE -->
+
           <div class="card social">
 
             <img
@@ -1209,8 +1746,10 @@
             </h3>
 
             <p>
+
               Kanał Smokol
               i wszystkie transmisje.
+
             </p>
 
             <a
@@ -1223,6 +1762,8 @@
 
           </div>
 
+
+          <!-- DISCORD -->
 
           <div class="card social">
 
@@ -1237,7 +1778,10 @@
             </h3>
 
             <p>
-              Discord społeczności Smokola.
+
+              Discord społeczności
+              Smokola.
+
             </p>
 
             <a
@@ -1250,6 +1794,8 @@
 
           </div>
 
+
+          <!-- FACEBOOK -->
 
           <div class="card social">
 
@@ -1264,9 +1810,11 @@
             </h3>
 
             <p>
+
               Posty,
               aktualności
               i zapowiedzi.
+
             </p>
 
             <a
@@ -1279,6 +1827,8 @@
 
           </div>
 
+
+          <!-- TIPPLY -->
 
           <div class="card social">
 
@@ -1296,8 +1846,10 @@
             </h3>
 
             <p>
+
               Wsparcie kanału
               podczas transmisji.
+
             </p>
 
             <a
@@ -1323,7 +1875,7 @@
 
   <!-- =========================
        STOPKA
-  ========================== -->
+  ========================= -->
 
   <footer>
 
@@ -1342,4 +1894,5 @@
 
 
 </body>
+
 </html>
