@@ -2,19 +2,14 @@
 <html lang="pl">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Smokol | Symulacja to moja pasja</title>
 
   <meta
     name="description"
-    content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, Smokol Hub i Baza Smokola."
+    content="Oficjalna strona kanału Smokol. Symulatory, gaming, transmisje na żywo, aktualności, Smokol Hub i Baza Smokola."
   >
 
   <style>
@@ -28,6 +23,7 @@
       --card: #121212;
       --text: #ffffff;
       --muted: #aaaaaa;
+      --blue: #2da8ff;
     }
 
     * {
@@ -100,13 +96,11 @@
       content: "";
 
       position: absolute;
-
       left: 8%;
       right: 8%;
       bottom: -9px;
 
       height: 4px;
-
       border-radius: 100%;
 
       background:
@@ -195,7 +189,7 @@
       display: flex;
       align-items: center;
 
-      gap: 22px;
+      gap: 20px;
 
       flex-wrap: wrap;
     }
@@ -226,37 +220,7 @@
 
       text-align: center;
 
-      position: relative;
-
-      border: none !important;
-      border-left: none !important;
-      border-right: none !important;
-
-      outline: none !important;
-
-      overflow: hidden;
-    }
-
-    .hero .container {
-      position: relative;
-
-      border: none !important;
-      border-left: none !important;
-      border-right: none !important;
-
-      outline: none !important;
-    }
-
-    .hero::before,
-    .hero::after,
-    .hero .container::before,
-    .hero .container::after {
-      content: none !important;
-      display: none !important;
-      width: 0 !important;
-      height: 0 !important;
-      border: none !important;
-      background: none !important;
+      border: none;
     }
 
     .hero-logo {
@@ -264,15 +228,8 @@
 
       margin-bottom: 32px;
 
-      border: none !important;
-      border-left: none !important;
-      border-right: none !important;
-
-      outline: none !important;
-
-      box-shadow: none !important;
-
-      display: inline-block;
+      border: none;
+      outline: none;
 
       filter:
         drop-shadow(
@@ -380,6 +337,7 @@
 
     .section-title {
       text-align: center;
+
       margin-bottom: 50px;
     }
 
@@ -488,6 +446,7 @@
     .live-badge {
       display: inline-flex;
       align-items: center;
+
       gap: 8px;
 
       background: var(--red);
@@ -536,8 +495,7 @@
     }
 
     .episode-number {
-      color: #2da8ff;
-
+      color: var(--blue);
       font-weight: 800;
     }
 
@@ -549,7 +507,175 @@
 
 
     /* =========================
-       KARTY
+       AKTUALNOŚCI
+    ========================= */
+
+    .news-section {
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(120, 0, 0, 0.10),
+          transparent 50%
+        );
+    }
+
+    .news-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap: 22px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+
+      background: var(--card);
+
+      border:
+        1px solid
+        #292929;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.28);
+
+      transition: 0.25s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(201, 21, 27, 0.75);
+    }
+
+    .news-image-link {
+      display: block;
+
+      overflow: hidden;
+    }
+
+    .news-image {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      object-fit: cover;
+
+      transition: 0.3s;
+    }
+
+    .news-card:hover .news-image {
+      transform: scale(1.035);
+    }
+
+    .news-content {
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      padding: 22px;
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 12px;
+    }
+
+    .news-category {
+      display: inline-block;
+
+      padding: 4px 9px;
+
+      background: var(--red);
+
+      border-radius: 6px;
+
+      color: #ffffff;
+
+      font-size: 0.75rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .news-date {
+      color: #777777;
+
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .news-card h3 {
+      color: #eeeeee;
+
+      font-size: 1.05rem;
+
+      line-height: 1.35;
+
+      margin-bottom: 12px;
+    }
+
+    .news-card p {
+      color: #999999;
+
+      font-size: 0.92rem;
+
+      margin-bottom: 20px;
+
+      flex: 1;
+    }
+
+    .news-card .btn {
+      align-self: flex-start;
+
+      min-height: 46px;
+
+      padding:
+        9px 16px;
+
+      font-size: 0.88rem;
+    }
+
+    .news-more {
+      display: flex;
+      justify-content: center;
+
+      margin-top: 35px;
+    }
+
+    .news-status {
+      grid-column: 1 / -1;
+
+      text-align: center;
+
+      color: #888888;
+
+      padding: 30px;
+    }
+
+
+    /* =========================
+       KARTY SERII
     ========================= */
 
     .grid {
@@ -607,7 +733,6 @@
       height: 105px;
 
       display: flex;
-
       justify-content: center;
       align-items: center;
 
@@ -640,7 +765,7 @@
 
 
     /* =========================
-       SMOKOL HUB / BAZA
+       HUB / BAZA
     ========================= */
 
     .community {
@@ -656,7 +781,6 @@
 
     .community-logo {
       width: 100%;
-
       max-width: 300px;
 
       margin: auto;
@@ -698,14 +822,8 @@
         );
     }
 
-
-    /* =========================
-       NAGŁÓWEK SMOKOL HUB
-    ========================= */
-
     .hub-heading {
       display: flex;
-
       align-items: center;
 
       gap: 12px;
@@ -722,14 +840,8 @@
       display: block;
     }
 
-
-    /* =========================
-       BAZA SMOKOLA
-    ========================= */
-
     .baza-heading {
       display: flex;
-
       align-items: center;
 
       gap: 14px;
@@ -749,7 +861,7 @@
 
 
     /* =========================
-       WAŻNE LINKI
+       LINKI
     ========================= */
 
     .social {
@@ -795,9 +907,7 @@
 
     .footer-content {
       display: flex;
-
       flex-direction: column;
-
       align-items: center;
 
       gap: 8px;
@@ -817,6 +927,18 @@
     /* =========================
        MOBILE
     ========================= */
+
+    @media (max-width: 900px) {
+
+      .news-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+      }
+
+    }
 
     @media (max-width: 760px) {
 
@@ -866,16 +988,17 @@
         font-size: 1.05rem;
       }
 
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
       .community {
         grid-template-columns: 1fr;
 
         text-align: center;
       }
 
-      .hub-heading {
-        justify-content: center;
-      }
-
+      .hub-heading,
       .baza-heading {
         justify-content: center;
       }
@@ -897,35 +1020,31 @@
 
       .series-logo {
         max-width: 150px;
-
         max-height: 78px;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-  <!-- =========================
-       MENU
-  ========================= -->
+  <!-- MENU -->
 
   <nav>
 
     <div class="container nav">
 
       <a
-        href="#"
+        href="index.html"
         class="brand"
       >
 
         <img
-          src="napis-smokol.png?v=16"
+          src="napis-smokol.png?v=20"
           alt="Smokol"
           class="brand-logo"
         >
@@ -937,6 +1056,10 @@
 
         <a href="#live">
           Live
+        </a>
+
+        <a href="aktualnosci.html">
+          Aktualności
         </a>
 
         <a href="#serie">
@@ -962,21 +1085,17 @@
   </nav>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+  <!-- HERO -->
 
   <header class="hero">
 
     <div class="container">
 
-
       <img
-        src="logo-smokol.png?v=16"
+        src="logo-smokol.png?v=20"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
-
 
       <h1 class="smokol-heading">
 
@@ -988,21 +1107,16 @@
 
       </h1>
 
-
       <p>
-
         Oficjalna strona kanału Smokol.
-
         Symulatory, gaming,
         transmisje na żywo
         i społeczność skupiona
         wokół wspólnej pasji do gier.
-
       </p>
 
 
       <div class="buttons">
-
 
         <a
           class="btn btn-main social-btn"
@@ -1060,7 +1174,6 @@
 
         </a>
 
-
       </div>
 
     </div>
@@ -1071,14 +1184,11 @@
   <main>
 
 
-    <!-- =========================
-         LIVE
-    ========================= -->
+    <!-- LIVE -->
 
     <section id="live">
 
       <div class="container">
-
 
         <div class="section-title">
 
@@ -1101,7 +1211,6 @@
 
 
         <div class="live-card live-layout">
-
 
           <a
             href="https://www.youtube.com/live/JZfk7nXXrPI?si=2bRROyo8lM3mERBF"
@@ -1138,25 +1247,20 @@
 
 
             <h3 class="live-title">
-
               LIVE | OMSI 2 -
               <span class="episode-number">
                 #190
               </span>
               "Projekt Wrocław - Linia: 119"
-
             </h3>
 
 
             <p>
-
               Wracamy na mapę Projekt Wrocław.
-
               Solaris Urbino 18 III generacji
               w malowaniu MZK Wrocław
               i linia 119 w relacji
               Nowy Dwór Pętla → Sołtysowice.
-
             </p>
 
 
@@ -1180,6 +1284,63 @@
 
           </div>
 
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NAJNOWSZE AKTUALNOŚCI -->
+
+    <section
+      id="aktualnosci"
+      class="news-section"
+    >
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2 class="smokol-heading">
+
+            NAJNOWSZE
+
+            <span class="smokol-red">
+              AKTUALNOŚCI
+            </span>
+
+          </h2>
+
+          <p>
+            Zapowiedzi transmisji,
+            informacje z kanału
+            i najważniejsze wiadomości.
+          </p>
+
+        </div>
+
+
+        <div
+          id="home-news"
+          class="news-grid"
+        >
+
+          <div class="news-status">
+            Ładowanie aktualności...
+          </div>
+
+        </div>
+
+
+        <div class="news-more">
+
+          <a
+            href="aktualnosci.html"
+            class="btn"
+          >
+            Zobacz wszystkie aktualności
+          </a>
 
         </div>
 
@@ -1188,14 +1349,11 @@
     </section>
 
 
-    <!-- =========================
-         SERIE
-    ========================= -->
+    <!-- SERIE -->
 
     <section id="serie">
 
       <div class="container">
-
 
         <div class="section-title">
 
@@ -1403,7 +1561,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -1411,9 +1568,7 @@
     </section>
 
 
-    <!-- =========================
-         SMOKOL HUB
-    ========================= -->
+    <!-- SMOKOL HUB -->
 
     <section
       id="hub"
@@ -1421,7 +1576,6 @@
     >
 
       <div class="container">
-
 
         <div class="section-title">
 
@@ -1445,7 +1599,6 @@
 
         <div class="feature-box community">
 
-
           <img
             src="logo-smokol-hub.png"
             alt="Smokol Hub"
@@ -1454,7 +1607,6 @@
 
 
           <div>
-
 
             <h3 class="hub-heading">
 
@@ -1472,7 +1624,6 @@
 
 
             <p>
-
               Smokol Hub to miejsce
               dla fanów symulatorów,
               gamingu, twórców
@@ -1483,7 +1634,6 @@
               śledź aktualności,
               zdobywaj poziomy
               i poznawaj innych graczy.
-
             </p>
 
 
@@ -1507,7 +1657,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -1515,9 +1664,7 @@
     </section>
 
 
-    <!-- =========================
-         BAZA SMOKOLA
-    ========================= -->
+    <!-- BAZA -->
 
     <section
       id="baza"
@@ -1525,7 +1672,6 @@
     >
 
       <div class="container">
-
 
         <div class="section-title">
 
@@ -1549,7 +1695,6 @@
 
         <div class="feature-box community">
 
-
           <img
             src="logo-baza-smokola.png"
             alt="Baza Smokola"
@@ -1558,7 +1703,6 @@
 
 
           <div>
-
 
             <h3 class="baza-heading">
 
@@ -1576,7 +1720,6 @@
 
 
             <p>
-
               Wirtualna spedycja
               związana ze społecznością Smokol.
 
@@ -1587,7 +1730,6 @@
               statystyki,
               przejechane kilometry
               i transportowy klimat.
-
             </p>
 
 
@@ -1609,9 +1751,7 @@
 
             </a>
 
-
           </div>
-
 
         </div>
 
@@ -1620,14 +1760,11 @@
     </section>
 
 
-    <!-- =========================
-         WAŻNE LINKI
-    ========================= -->
+    <!-- LINKI -->
 
     <section id="linki">
 
       <div class="container">
-
 
         <div class="section-title">
 
@@ -1759,20 +1896,16 @@
 
           </div>
 
-
         </div>
 
       </div>
 
     </section>
 
-
   </main>
 
 
-  <!-- =========================
-       STOPKA
-  ========================= -->
+  <!-- STOPKA -->
 
   <footer>
 
@@ -1796,6 +1929,123 @@
 
   </footer>
 
+
+  <!-- WCZYTYWANIE 3 NAJNOWSZYCH POSTÓW -->
+
+  <script>
+
+    async function loadHomeNews() {
+
+      const container =
+        document.getElementById("home-news");
+
+      try {
+
+        const response =
+          await fetch("./posts.json?version=1");
+
+        if (!response.ok) {
+          throw new Error("Nie udało się pobrać posts.json");
+        }
+
+        const posts =
+          await response.json();
+
+        posts.sort(
+          (a, b) =>
+            new Date(b.date) -
+            new Date(a.date)
+        );
+
+        const latest =
+          posts.slice(0, 3);
+
+        container.innerHTML = "";
+
+        if (latest.length === 0) {
+
+          container.innerHTML =
+            '<div class="news-status">Brak aktualności.</div>';
+
+          return;
+        }
+
+        latest.forEach(post => {
+
+          const card =
+            document.createElement("article");
+
+          card.className =
+            "news-card";
+
+          card.innerHTML = `
+            <a
+              href="${post.link}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="news-image-link"
+            >
+              <img
+                src="${post.image}"
+                alt="${post.title}"
+                class="news-image"
+              >
+            </a>
+
+            <div class="news-content">
+
+              <div class="news-meta">
+
+                <span class="news-category">
+                  ${post.category}
+                </span>
+
+                <span class="news-date">
+                  ${post.displayDate}
+                </span>
+
+              </div>
+
+              <h3>
+                ${post.title}
+              </h3>
+
+              <p>
+                ${post.text}
+              </p>
+
+              <a
+                href="${post.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+              >
+                ${post.button}
+              </a>
+
+            </div>
+          `;
+
+          container.appendChild(card);
+
+        });
+
+      }
+
+      catch (error) {
+
+        container.innerHTML =
+          '<div class="news-status">Nie udało się wczytać aktualności.</div>';
+
+        console.error(error);
+
+      }
+
+    }
+
+    loadHomeNews();
+
+  </script>
 
 </body>
 
