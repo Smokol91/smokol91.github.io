@@ -486,8 +486,9 @@
     }
 
     .live-badge {
-      display:
-        inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
 
       background:
         var(--red);
@@ -503,6 +504,14 @@
 
       font-weight:
         900;
+    }
+
+    .live-badge-logo {
+      width: 26px;
+      height: 26px;
+
+      object-fit: contain;
+      display: block;
     }
 
     .live-info h3 {
@@ -960,7 +969,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=10"
+          src="napis-smokol.png?v=11"
           alt="Smokol"
           class="brand-logo"
         >
@@ -1007,7 +1016,7 @@
 
 
       <img
-        src="logo-smokol.png?v=10"
+        src="logo-smokol.png?v=11"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1158,7 +1167,17 @@
           <div class="live-info">
 
             <span class="live-badge">
-              🔴 TRANSMISJA
+
+              <img
+                src="logo-live.png"
+                alt="Live"
+                class="live-badge-logo"
+              >
+
+              <span>
+                TRANSMISJA
+              </span>
+
             </span>
 
 
