@@ -234,6 +234,38 @@
       padding: 80px 0;
 
       text-align: center;
+
+      position: relative;
+
+      border: none !important;
+      border-left: none !important;
+      border-right: none !important;
+
+      outline: none !important;
+
+      overflow: hidden;
+    }
+
+    .hero .container {
+      position: relative;
+
+      border: none !important;
+      border-left: none !important;
+      border-right: none !important;
+
+      outline: none !important;
+    }
+
+    .hero::before,
+    .hero::after,
+    .hero .container::before,
+    .hero .container::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: none !important;
+      background: none !important;
     }
 
     .hero-logo {
@@ -241,11 +273,27 @@
 
       margin-bottom: 32px;
 
+      border: none !important;
+      border-left: none !important;
+      border-right: none !important;
+
+      outline: none !important;
+
+      box-shadow: none !important;
+
+      display: inline-block;
+
       filter:
         drop-shadow(
           0 0 30px
           rgba(160, 0, 0, 0.25)
         );
+    }
+
+    .hero-logo::before,
+    .hero-logo::after {
+      content: none !important;
+      display: none !important;
     }
 
     .hero h1 {
@@ -897,7 +945,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=14"
+          src="napis-smokol.png?v=15"
           alt="Smokol"
           class="brand-logo"
         >
@@ -944,7 +992,7 @@
 
 
       <img
-        src="logo-smokol.png?v=14"
+        src="logo-smokol.png?v=15"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
