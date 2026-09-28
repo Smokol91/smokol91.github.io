@@ -156,11 +156,9 @@
       top: 0;
       z-index: 1000;
 
-      background:
-        rgba(7, 7, 7, 0.96);
+      background: rgba(7, 7, 7, 0.96);
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter: blur(12px);
 
       border-bottom:
         1px solid
@@ -304,11 +302,9 @@
         1px solid
         #333333;
 
-      background:
-        #151515;
+      background: #151515;
 
-      color:
-        #ffffff;
+      color: #ffffff;
 
       font-weight: 900;
 
@@ -316,36 +312,27 @@
     }
 
     .btn:hover {
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
-      border-color:
-        var(--red);
+      border-color: var(--red);
 
-      background:
-        #1d1d1d;
+      background: #1d1d1d;
     }
 
     .btn-main {
-      background:
-        var(--red);
-
-      border-color:
-        var(--red);
+      background: var(--red);
+      border-color: var(--red);
     }
 
     .btn-main:hover {
-      background:
-        #dd1b22;
+      background: #dd1b22;
     }
 
     .social-btn img {
       width: 31px;
       height: 31px;
 
-      object-fit:
-        contain;
-
+      object-fit: contain;
       display: block;
     }
 
@@ -355,16 +342,12 @@
     ========================= */
 
     section {
-      padding:
-        85px 0;
+      padding: 85px 0;
     }
 
     .section-title {
-      text-align:
-        center;
-
-      margin-bottom:
-        50px;
+      text-align: center;
+      margin-bottom: 50px;
     }
 
     .section-title h2 {
@@ -375,13 +358,11 @@
           3.2rem
         );
 
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
     }
 
     .section-title p {
-      color:
-        #999999;
+      color: #999999;
     }
 
 
@@ -391,14 +372,11 @@
 
     .live-card,
     .feature-box {
-      max-width:
-        1050px;
+      max-width: 1050px;
 
-      margin:
-        auto;
+      margin: auto;
 
-      border-radius:
-        20px;
+      border-radius: 20px;
 
       background:
         linear-gradient(
@@ -412,8 +390,7 @@
         1px solid
         rgba(180, 20, 20, 0.4);
 
-      padding:
-        36px;
+      padding: 36px;
 
       box-shadow:
         0 20px 60px
@@ -435,11 +412,9 @@
     .live-thumb-link {
       display: block;
 
-      border-radius:
-        14px;
+      border-radius: 14px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
     }
 
     .live-thumbnail {
@@ -447,14 +422,11 @@
 
       width: 100%;
 
-      aspect-ratio:
-        16 / 9;
+      aspect-ratio: 16 / 9;
 
-      object-fit:
-        cover;
+      object-fit: cover;
 
-      border-radius:
-        14px;
+      border-radius: 14px;
 
       border:
         1px solid
@@ -466,21 +438,18 @@
         0 0 20px
         rgba(150, 0, 0, 0.12);
 
-      transition:
-        0.25s;
+      transition: 0.25s;
     }
 
     .live-thumbnail:hover {
-      transform:
-        scale(1.025);
+      transform: scale(1.025);
 
-      filter:
-        brightness(1.08);
+      filter: brightness(1.08);
     }
 
     .live-info {
-      text-align:
-        left;
+      text-align: left;
+      min-width: 0;
     }
 
     .live-badge {
@@ -488,20 +457,15 @@
       align-items: center;
       gap: 8px;
 
-      background:
-        var(--red);
+      background: var(--red);
 
-      padding:
-        6px 13px;
+      padding: 6px 13px;
 
-      border-radius:
-        8px;
+      border-radius: 8px;
 
-      margin-bottom:
-        16px;
+      margin-bottom: 16px;
 
-      font-weight:
-        900;
+      font-weight: 900;
     }
 
     .live-badge-logo {
@@ -512,26 +476,47 @@
       display: block;
     }
 
-    .live-info h3 {
+
+    /* =========================
+       TYTUŁ LIVE
+    ========================= */
+
+    .live-title {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size:
         clamp(
-          1.25rem,
-          1.7vw,
-          1.65rem
+          0.95rem,
+          1.25vw,
+          1.15rem
         );
 
-      line-height: 1.3;
+      font-weight: 700;
+
+      line-height: 1.25;
+
+      letter-spacing: -0.15px;
+
+      color: #f1f1f1;
+
+      white-space: nowrap;
+
       margin-bottom: 14px;
+    }
+
+    .episode-number {
+      color: #2da8ff;
+
       font-weight: 800;
-      letter-spacing: -0.2px;
     }
 
     .live-info p {
-      color:
-        #bbbbbb;
+      color: #bbbbbb;
 
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
     }
 
 
@@ -548,34 +533,27 @@
           minmax(230px, 1fr)
         );
 
-      gap:
-        20px;
+      gap: 20px;
     }
 
     .card {
-      background:
-        var(--card);
+      background: var(--card);
 
       border:
         1px solid
         #252525;
 
-      border-radius:
-        16px;
+      border-radius: 16px;
 
-      padding:
-        28px;
+      padding: 28px;
 
-      transition:
-        0.25s;
+      transition: 0.25s;
     }
 
     .card:hover {
-      transform:
-        translateY(-5px);
+      transform: translateY(-5px);
 
-      border-color:
-        var(--red);
+      border-color: var(--red);
 
       box-shadow:
         0 15px 35px
@@ -583,16 +561,13 @@
     }
 
     .card h3 {
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
     }
 
     .card p {
-      color:
-        #999999;
+      color: #999999;
 
-      font-size:
-        0.95rem;
+      font-size: 0.95rem;
     }
 
 
@@ -601,48 +576,32 @@
     ========================= */
 
     .series-logo-wrap {
-      height:
-        105px;
+      height: 105px;
 
-      display:
-        flex;
+      display: flex;
 
-      justify-content:
-        center;
+      justify-content: center;
+      align-items: center;
 
-      align-items:
-        center;
-
-      margin-bottom:
-        18px;
+      margin-bottom: 18px;
     }
 
     .series-logo {
-      max-width:
-        175px;
+      max-width: 175px;
+      max-height: 90px;
 
-      max-height:
-        90px;
+      width: auto;
+      height: auto;
 
-      width:
-        auto;
+      object-fit: contain;
 
-      height:
-        auto;
+      display: block;
 
-      object-fit:
-        contain;
-
-      display:
-        block;
-
-      transition:
-        0.25s ease;
+      transition: 0.25s ease;
     }
 
     .card:hover .series-logo {
-      transform:
-        scale(1.07);
+      transform: scale(1.07);
 
       filter:
         drop-shadow(
@@ -657,28 +616,22 @@
     ========================= */
 
     .community {
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
         300px 1fr;
 
-      gap:
-        45px;
+      gap: 45px;
 
-      align-items:
-        center;
+      align-items: center;
     }
 
     .community-logo {
-      width:
-        100%;
+      width: 100%;
 
-      max-width:
-        300px;
+      max-width: 300px;
 
-      margin:
-        auto;
+      margin: auto;
 
       filter:
         drop-shadow(
@@ -688,19 +641,15 @@
     }
 
     .community h3 {
-      font-size:
-        2rem;
+      font-size: 2rem;
 
-      margin-bottom:
-        14px;
+      margin-bottom: 14px;
     }
 
     .community p {
-      color:
-        #aaaaaa;
+      color: #aaaaaa;
 
-      margin-bottom:
-        22px;
+      margin-bottom: 22px;
     }
 
     .hub-section {
@@ -727,31 +676,22 @@
     ========================= */
 
     .hub-heading {
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        12px;
+      gap: 12px;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
     }
 
     .hub-heading-logo {
-      width:
-        42px;
+      width: 42px;
+      height: 42px;
 
-      height:
-        42px;
+      object-fit: contain;
 
-      object-fit:
-        contain;
-
-      display:
-        block;
+      display: block;
     }
 
 
@@ -760,31 +700,23 @@
     ========================= */
 
     .baza-heading {
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        14px;
+      gap: 14px;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
     }
 
     .baza-heading-logo {
-      width:
-        105px;
+      width: 105px;
 
-      max-height:
-        42px;
+      max-height: 42px;
 
-      object-fit:
-        contain;
+      object-fit: contain;
 
-      display:
-        block;
+      display: block;
     }
 
 
@@ -793,33 +725,25 @@
     ========================= */
 
     .social {
-      text-align:
-        center;
+      text-align: center;
     }
 
     .social-icon {
-      width:
-        55px;
+      width: 55px;
+      height: 55px;
 
-      height:
-        55px;
+      object-fit: contain;
 
-      object-fit:
-        contain;
-
-      display:
-        block;
+      display: block;
 
       margin:
         0 auto 15px;
     }
 
     .social a {
-      color:
-        var(--red-light);
+      color: var(--red-light);
 
-      font-weight:
-        800;
+      font-weight: 800;
     }
 
 
@@ -828,35 +752,36 @@
     ========================= */
 
     footer {
-      padding:
-        35px 0;
+      padding: 35px 0;
 
-      text-align:
-        center;
+      text-align: center;
 
       border-top:
         1px solid
         #222222;
 
-      background:
-        #050505;
+      background: #050505;
 
-      color:
-        #777777;
+      color: #777777;
     }
 
     .footer-content {
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       gap: 8px;
     }
 
     .footer-logo {
       width: 140px;
+
       max-height: 50px;
 
       object-fit: contain;
+
       display: block;
     }
 
@@ -868,29 +793,23 @@
     @media (max-width: 760px) {
 
       .nav {
-        flex-direction:
-          column;
+        flex-direction: column;
 
-        padding:
-          16px 0;
+        padding: 16px 0;
       }
 
       .brand-logo {
-        width:
-          145px;
+        width: 145px;
       }
 
       .nav-links {
-        justify-content:
-          center;
+        justify-content: center;
 
-        gap:
-          13px;
+        gap: 13px;
       }
 
       .hero {
-        min-height:
-          auto;
+        min-height: auto;
       }
 
       .hero-logo {
@@ -902,68 +821,56 @@
       }
 
       .hero h1 {
-        font-size:
-          2.5rem;
+        font-size: 2.5rem;
       }
 
       .live-layout {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .live-info {
-        text-align:
-          left;
+        text-align: left;
       }
 
-      .live-info h3 {
-        font-size:
-          1.3rem;
+      .live-title {
+        white-space: normal;
+
+        font-size: 1.05rem;
       }
 
       .community {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
-        text-align:
-          center;
+        text-align: center;
       }
 
       .hub-heading {
-        justify-content:
-          center;
+        justify-content: center;
       }
 
       .baza-heading {
-        justify-content:
-          center;
+        justify-content: center;
       }
 
       .live-card,
       .feature-box {
-        padding:
-          24px;
+        padding: 24px;
       }
 
       .btn {
-        width:
-          100%;
+        width: 100%;
 
-        max-width:
-          310px;
+        max-width: 310px;
       }
 
       .series-logo-wrap {
-        height:
-          90px;
+        height: 90px;
       }
 
       .series-logo {
-        max-width:
-          150px;
+        max-width: 150px;
 
-        max-height:
-          78px;
+        max-height: 78px;
       }
 
     }
@@ -990,7 +897,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=13"
+          src="napis-smokol.png?v=14"
           alt="Smokol"
           class="brand-logo"
         >
@@ -1037,7 +944,7 @@
 
 
       <img
-        src="logo-smokol.png?v=13"
+        src="logo-smokol.png?v=14"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1202,8 +1109,14 @@
             </span>
 
 
-            <h3>
-              OMSI 2 #190 — Projekt Wrocław | Linia 119
+            <h3 class="live-title">
+
+              LIVE | OMSI 2 -
+              <span class="episode-number">
+                #190
+              </span>
+              "Projekt Wrocław - Linia: 119"
+
             </h3>
 
 
