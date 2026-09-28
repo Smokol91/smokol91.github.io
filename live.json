@@ -1,9 +1,8 @@
 {
   "videoId": "1jH0j21uOHU",
-  "link": "https://youtube.com/live/1jH0j21uOHU",
-  "status": "ZAPLANOWANA TRANSMISJA",
-  "date": "28.09.2026",
-  "time": "19:00",
+  "start": "2026-09-28T19:00:00+02:00",
+  "liveDurationMinutes": 240,
+  "statusOverride": "",
   "game": "Horizon: Zero Dawn Remastered",
   "episode": "#09",
   "title": "Kurhan",
