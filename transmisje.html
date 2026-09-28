@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Ostatnie transmisje | Smokol</title>
+
+  <meta
+    name="description"
+    content="Ostatnie transmisje na żywo z kanału Smokol. Przegapiłeś live? Tutaj możesz nadrobić ostatnie transmisje."
+  >
+
+  <style>
+
+    :root {
+      --red: #c9151b;
+      --red-light: #e34b4f;
+      --red-dark: #8f0d12;
+      --heading: #e8e8e8;
+      --black: #080808;
+      --card: #121212;
+      --text: #ffffff;
+      --muted: #aaaaaa;
+      --blue: #2da8ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(200, 0, 0, 0.16),
+          transparent 32%
+        ),
+        var(--black);
+
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(7, 7, 7, 0.96);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom:
+        1px solid
+        rgba(160, 0, 0, 0.35);
+    }
+
+    .nav {
+      min-height: 76px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 155px;
+      max-height: 58px;
+
+      object-fit: contain;
+      display: block;
+
+      transition: 0.2s;
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.04);
+
+      filter:
+        drop-shadow(
+          0 0 10px
+          rgba(160, 0, 0, 0.35)
+        );
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      gap: 18px;
+
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      color: #dddddd;
+
+      font-size: 0.95rem;
+      font-weight: 700;
+
+      transition: 0.2s;
+
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--red-light);
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--red);
+
+      transform: translateX(-50%);
+
+      transition: width 0.2s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+
+    /* =========================
+       NAGŁÓWKI
+    ========================= */
+
+    .smokol-heading {
+      font-family:
+        Arial Black,
+        Impact,
+        Arial,
+        sans-serif;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      line-height: 1.02;
+
+      display: inline-block;
+
+      position: relative;
+
+      color: var(--heading);
+
+      -webkit-text-fill-color:
+        var(--heading);
+
+      text-shadow:
+        0 2px 0 #cfcfcf,
+        0 4px 0 #a8a8a8,
+        0 7px 0 rgba(0,0,0,.55),
+        0 10px 18px rgba(0,0,0,.85),
+        0 0 10px rgba(160,0,0,.10);
+    }
+
+    .smokol-heading::after {
+      content: "";
+
+      position: absolute;
+
+      left: 8%;
+      right: 8%;
+      bottom: -9px;
+
+      height: 4px;
+
+      border-radius: 100%;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          rgba(143,13,18,.25),
+          var(--red),
+          rgba(143,13,18,.25),
+          transparent
+        );
+
+      box-shadow:
+        0 0 8px
+        rgba(160,0,0,.35);
+
+      opacity: 0.9;
+    }
+
+    .smokol-red {
+      color: var(--red);
+
+      -webkit-text-fill-color:
+        var(--red);
+
+      text-shadow:
+        0 1px 0 var(--red-light),
+        0 3px 0 var(--red-dark),
+        0 5px 0 rgba(50,0,0,.85),
+        0 7px 15px rgba(0,0,0,.85),
+        0 0 12px rgba(160,0,0,.3);
+    }
+
+
+    /* =========================
+       GÓRA STRONY
+    ========================= */
+
+    .page-header {
+      padding:
+        105px 0 70px;
+
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size:
+        clamp(
+          2.5rem,
+          6vw,
+          4.5rem
+        );
+
+      margin-bottom: 32px;
+    }
+
+    .page-header p {
+      max-width: 720px;
+
+      margin: auto;
+
+      color: #aaaaaa;
+
+      font-size: 1.05rem;
+    }
+
+
+    /* =========================
+       TRANSMISJE
+    ========================= */
+
+    .broadcasts {
+      padding:
+        20px 0 100px;
+    }
+
+    .broadcast-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap: 24px;
+    }
+
+    .broadcast-card {
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(130,0,0,.08),
+          transparent 50%
+        ),
+        var(--card);
+
+      border:
+        1px solid
+        #292929;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.35);
+
+      transition: 0.25s;
+    }
+
+    .broadcast-card:hover {
+      transform:
+        translateY(-6px);
+
+      border-color:
+        rgba(201,21,27,.8);
+
+      box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.45),
+        0 0 20px
+        rgba(150,0,0,.10);
+    }
+
+    .broadcast-thumb-link {
+      display: block;
+
+      overflow: hidden;
+    }
+
+    .broadcast-thumbnail {
+      width: 100%;
+
+      aspect-ratio:
+        16 / 9;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition:
+        transform 0.3s,
+        filter 0.3s;
+    }
+
+    .broadcast-card:hover
+    .broadcast-thumbnail {
+      transform:
+        scale(1.035);
+
+      filter:
+        brightness(1.06);
+    }
+
+    .broadcast-content {
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      padding: 24px;
+    }
+
+    .broadcast-meta {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 14px;
+    }
+
+    .game-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      min-height: 28px;
+
+      padding:
+        4px 10px;
+
+      border-radius: 6px;
+
+      background:
+        var(--red);
+
+      color: #ffffff;
+
+      font-size: 0.76rem;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .episode {
+      color: var(--blue);
+
+      font-size: 0.84rem;
+
+      font-weight: 900;
+    }
+
+    .broadcast-date {
+      color: #858585;
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+    }
+
+    .broadcast-card h2 {
+      color: #f0f0f0;
+
+      font-size: 1.12rem;
+
+      line-height: 1.35;
+
+      margin-bottom: 14px;
+    }
+
+    .broadcast-description {
+      color: #a5a5a5;
+
+      font-size: 0.94rem;
+
+      margin-bottom: 24px;
+
+      flex: 1;
+    }
+
+
+    /* =========================
+       PRZYCISKI
+    ========================= */
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-height: 50px;
+
+      padding:
+        10px 18px;
+
+      border-radius: 9px;
+
+      border:
+        1px solid
+        #333333;
+
+      background:
+        #151515;
+
+      color:
+        #ffffff;
+
+      font-weight:
+        900;
+
+      transition:
+        0.2s;
+    }
+
+    .btn:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        var(--red);
+
+      background:
+        #1d1d1d;
+    }
+
+    .btn-main {
+      background:
+        var(--red);
+
+      border-color:
+        var(--red);
+    }
+
+    .btn-main:hover {
+      background:
+        #dd1b22;
+    }
+
+    .btn img {
+      width: 27px;
+      height: 27px;
+
+      object-fit: contain;
+    }
+
+    .youtube-more {
+      display: flex;
+
+      justify-content: center;
+
+      margin-top: 42px;
+    }
+
+
+    /* =========================
+       STOPKA
+    ========================= */
+
+    footer {
+      padding:
+        35px 0;
+
+      text-align: center;
+
+      border-top:
+        1px solid
+        #222222;
+
+      background:
+        #050505;
+
+      color:
+        #777777;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .footer-logo {
+      width: 140px;
+
+      max-height: 50px;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       RESPONSYWNOŚĆ
+    ========================= */
+
+    @media (max-width: 1050px) {
+
+      .nav {
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding:
+          14px 0 17px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .broadcast-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .nav-links {
+        justify-content: center;
+
+        gap:
+          12px 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+      }
+
+      .page-header {
+        padding:
+          75px 0 55px;
+      }
+
+      .broadcast-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <img
+          src="napis-smokol.png"
+          alt="Smokol"
+          class="brand-logo"
+        >
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="aktualnosci.html">
+          Aktualności
+        </a>
+
+        <a href="index.html#live">
+          Live
+        </a>
+
+        <a
+          href="transmisje.html"
+          class="active"
+        >
+          Ostatnie transmisje
+        </a>
+
+        <a href="index.html#serie">
+          Serie
+        </a>
+
+        <a href="index.html#hub">
+          Smokol Hub
+        </a>
+
+        <a href="index.html#baza">
+          Baza Smokola
+        </a>
+
+        <a href="index.html#linki">
+          Linki
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       NAGŁÓWEK
+  ========================= -->
+
+  <header class="page-header">
+
+    <div class="container">
+
+      <h1 class="smokol-heading">
+
+        OSTATNIE
+
+        <span class="smokol-red">
+          TRANSMISJE
+        </span>
+
+      </h1>
+
+      <p>
+        Przegapiłeś live?
+        Tutaj znajdziesz trzy ostatnie transmisje
+        z kanału Smokol i możesz nadrobić je
+        w dowolnym momencie.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       TRANSMISJE
+  ========================= -->
+
+  <main>
+
+    <section class="broadcasts">
+
+      <div class="container">
+
+        <div
+          id="broadcast-grid"
+          class="broadcast-grid"
+        >
+        </div>
+
+
+        <div class="youtube-more">
+
+          <a
+            href="https://www.youtube.com/c/smokol"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+          >
+
+            <img
+              src="logo-youtube-white.png"
+              alt="YouTube"
+            >
+
+            <span>
+              Zobacz wszystkie transmisje na YouTube
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       STOPKA
+  ========================= -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <img
+        src="napis-smokol.png"
+        alt="Smokol"
+        class="footer-logo"
+      >
+
+      <span>
+        Symulacja to moja pasja
+      </span>
+
+      <span>
+        © 2026 Smokol
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       WCZYTYWANIE TRANSMISJI
+  ========================= -->
+
+  <script>
+
+    async function loadBroadcasts() {
+
+      const container =
+        document.getElementById(
+          "broadcast-grid"
+        );
+
+      try {
+
+        const response =
+          await fetch(
+            "./transmisje.json?version=1"
+          );
+
+        if (!response.ok) {
+          throw new Error(
+            "Nie udało się pobrać transmisje.json"
+          );
+        }
+
+        const broadcasts =
+          await response.json();
+
+
+        broadcasts.sort(
+          (a, b) =>
+            new Date(b.date) -
+            new Date(a.date)
+        );
+
+
+        const latest =
+          broadcasts.slice(0, 3);
+
+
+        latest.forEach(item => {
+
+          const url =
+            `https://youtube.com/live/${item.videoId}`;
+
+          const thumbnail =
+            `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
+
+
+          const card =
+            document.createElement(
+              "article"
+            );
+
+          card.className =
+            "broadcast-card";
+
+
+          const episode =
+            item.episode
+              ? `<span class="episode">${item.episode}</span>`
+              : "";
+
+
+          card.innerHTML = `
+
+            <a
+              href="${url}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="broadcast-thumb-link"
+            >
+
+              <img
+                src="${thumbnail}"
+                onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg';"
+                alt="${item.title}"
+                class="broadcast-thumbnail"
+              >
+
+            </a>
+
+
+            <div class="broadcast-content">
+
+
+              <div class="broadcast-meta">
+
+                <span class="game-badge">
+                  ${item.game}
+                </span>
+
+                ${episode}
+
+                <span class="broadcast-date">
+                  ${item.displayDate}
+                </span>
+
+              </div>
+
+
+              <h2>
+                ${item.title}
+              </h2>
+
+
+              <p class="broadcast-description">
+                ${item.description}
+              </p>
+
+
+              <a
+                href="${url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-main"
+              >
+
+                <img
+                  src="logo-youtube-white.png"
+                  alt="YouTube"
+                >
+
+                <span>
+                  Obejrzyj transmisję
+                </span>
+
+              </a>
+
+
+            </div>
+
+          `;
+
+
+          container.appendChild(
+            card
+          );
+
+        });
+
+      }
+
+      catch (error) {
+
+        container.innerHTML = `
+          <p style="
+            grid-column:1/-1;
+            text-align:center;
+            color:#888;
+            padding:40px;
+          ">
+            Nie udało się wczytać transmisji.
+          </p>
+        `;
+
+        console.error(error);
+
+      }
+
+    }
+
+
+    loadBroadcasts();
+
+  </script>
+
+
+</body>
+
+</html>
