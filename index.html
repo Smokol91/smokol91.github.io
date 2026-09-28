@@ -499,6 +499,17 @@
       min-width: 0;
     }
 
+
+    /* TRANSMISJA + DATA + GODZINA */
+
+    .live-status {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      margin-bottom: 18px;
+    }
+
     .live-badge {
       display: inline-flex;
       align-items: center;
@@ -511,7 +522,10 @@
 
       border-radius: 8px;
 
-      margin-bottom: 16px;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-weight: 900;
 
@@ -525,11 +539,50 @@
       height: 26px;
 
       object-fit: contain;
+
       display: block;
     }
 
+    .live-schedule {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 9px;
+
+      padding-left: 2px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-weight: 900;
+
+      line-height: 1.25;
+
+      letter-spacing: 0.25px;
+    }
+
+    .live-date {
+      color: #f1f1f1;
+
+      font-size: 0.95rem;
+    }
+
+    .live-time {
+      color: var(--red-light);
+
+      font-size: 1.02rem;
+
+      margin-top: 2px;
+    }
+
+
     .live-title {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       font-size:
         clamp(
@@ -897,6 +950,14 @@
         font-size: 1.05rem;
       }
 
+      .live-date {
+        font-size: 0.9rem;
+      }
+
+      .live-time {
+        font-size: 1rem;
+      }
+
       .community {
         grid-template-columns: 1fr;
 
@@ -956,7 +1017,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=22"
+          src="napis-smokol.png?v=23"
           alt="Smokol"
           class="brand-logo"
         >
@@ -1010,7 +1071,7 @@
     <div class="container">
 
       <img
-        src="logo-smokol.png?v=22"
+        src="logo-smokol.png?v=23"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1156,19 +1217,37 @@
 
           <div class="live-info">
 
-            <span class="live-badge">
 
-              <img
-                src="logo-live.png"
-                alt="Live"
-                class="live-badge-logo"
-              >
+            <div class="live-status">
 
-              <span>
-                TRANSMISJA
+              <span class="live-badge">
+
+                <img
+                  src="logo-live.png"
+                  alt="Live"
+                  class="live-badge-logo"
+                >
+
+                <span>
+                  TRANSMISJA
+                </span>
+
               </span>
 
-            </span>
+
+              <div class="live-schedule">
+
+                <span class="live-date">
+                  27.09.2026
+                </span>
+
+                <span class="live-time">
+                  GODZINA 20:00
+                </span>
+
+              </div>
+
+            </div>
 
 
             <h3 class="live-title">
@@ -1221,7 +1300,7 @@
 
 
     <!-- =========================
-         SERIE NA KANALE
+         SERIE
     ========================= -->
 
     <section id="serie">
@@ -1251,8 +1330,6 @@
         <div class="grid">
 
 
-          <!-- OMSI 2 -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1280,8 +1357,6 @@
           </div>
 
 
-          <!-- EURO TRUCK SIMULATOR 2 -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1308,8 +1383,6 @@
           </div>
 
 
-          <!-- ATS -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1334,8 +1407,6 @@
 
           </div>
 
-
-          <!-- FERNBUS -->
 
           <div class="card">
 
@@ -1362,8 +1433,6 @@
           </div>
 
 
-          <!-- THE BUS -->
-
           <div class="card">
 
             <div class="series-logo-wrap">
@@ -1387,8 +1456,6 @@
 
           </div>
 
-
-          <!-- EA SPORTS FC -->
 
           <div class="card">
 
@@ -1414,8 +1481,6 @@
 
           </div>
 
-
-          <!-- GAMING -->
 
           <div class="card">
 
@@ -1660,8 +1725,6 @@
         <div class="grid">
 
 
-          <!-- YOUTUBE -->
-
           <div class="card social">
 
             <img
@@ -1689,8 +1752,6 @@
 
           </div>
 
-
-          <!-- DISCORD -->
 
           <div class="card social">
 
@@ -1720,8 +1781,6 @@
           </div>
 
 
-          <!-- FACEBOOK -->
-
           <div class="card social">
 
             <img
@@ -1749,8 +1808,6 @@
 
           </div>
 
-
-          <!-- TIPPLY -->
 
           <div class="card social">
 
@@ -1798,7 +1855,7 @@
     <div class="container footer-content">
 
       <img
-        src="napis-smokol.png?v=22"
+        src="napis-smokol.png?v=23"
         alt="Smokol"
         class="footer-logo"
       >
