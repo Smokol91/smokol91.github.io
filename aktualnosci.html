@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Aktualności | Smokol</title>
+
+  <meta
+    name="description"
+    content="Aktualności, zapowiedzi transmisji i wiadomości z kanału Smokol."
+  >
+
+  <style>
+
+    :root {
+      --red: #c9151b;
+      --red-light: #e34b4f;
+      --red-dark: #8f0d12;
+      --heading: #e8e8e8;
+      --black: #080808;
+      --card: #121212;
+      --text: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(200, 0, 0, 0.18),
+          transparent 30%
+        ),
+        var(--black);
+
+      color: var(--text);
+
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+
+    /* MENU */
+
+    nav {
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(7, 7, 7, 0.96);
+
+      backdrop-filter:
+        blur(12px);
+
+      border-bottom:
+        1px solid
+        rgba(160, 0, 0, 0.35);
+    }
+
+    .nav {
+      min-height: 76px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo {
+      width: 155px;
+      max-height: 58px;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #dddddd;
+
+      font-weight: 700;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--red-light);
+    }
+
+
+    /* NAGŁÓWEK */
+
+    .page-header {
+      padding:
+        100px 0 65px;
+
+      text-align: center;
+    }
+
+    .smokol-heading {
+      font-family:
+        Arial Black,
+        Impact,
+        Arial,
+        sans-serif;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      display: inline-block;
+
+      position: relative;
+
+      color: var(--heading);
+
+      -webkit-text-fill-color:
+        var(--heading);
+
+      text-shadow:
+        0 2px 0 #cfcfcf,
+        0 4px 0 #a8a8a8,
+        0 7px 0 rgba(0, 0, 0, 0.55),
+        0 10px 18px rgba(0, 0, 0, 0.85);
+    }
+
+    .smokol-heading::after {
+      content: "";
+
+      position: absolute;
+
+      left: 8%;
+      right: 8%;
+      bottom: -9px;
+
+      height: 4px;
+
+      background:
+        linear-gradient(
+          to right,
+          transparent,
+          var(--red),
+          transparent
+        );
+
+      box-shadow:
+        0 0 8px
+        rgba(160, 0, 0, 0.35);
+    }
+
+    .smokol-red {
+      color: var(--red);
+
+      -webkit-text-fill-color:
+        var(--red);
+
+      text-shadow:
+        0 1px 0 var(--red-light),
+        0 3px 0 var(--red-dark),
+        0 5px 0 rgba(50, 0, 0, 0.85),
+        0 7px 15px rgba(0, 0, 0, 0.85);
+    }
+
+    .page-header h1 {
+      font-size:
+        clamp(
+          2.4rem,
+          6vw,
+          4.4rem
+        );
+
+      margin-bottom:
+        30px;
+    }
+
+    .page-header p {
+      color: #999999;
+
+      max-width: 720px;
+
+      margin: auto;
+    }
+
+
+    /* POSTY */
+
+    .news {
+      padding:
+        25px 0 100px;
+    }
+
+    .news-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
+
+      gap: 24px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        #292929;
+
+      border-radius:
+        18px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.3);
+
+      transition:
+        0.25s;
+    }
+
+    .news-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        var(--red);
+    }
+
+    .news-image-link {
+      display: block;
+
+      overflow: hidden;
+    }
+
+    .news-image {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio:
+        16 / 9;
+
+      object-fit: cover;
+
+      transition:
+        0.3s;
+    }
+
+    .news-card:hover .news-image {
+      transform:
+        scale(1.035);
+    }
+
+    .news-content {
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      padding: 24px;
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 13px;
+    }
+
+    .news-category {
+      padding:
+        4px 9px;
+
+      background:
+        var(--red);
+
+      border-radius:
+        6px;
+
+      font-size:
+        0.75rem;
+
+      font-weight: 900;
+    }
+
+    .news-date {
+      color:
+        #777777;
+
+      font-size:
+        0.82rem;
+
+      font-weight:
+        700;
+    }
+
+    .news-card h2 {
+      font-size:
+        1.15rem;
+
+      line-height:
+        1.35;
+
+      color:
+        #eeeeee;
+
+      margin-bottom:
+        13px;
+    }
+
+    .news-card p {
+      color:
+        #999999;
+
+      font-size:
+        0.94rem;
+
+      margin-bottom:
+        22px;
+
+      flex: 1;
+    }
+
+    .btn {
+      display:
+        inline-flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      align-self:
+        flex-start;
+
+      min-height:
+        46px;
+
+      padding:
+        9px 17px;
+
+      background:
+        var(--red);
+
+      border:
+        1px solid
+        var(--red);
+
+      border-radius:
+        9px;
+
+      color:
+        #ffffff;
+
+      font-weight:
+        900;
+
+      transition:
+        0.2s;
+    }
+
+    .btn:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        #dd1b22;
+    }
+
+    .news-status {
+      grid-column:
+        1 / -1;
+
+      text-align:
+        center;
+
+      color:
+        #888888;
+
+      padding:
+        50px;
+    }
+
+
+    /* STOPKA */
+
+    footer {
+      padding:
+        35px 0;
+
+      text-align:
+        center;
+
+      border-top:
+        1px solid
+        #222222;
+
+      background:
+        #050505;
+
+      color:
+        #777777;
+    }
+
+    .footer-content {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+    }
+
+    .footer-logo {
+      width:
+        140px;
+
+      max-height:
+        50px;
+
+      object-fit:
+        contain;
+    }
+
+
+    @media (max-width: 900px) {
+
+      .news-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
+      }
+
+    }
+
+
+    @media (max-width: 760px) {
+
+      .nav {
+        flex-direction:
+          column;
+
+        padding:
+          16px 0;
+      }
+
+      .nav-links {
+        justify-content:
+          center;
+
+        gap:
+          13px;
+      }
+
+      .brand-logo {
+        width:
+          145px;
+      }
+
+      .news-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <nav>
+
+    <div class="container nav">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <img
+          src="napis-smokol.png"
+          alt="Smokol"
+          class="brand-logo"
+        >
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html#live">
+          Live
+        </a>
+
+        <a
+          href="aktualnosci.html"
+          class="active"
+        >
+          Aktualności
+        </a>
+
+        <a href="index.html#serie">
+          Serie
+        </a>
+
+        <a href="index.html#hub">
+          Smokol Hub
+        </a>
+
+        <a href="index.html#baza">
+          Baza Smokola
+        </a>
+
+        <a href="index.html#linki">
+          Linki
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <header class="page-header">
+
+    <div class="container">
+
+      <h1 class="smokol-heading">
+
+        AKTUALNOŚCI
+
+        <span class="smokol-red">
+          SMOKOL
+        </span>
+
+      </h1>
+
+      <p>
+        Zapowiedzi transmisji,
+        informacje z kanału,
+        Smokol Hub,
+        Bazy Smokola
+        i inne najważniejsze wiadomości.
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="news">
+
+      <div class="container">
+
+        <div
+          id="all-news"
+          class="news-grid"
+        >
+
+          <div class="news-status">
+            Ładowanie aktualności...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <img
+        src="napis-smokol.png"
+        alt="Smokol"
+        class="footer-logo"
+      >
+
+      <span>
+        Symulacja to moja pasja
+      </span>
+
+      <span>
+        © 2026 Smokol
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    async function loadNews() {
+
+      const container =
+        document.getElementById("all-news");
+
+      try {
+
+        const response =
+          await fetch("./posts.json?version=1");
+
+        if (!response.ok) {
+          throw new Error(
+            "Nie udało się pobrać posts.json"
+          );
+        }
+
+        const posts =
+          await response.json();
+
+        posts.sort(
+          (a, b) =>
+            new Date(b.date) -
+            new Date(a.date)
+        );
+
+        container.innerHTML = "";
+
+        if (posts.length === 0) {
+
+          container.innerHTML =
+            '<div class="news-status">Brak aktualności.</div>';
+
+          return;
+        }
+
+
+        posts.forEach(post => {
+
+          const card =
+            document.createElement("article");
+
+          card.className =
+            "news-card";
+
+          card.innerHTML = `
+
+            <a
+              href="${post.link}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="news-image-link"
+            >
+
+              <img
+                src="${post.image}"
+                alt="${post.title}"
+                class="news-image"
+              >
+
+            </a>
+
+
+            <div class="news-content">
+
+              <div class="news-meta">
+
+                <span class="news-category">
+                  ${post.category}
+                </span>
+
+                <span class="news-date">
+                  ${post.displayDate}
+                </span>
+
+              </div>
+
+
+              <h2>
+                ${post.title}
+              </h2>
+
+
+              <p>
+                ${post.text}
+              </p>
+
+
+              <a
+                href="${post.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+              >
+                ${post.button}
+              </a>
+
+            </div>
+
+          `;
+
+          container.appendChild(card);
+
+        });
+
+      }
+
+      catch (error) {
+
+        container.innerHTML =
+          '<div class="news-status">Nie udało się wczytać aktualności.</div>';
+
+        console.error(error);
+
+      }
+
+    }
+
+    loadNews();
+
+  </script>
+
+</body>
+
+</html>
