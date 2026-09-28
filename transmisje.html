@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="Ostatnie transmisje na żywo z kanału Smokol. Przegapiłeś live? Tutaj możesz nadrobić ostatnie transmisje."
+    content="Ostatnie transmisje na żywo z kanału Smokol."
   >
 
   <style>
@@ -42,13 +42,16 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(200, 0, 0, 0.16),
-          transparent 32%
+          rgba(200, 0, 0, 0.18),
+          transparent 30%
         ),
         var(--black);
 
@@ -80,9 +83,11 @@
       top: 0;
       z-index: 1000;
 
-      background: rgba(7, 7, 7, 0.96);
+      background:
+        rgba(7, 7, 7, 0.96);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter:
+        blur(12px);
 
       border-bottom:
         1px solid
@@ -102,7 +107,6 @@
     .brand {
       display: flex;
       align-items: center;
-
       flex-shrink: 0;
     }
 
@@ -144,13 +148,13 @@
       font-size: 0.95rem;
       font-weight: 700;
 
-      transition: 0.2s;
-
       white-space: nowrap;
+
+      transition: 0.2s;
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links .active {
       color: var(--red-light);
     }
 
@@ -173,14 +177,21 @@
     }
 
     .nav-links a:hover::after,
-    .nav-links a.active::after {
+    .nav-links .active::after {
       width: 100%;
     }
 
 
     /* =========================
-       NAGŁÓWKI
+       NAGŁÓWEK
     ========================= */
+
+    .page-header {
+      padding:
+        100px 0 65px;
+
+      text-align: center;
+    }
 
     .smokol-heading {
       font-family:
@@ -190,28 +201,22 @@
         sans-serif;
 
       font-weight: 900;
-
       text-transform: uppercase;
-
       letter-spacing: 1px;
-
       line-height: 1.02;
 
       display: inline-block;
-
       position: relative;
 
       color: var(--heading);
-
-      -webkit-text-fill-color:
-        var(--heading);
+      -webkit-text-fill-color: var(--heading);
 
       text-shadow:
         0 2px 0 #cfcfcf,
         0 4px 0 #a8a8a8,
-        0 7px 0 rgba(0,0,0,.55),
-        0 10px 18px rgba(0,0,0,.85),
-        0 0 10px rgba(160,0,0,.10);
+        0 7px 0 rgba(0, 0, 0, 0.55),
+        0 10px 18px rgba(0, 0, 0, 0.85),
+        0 0 10px rgba(160, 0, 0, 0.10);
     }
 
     .smokol-heading::after {
@@ -231,17 +236,15 @@
         linear-gradient(
           to right,
           transparent,
-          rgba(143,13,18,.25),
+          rgba(143, 13, 18, 0.25),
           var(--red),
-          rgba(143,13,18,.25),
+          rgba(143, 13, 18, 0.25),
           transparent
         );
 
       box-shadow:
         0 0 8px
-        rgba(160,0,0,.35);
-
-      opacity: 0.9;
+        rgba(160, 0, 0, 0.35);
     }
 
     .smokol-red {
@@ -253,40 +256,28 @@
       text-shadow:
         0 1px 0 var(--red-light),
         0 3px 0 var(--red-dark),
-        0 5px 0 rgba(50,0,0,.85),
-        0 7px 15px rgba(0,0,0,.85),
-        0 0 12px rgba(160,0,0,.3);
-    }
-
-
-    /* =========================
-       GÓRA STRONY
-    ========================= */
-
-    .page-header {
-      padding:
-        105px 0 70px;
-
-      text-align: center;
+        0 5px 0 rgba(50, 0, 0, 0.85),
+        0 7px 15px rgba(0, 0, 0, 0.85),
+        0 0 12px rgba(160, 0, 0, 0.3);
     }
 
     .page-header h1 {
       font-size:
         clamp(
-          2.5rem,
+          2.4rem,
           6vw,
-          4.5rem
+          4.4rem
         );
 
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .page-header p {
-      max-width: 720px;
+      color: #999999;
+
+      max-width: 760px;
 
       margin: auto;
-
-      color: #aaaaaa;
 
       font-size: 1.05rem;
     }
@@ -296,12 +287,12 @@
        TRANSMISJE
     ========================= */
 
-    .broadcasts {
+    .streams {
       padding:
-        20px 0 100px;
+        25px 0 90px;
     }
 
-    .broadcast-grid {
+    .streams-grid {
       display: grid;
 
       grid-template-columns:
@@ -313,17 +304,15 @@
       gap: 24px;
     }
 
-    .broadcast-card {
+    .stream-card {
       display: flex;
       flex-direction: column;
 
-      overflow: hidden;
-
       background:
         linear-gradient(
-          145deg,
-          rgba(130,0,0,.08),
-          transparent 50%
+          135deg,
+          rgba(150, 0, 0, 0.08),
+          transparent 55%
         ),
         var(--card);
 
@@ -333,34 +322,42 @@
 
       border-radius: 18px;
 
+      overflow: hidden;
+
       box-shadow:
         0 15px 40px
-        rgba(0,0,0,.35);
+        rgba(0, 0, 0, 0.3);
 
-      transition: 0.25s;
+      transition:
+        0.25s;
     }
 
-    .broadcast-card:hover {
+    .stream-card:hover {
       transform:
-        translateY(-6px);
+        translateY(-5px);
 
       border-color:
-        rgba(201,21,27,.8);
+        var(--red);
 
       box-shadow:
         0 20px 45px
-        rgba(0,0,0,.45),
-        0 0 20px
-        rgba(150,0,0,.10);
+        rgba(0, 0, 0, 0.42);
     }
 
-    .broadcast-thumb-link {
+
+    /* =========================
+       MINIATURA
+    ========================= */
+
+    .stream-image-link {
       display: block;
 
       overflow: hidden;
     }
 
-    .broadcast-thumbnail {
+    .stream-image {
+      display: block;
+
       width: 100%;
 
       aspect-ratio:
@@ -368,23 +365,21 @@
 
       object-fit: cover;
 
-      display: block;
-
       transition:
-        transform 0.3s,
-        filter 0.3s;
+        0.3s;
     }
 
-    .broadcast-card:hover
-    .broadcast-thumbnail {
+    .stream-card:hover .stream-image {
       transform:
         scale(1.035);
-
-      filter:
-        brightness(1.06);
     }
 
-    .broadcast-content {
+
+    /* =========================
+       TREŚĆ KARTY
+    ========================= */
+
+    .stream-content {
       display: flex;
       flex-direction: column;
 
@@ -393,7 +388,7 @@
       padding: 24px;
     }
 
-    .broadcast-meta {
+    .stream-meta {
       display: flex;
       align-items: center;
 
@@ -401,65 +396,59 @@
 
       flex-wrap: wrap;
 
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
-    .game-badge {
-      display: inline-flex;
-
-      align-items: center;
-
-      min-height: 28px;
-
+    .stream-game {
       padding:
-        4px 10px;
-
-      border-radius: 6px;
+        4px 9px;
 
       background:
         var(--red);
 
+      border-radius: 6px;
+
       color: #ffffff;
 
-      font-size: 0.76rem;
+      font-size: 0.75rem;
 
       font-weight: 900;
-
-      text-transform: uppercase;
     }
 
-    .episode {
+    .stream-episode {
       color: var(--blue);
 
-      font-size: 0.84rem;
+      font-size: 0.82rem;
 
       font-weight: 900;
     }
 
-    .broadcast-date {
-      color: #858585;
+    .stream-date {
+      color: #777777;
 
       font-size: 0.82rem;
 
       font-weight: 700;
     }
 
-    .broadcast-card h2 {
-      color: #f0f0f0;
+    .stream-card h2 {
+      color: #eeeeee;
 
-      font-size: 1.12rem;
+      font-size: 1.15rem;
 
       line-height: 1.35;
 
-      margin-bottom: 14px;
+      margin-bottom: 13px;
     }
 
-    .broadcast-description {
-      color: #a5a5a5;
+    .stream-description {
+      color: #999999;
 
       font-size: 0.94rem;
 
-      margin-bottom: 24px;
+      line-height: 1.65;
+
+      margin-bottom: 22px;
 
       flex: 1;
     }
@@ -472,55 +461,39 @@
     .btn {
       display: inline-flex;
 
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
-      gap: 10px;
+      gap: 9px;
 
-      min-height: 50px;
+      min-height: 46px;
 
       padding:
-        10px 18px;
+        9px 17px;
 
       border-radius: 9px;
 
-      border:
-        1px solid
-        #333333;
+      color: #ffffff;
 
-      background:
-        #151515;
+      font-weight: 900;
 
-      color:
-        #ffffff;
-
-      font-weight:
-        900;
-
-      transition:
-        0.2s;
-    }
-
-    .btn:hover {
-      transform:
-        translateY(-2px);
-
-      border-color:
-        var(--red);
-
-      background:
-        #1d1d1d;
+      transition: 0.2s;
     }
 
     .btn-main {
-      background:
-        var(--red);
+      align-self: flex-start;
 
-      border-color:
+      background: var(--red);
+
+      border:
+        1px solid
         var(--red);
     }
 
     .btn-main:hover {
+      transform:
+        translateY(-2px);
+
       background:
         #dd1b22;
     }
@@ -530,14 +503,88 @@
       height: 27px;
 
       object-fit: contain;
+
+      display: block;
     }
 
-    .youtube-more {
+
+    /* =========================
+       ODWIEDŹ KANAŁ
+    ========================= */
+
+    .channel-area {
       display: flex;
 
       justify-content: center;
 
-      margin-top: 42px;
+      margin-top: 50px;
+    }
+
+    .channel-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-height: 54px;
+
+      padding:
+        11px 22px;
+
+      background: var(--red);
+
+      border:
+        1px solid
+        var(--red);
+
+      border-radius: 10px;
+
+      color: #ffffff;
+
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .channel-btn:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        #dd1b22;
+
+      box-shadow:
+        0 8px 25px
+        rgba(150, 0, 0, 0.25);
+    }
+
+    .channel-btn img {
+      width: 31px;
+      height: 31px;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+    /* =========================
+       STATUS
+    ========================= */
+
+    .stream-status {
+      grid-column:
+        1 / -1;
+
+      text-align: center;
+
+      color:
+        #888888;
+
+      padding:
+        50px;
     }
 
 
@@ -549,7 +596,8 @@
       padding:
         35px 0;
 
-      text-align: center;
+      text-align:
+        center;
 
       border-top:
         1px solid
@@ -565,7 +613,6 @@
     .footer-content {
       display: flex;
       flex-direction: column;
-
       align-items: center;
 
       gap: 8px;
@@ -577,18 +624,19 @@
       max-height: 50px;
 
       object-fit: contain;
+
+      display: block;
     }
 
 
     /* =========================
-       RESPONSYWNOŚĆ
+       TABLET
     ========================= */
 
     @media (max-width: 1050px) {
 
       .nav {
         flex-direction: column;
-
         justify-content: center;
 
         padding:
@@ -601,43 +649,72 @@
 
     }
 
+
     @media (max-width: 900px) {
 
-      .broadcast-grid {
+      .streams-grid {
         grid-template-columns:
           repeat(
             2,
-            minmax(0,1fr)
+            minmax(0, 1fr)
           );
       }
 
     }
 
-    @media (max-width: 650px) {
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      .nav {
+        padding:
+          16px 0;
+      }
+
+      .brand-logo {
+        width:
+          145px;
+      }
 
       .nav-links {
-        justify-content: center;
+        justify-content:
+          center;
 
         gap:
           12px 14px;
       }
 
       .nav-links a {
-        font-size: 0.88rem;
+        font-size:
+          0.88rem;
       }
 
       .page-header {
         padding:
-          75px 0 55px;
+          75px 0 50px;
       }
 
-      .broadcast-grid {
+      .streams {
+        padding-top:
+          10px;
+      }
+
+      .streams-grid {
         grid-template-columns:
           1fr;
       }
 
-      .btn {
+      .btn-main {
         width: 100%;
+      }
+
+      .channel-btn {
+        width: 100%;
+
+        max-width: 320px;
       }
 
     }
@@ -664,7 +741,7 @@
       >
 
         <img
-          src="napis-smokol.png"
+          src="napis-smokol.png?v=28"
           alt="Smokol"
           class="brand-logo"
         >
@@ -730,6 +807,7 @@
 
       </h1>
 
+
       <p>
         Przegapiłeś live?
         Tutaj znajdziesz trzy ostatnie transmisje
@@ -748,24 +826,33 @@
 
   <main>
 
-    <section class="broadcasts">
+    <section class="streams">
 
       <div class="container">
 
         <div
-          id="broadcast-grid"
-          class="broadcast-grid"
+          id="streams-grid"
+          class="streams-grid"
         >
+
+          <div class="stream-status">
+            Ładowanie transmisji...
+          </div>
+
         </div>
 
 
-        <div class="youtube-more">
+        <!-- =========================
+             ODWIEDŹ KANAŁ
+        ========================= -->
+
+        <div class="channel-area">
 
           <a
             href="https://www.youtube.com/c/smokol"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn"
+            class="channel-btn"
           >
 
             <img
@@ -774,7 +861,7 @@
             >
 
             <span>
-              Zobacz wszystkie transmisje na YouTube
+              Odwiedź kanał
             </span>
 
           </a>
@@ -797,7 +884,7 @@
     <div class="container footer-content">
 
       <img
-        src="napis-smokol.png"
+        src="napis-smokol.png?v=28"
         alt="Smokol"
         class="footer-logo"
       >
@@ -821,12 +908,13 @@
 
   <script>
 
-    async function loadBroadcasts() {
+    async function loadStreams() {
 
       const container =
         document.getElementById(
-          "broadcast-grid"
+          "streams-grid"
         );
+
 
       try {
 
@@ -835,142 +923,160 @@
             "./transmisje.json?version=1"
           );
 
+
         if (!response.ok) {
+
           throw new Error(
             "Nie udało się pobrać transmisje.json"
           );
+
         }
 
-        const broadcasts =
+
+        const streams =
           await response.json();
 
 
-        broadcasts.sort(
+        streams.sort(
           (a, b) =>
             new Date(b.date) -
             new Date(a.date)
         );
 
 
-        const latest =
-          broadcasts.slice(0, 3);
+        const latestStreams =
+          streams.slice(0, 3);
 
 
-        latest.forEach(item => {
-
-          const url =
-            `https://youtube.com/live/${item.videoId}`;
-
-          const thumbnail =
-            `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
+        container.innerHTML = "";
 
 
-          const card =
-            document.createElement(
-              "article"
-            );
+        if (
+          latestStreams.length === 0
+        ) {
 
-          card.className =
-            "broadcast-card";
+          container.innerHTML =
+            '<div class="stream-status">Brak transmisji.</div>';
 
+          return;
 
-          const episode =
-            item.episode
-              ? `<span class="episode">${item.episode}</span>`
-              : "";
+        }
 
 
-          card.innerHTML = `
+        latestStreams.forEach(
+          stream => {
 
-            <a
-              href="${url}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="broadcast-thumb-link"
-            >
-
-              <img
-                src="${thumbnail}"
-                onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg';"
-                alt="${item.title}"
-                class="broadcast-thumbnail"
-              >
-
-            </a>
+            const card =
+              document.createElement(
+                "article"
+              );
 
 
-            <div class="broadcast-content">
+            card.className =
+              "stream-card";
 
 
-              <div class="broadcast-meta">
-
-                <span class="game-badge">
-                  ${item.game}
-                </span>
-
-                ${episode}
-
-                <span class="broadcast-date">
-                  ${item.displayDate}
-                </span>
-
-              </div>
+            const videoUrl =
+              `https://youtube.com/live/${stream.videoId}`;
 
 
-              <h2>
-                ${item.title}
-              </h2>
+            const thumbnail =
+              `https://img.youtube.com/vi/${stream.videoId}/maxresdefault.jpg`;
 
 
-              <p class="broadcast-description">
-                ${item.description}
-              </p>
+            const fallback =
+              `https://img.youtube.com/vi/${stream.videoId}/hqdefault.jpg`;
 
+
+            const episode =
+              stream.episode
+                ? `<span class="stream-episode">${stream.episode}</span>`
+                : "";
+
+
+            card.innerHTML = `
 
               <a
-                href="${url}"
+                href="${videoUrl}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-main"
+                class="stream-image-link"
               >
 
                 <img
-                  src="logo-youtube-white.png"
-                  alt="YouTube"
+                  src="${thumbnail}"
+                  onerror="this.onerror=null;this.src='${fallback}';"
+                  alt="${stream.title}"
+                  class="stream-image"
                 >
-
-                <span>
-                  Obejrzyj transmisję
-                </span>
 
               </a>
 
 
-            </div>
+              <div class="stream-content">
 
-          `;
+                <div class="stream-meta">
+
+                  <span class="stream-game">
+                    ${stream.game}
+                  </span>
+
+                  ${episode}
+
+                  <span class="stream-date">
+                    ${stream.displayDate}
+                  </span>
+
+                </div>
 
 
-          container.appendChild(
-            card
-          );
+                <h2>
+                  ${stream.title}
+                </h2>
 
-        });
+
+                <p class="stream-description">
+                  ${stream.description}
+                </p>
+
+
+                <a
+                  href="${videoUrl}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-main"
+                >
+
+                  <img
+                    src="logo-youtube-white.png"
+                    alt="YouTube"
+                  >
+
+                  <span>
+                    Oglądaj na YouTube
+                  </span>
+
+                </a>
+
+              </div>
+
+            `;
+
+
+            container.appendChild(
+              card
+            );
+
+          }
+        );
 
       }
 
+
       catch (error) {
 
-        container.innerHTML = `
-          <p style="
-            grid-column:1/-1;
-            text-align:center;
-            color:#888;
-            padding:40px;
-          ">
-            Nie udało się wczytać transmisji.
-          </p>
-        `;
+        container.innerHTML =
+          '<div class="stream-status">Nie udało się wczytać transmisji.</div>';
 
         console.error(error);
 
@@ -979,7 +1085,7 @@
     }
 
 
-    loadBroadcasts();
+    loadStreams();
 
   </script>
 
