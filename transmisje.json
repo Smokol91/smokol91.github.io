@@ -1,21 +1,12 @@
 [
   {
-    "date": "2026-09-27",
-    "displayDate": "27.09.2026",
-    "game": "OMSI 2",
-    "episode": "#190",
-    "title": "Projekt Wrocław - Linia: 119",
-    "videoId": "JZfk7nXXrPI",
-    "description": "Projekt Wrocław, linia 119 w relacji Nowy Dwór Pętla → Sołtysowice oraz Solaris Urbino 18 III generacji w malowaniu MZK Wrocław."
-  },
-  {
     "date": "2026-09-26",
     "displayDate": "26.09.2026",
     "game": "Smokol Hub + ETS2",
     "episode": "",
     "title": "WIELKI START SMOKOL HUB! | Otwieramy społeczność + ETS2 LIVE",
     "videoId": "iqWcGMULhmY",
-    "description": "Zapis specjalnej transmisji z wielkiego startu Smokol Hub, prezentacją nowej społeczności oraz wspólną jazdą w Euro Truck Simulator 2."
+    "description": "Specjalna transmisja z wielkiego startu Smokol Hub. Prezentujemy nową społeczność, zaglądamy na serwer i ruszamy również w trasę w Euro Truck Simulator 2."
   },
   {
     "date": "2026-09-23",
@@ -24,6 +15,15 @@
     "episode": "",
     "title": "Nowa era czy stara bieda?",
     "videoId": "3bAfmjROm5c",
-    "description": "Pierwsze większe spojrzenie na EA SPORTS FC 27. Sprawdzamy zmiany, rozgrywkę i odpowiadamy na pytanie: nowa era czy znowu stara bieda?"
+    "description": "Sprawdzamy EA SPORTS FC 27, najważniejsze zmiany i rozgrywkę. Czy to rzeczywiście nowa era, czy ponownie dobrze znana stara bieda?"
+  },
+  {
+    "date": "2026-09-21",
+    "displayDate": "21.09.2026",
+    "game": "Fernbus Simulator",
+    "episode": "#26",
+    "title": "Kierunek Liverpool | 1/2",
+    "videoId": "UnwH4frfd34",
+    "description": "Ruszamy w kierunku Liverpoolu i sprawdzamy DLC England oraz Tourism W410. Pierwsza część naszej brytyjskiej podróży w Fernbus Simulator."
   }
 ]
