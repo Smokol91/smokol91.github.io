@@ -845,6 +845,21 @@
         #777777;
     }
 
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo {
+      width: 140px;
+      max-height: 50px;
+
+      object-fit: contain;
+      display: block;
+    }
+
 
     /* =========================
        MOBILE
@@ -902,7 +917,8 @@
       }
 
       .live-info h3 {
-        font-size: 1.3rem;
+        font-size:
+          1.3rem;
       }
 
       .community {
@@ -974,7 +990,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=12"
+          src="napis-smokol.png?v=13"
           alt="Smokol"
           class="brand-logo"
         >
@@ -1021,7 +1037,7 @@
 
 
       <img
-        src="logo-smokol.png?v=12"
+        src="logo-smokol.png?v=13"
         alt="Logo kanału Smokol"
         class="hero-logo"
       >
@@ -1818,14 +1834,21 @@
 
   <footer>
 
-    <div class="container">
+    <div class="container footer-content">
 
-      🐲 Smokol —
-      Symulacja to moja pasja
+      <img
+        src="napis-smokol.png"
+        alt="Smokol"
+        class="footer-logo"
+      >
 
-      <br>
+      <span>
+        Symulacja to moja pasja
+      </span>
 
-      © 2026 Smokol
+      <span>
+        © 2026 Smokol
+      </span>
 
     </div>
 
