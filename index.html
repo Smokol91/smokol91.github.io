@@ -507,11 +507,16 @@
     ========================= */
 
     .live-status {
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
-      margin-bottom: 18px;
+      width: 100%;
+
+      margin-bottom: 24px;
+
+      text-align: center;
     }
 
     .live-badge {
@@ -567,14 +572,13 @@
 
     .live-schedule {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      gap: 9px;
 
       text-align: center;
 
-      margin-top: 13px;
-
-      padding-left: 0;
+      margin-top: 12px;
 
       font-family:
         Arial,
@@ -582,26 +586,27 @@
         sans-serif;
 
       line-height: 1.25;
-
       letter-spacing: 0.25px;
+
+      color: #d7d7d7;
     }
 
-    .live-date {
-      color: #f1f1f1;
-
-      font-size: 0.95rem;
-
-      font-weight: 900;
-    }
-
+    .live-date,
     .live-time {
-      color: #ffffff;
-
-      font-size: 0.98rem;
-
+      color: #f1f1f1;
+      font-size: 0.92rem;
       font-weight: 800;
+    }
 
-      margin-top: 2px;
+    .live-date::after {
+      content: "•";
+      margin-left: 9px;
+      color: var(--red-light);
+    }
+
+    .live-date:empty::after {
+      content: "";
+      margin-left: 0;
     }
 
 
@@ -617,34 +622,67 @@
 
       font-size:
         clamp(
-          0.95rem,
+          0.98rem,
           1.25vw,
           1.15rem
         );
 
-      font-weight: 700;
-
-      line-height: 1.25;
-
+      font-weight: 800;
+      line-height: 1.3;
       letter-spacing: -0.15px;
 
       color: #f1f1f1;
 
-      white-space: nowrap;
+      white-space: normal;
 
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .episode-number {
       color: var(--blue);
+      font-weight: 900;
+    }
 
-      font-weight: 800;
+    .live-topic {
+      display: none;
+      align-items: center;
+
+      width: 100%;
+
+      margin: 0 0 20px;
+      padding: 11px 14px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(201, 21, 27, 0.20),
+          rgba(201, 21, 27, 0.035)
+        );
+
+      border-left: 4px solid var(--red);
+      border-radius: 7px;
+
+      color: #ffffff;
+
+      font-size: 0.98rem;
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: 0.2px;
+
+      text-transform: uppercase;
     }
 
     .live-info p {
       color: #bbbbbb;
+      margin-bottom: 24px;
+    }
 
-      margin-bottom: 22px;
+    #latest-live-button {
+      display: flex;
+      width: max-content;
+
+      margin-left: auto;
+      margin-right: auto;
     }
 
 
@@ -977,16 +1015,27 @@
 
       .live-title {
         white-space: normal;
-
         font-size: 1.05rem;
       }
 
-      .live-date {
+      .live-topic {
+        font-size: 0.92rem;
+        padding: 10px 12px;
+      }
+
+      .live-schedule {
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .live-date,
+      .live-time {
         font-size: 0.9rem;
       }
 
-      .live-time {
-        font-size: 0.95rem;
+      #latest-live-button {
+        width: 100%;
+        max-width: 310px;
       }
 
       .community {
@@ -1026,6 +1075,13 @@
 
     }
 
+    .live-title {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
   </style>
 
 </head>
@@ -1298,6 +1354,13 @@
             >
               Ładowanie informacji o transmisji...
             </h3>
+
+
+            <div
+              id="latest-live-topic"
+              class="live-topic"
+            >
+            </div>
 
 
             <p id="latest-live-description">
@@ -1950,6 +2013,11 @@
           "latest-live-title"
         );
 
+      const topic =
+        document.getElementById(
+          "latest-live-topic"
+        );
+
       const description =
         document.getElementById(
           "latest-live-description"
@@ -2115,19 +2183,23 @@
 
 
         time.textContent =
-          `GODZINA ${formattedTime}`;
+          formattedTime;
 
 
         title.innerHTML =
           `LIVE | ${live.game || "Smokol"}${
             live.episode
-              ? ` - <span class="episode-number">${live.episode}</span>`
-              : ""
-          }${
-            live.title
-              ? ` "${live.title}"`
+              ? ` | <span class="episode-number">${live.episode}</span>`
               : ""
           }`;
+
+
+        topic.textContent =
+          live.title || "";
+
+
+        topic.style.display =
+          live.title ? "flex" : "none";
 
 
         description.textContent =
@@ -2300,6 +2372,14 @@
           "Nie udało się wczytać najnowszej transmisji.";
 
 
+        topic.textContent =
+          "";
+
+
+        topic.style.display =
+          "none";
+
+
         description.textContent =
           "Spróbuj odświeżyć stronę za chwilę.";
 
@@ -2324,3 +2404,4 @@
 </body>
 
 </html>
+
