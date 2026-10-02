@@ -53,20 +53,14 @@
 
 
     * {
-      box-sizing:
-        border-box;
-
-      margin:
-        0;
-
-      padding:
-        0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
 
     html {
-      scroll-behavior:
-        smooth;
+      scroll-behavior: smooth;
     }
 
 
@@ -89,14 +83,11 @@
         ),
         var(--black);
 
-      color:
-        var(--text);
+      color: var(--text);
 
-      line-height:
-        1.6;
+      line-height: 1.6;
 
-      min-height:
-        100vh;
+      min-height: 100vh;
 
       text-rendering:
         optimizeLegibility;
@@ -107,17 +98,13 @@
 
 
     a {
-      color:
-        inherit;
-
-      text-decoration:
-        none;
+      color: inherit;
+      text-decoration: none;
     }
 
 
     img {
-      max-width:
-        100%;
+      max-width: 100%;
     }
 
 
@@ -128,8 +115,7 @@
           92%
         );
 
-      margin:
-        auto;
+      margin: auto;
     }
 
 
@@ -142,8 +128,7 @@
           0.78
         );
 
-      color:
-        #ffffff;
+      color: #ffffff;
     }
 
 
@@ -152,11 +137,9 @@
         2px solid
         var(--red-light);
 
-      outline-offset:
-        4px;
+      outline-offset: 4px;
 
-      border-radius:
-        6px;
+      border-radius: 6px;
     }
 
 
@@ -167,14 +150,11 @@
 
 
     nav {
-      position:
-        sticky;
+      position: sticky;
 
-      top:
-        0;
+      top: 0;
 
-      z-index:
-        1000;
+      z-index: 1000;
 
       background:
         rgba(
@@ -210,50 +190,38 @@
 
 
     .nav {
-      min-height:
-        76px;
+      min-height: 76px;
 
-      display:
-        flex;
+      display: flex;
 
       justify-content:
         space-between;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        25px;
+      gap: 25px;
     }
 
 
     .brand {
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      flex-shrink:
-        0;
+      flex-shrink: 0;
     }
 
 
     .brand-logo {
-      width:
-        155px;
+      width: 155px;
 
-      max-height:
-        58px;
+      max-height: 58px;
 
-      object-fit:
-        contain;
+      object-fit: contain;
 
-      display:
-        block;
+      display: block;
 
-      transition:
-        0.2s;
+      transition: 0.2s;
     }
 
 
@@ -277,41 +245,31 @@
 
 
     .nav-links {
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
       justify-content:
         flex-end;
 
-      gap:
-        18px;
+      gap: 18px;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
     }
 
 
     .nav-links a {
-      position:
-        relative;
+      position: relative;
 
-      color:
-        #dddddd;
+      color: #dddddd;
 
-      font-size:
-        0.95rem;
+      font-size: 0.95rem;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      white-space:
-        nowrap;
+      white-space: nowrap;
 
-      transition:
-        0.2s;
+      transition: 0.2s;
     }
 
 
@@ -323,23 +281,17 @@
 
 
     .nav-links a::after {
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      left:
-        50%;
+      left: 50%;
 
-      bottom:
-        -7px;
+      bottom: -7px;
 
-      width:
-        0;
+      width: 0;
 
-      height:
-        2px;
+      height: 2px;
 
       background:
         var(--red);
@@ -354,14 +306,13 @@
 
     .nav-links a:hover::after,
     .nav-links .active::after {
-      width:
-        100%;
+      width: 100%;
     }
 
 
 
     /* =========================
-       NAGŁÓWKI SMOKOL
+       NAGŁÓWKI
     ========================= */
 
 
@@ -372,23 +323,17 @@
         Arial,
         sans-serif;
 
-      font-weight:
-        900;
+      font-weight: 900;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
-      letter-spacing:
-        1px;
+      letter-spacing: 1px;
 
-      line-height:
-        1.02;
+      line-height: 1.02;
 
-      display:
-        inline-block;
+      display: inline-block;
 
-      position:
-        relative;
+      position: relative;
 
       color:
         var(--heading);
@@ -402,26 +347,19 @@
 
 
     .smokol-heading::after {
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      left:
-        8%;
+      left: 8%;
 
-      right:
-        8%;
+      right: 8%;
 
-      bottom:
-        -9px;
+      bottom: -9px;
 
-      height:
-        4px;
+      height: 4px;
 
-      border-radius:
-        100%;
+      border-radius: 100%;
 
       background:
         linear-gradient(
@@ -470,8 +408,7 @@
         0
         48px;
 
-      text-align:
-        center;
+      text-align: center;
     }
 
 
@@ -483,23 +420,18 @@
           4.2rem
         );
 
-      margin-bottom:
-        28px;
+      margin-bottom: 28px;
     }
 
 
     .page-header p {
-      max-width:
-        720px;
+      max-width: 720px;
 
-      margin:
-        auto;
+      margin: auto;
 
-      color:
-        #aaaaaa;
+      color: #aaaaaa;
 
-      line-height:
-        1.75;
+      line-height: 1.75;
     }
 
 
@@ -518,8 +450,7 @@
 
 
     .news-grid {
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
         repeat(
@@ -530,20 +461,16 @@
           )
         );
 
-      gap:
-        24px;
+      gap: 24px;
     }
 
 
     .news-card {
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      min-width:
-        0;
+      min-width: 0;
 
       background:
         linear-gradient(
@@ -562,11 +489,9 @@
         1px solid
         #262626;
 
-      border-radius:
-        18px;
+      border-radius: 18px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
       box-shadow:
         0
@@ -621,11 +546,9 @@
 
 
     .news-image-link {
-      display:
-        block;
+      display: block;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
       aspect-ratio:
         16 / 9;
@@ -636,17 +559,13 @@
 
 
     .news-image {
-      width:
-        100%;
+      width: 100%;
 
-      height:
-        100%;
+      height: 100%;
 
-      object-fit:
-        cover;
+      object-fit: cover;
 
-      display:
-        block;
+      display: block;
 
       transition:
         transform 0.35s var(--ease),
@@ -664,35 +583,26 @@
 
 
     .news-content {
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      flex:
-        1;
+      flex: 1;
 
-      padding:
-        24px;
+      padding: 24px;
     }
 
 
     .news-meta {
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        10px;
+      gap: 10px;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
 
-      margin-bottom:
-        13px;
+      margin-bottom: 13px;
     }
 
 
@@ -701,17 +611,14 @@
         4px
         9px;
 
-      border-radius:
-        7px;
+      border-radius: 7px;
 
       background:
         var(--red);
 
-      font-size:
-        0.74rem;
+      font-size: 0.74rem;
 
-      font-weight:
-        900;
+      font-weight: 900;
     }
 
 
@@ -719,23 +626,18 @@
       color:
         #858585;
 
-      font-size:
-        0.82rem;
+      font-size: 0.82rem;
 
-      font-weight:
-        700;
+      font-weight: 700;
     }
 
 
     .news-card h2 {
-      font-size:
-        1.16rem;
+      font-size: 1.16rem;
 
-      line-height:
-        1.32;
+      line-height: 1.32;
 
-      margin-bottom:
-        12px;
+      margin-bottom: 12px;
 
       color:
         #f2f2f2;
@@ -767,8 +669,7 @@
       margin-bottom:
         22px;
 
-      flex:
-        1;
+      flex: 1;
     }
 
 
@@ -1425,21 +1326,29 @@
           await response.json();
 
 
-        posts.sort(
+        const latestPosts =
+          posts
 
-          (a, b) =>
+            .sort(
 
-            new Date(b.date) -
-            new Date(a.date)
+              (a, b) =>
 
-        );
+                new Date(b.date) -
+                new Date(a.date)
+
+            )
+
+            .slice(
+              0,
+              3
+            );
 
 
         container.innerHTML =
           "";
 
 
-        if (!posts.length) {
+        if (!latestPosts.length) {
 
 
           container.innerHTML = `
@@ -1459,7 +1368,7 @@
         }
 
 
-        posts.forEach(
+        latestPosts.forEach(
 
           (post, index) => {
 
