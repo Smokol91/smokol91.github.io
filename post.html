@@ -1,549 +1,2218 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aktualność | Smokol</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Aktualność | Smokol
+  </title>
 
   <meta
     name="description"
     content="Aktualności i wiadomości z kanału Smokol."
   >
 
+
   <style>
+
     :root {
+
       --red: #c9151b;
       --red-light: #e34b4f;
       --red-dark: #8f0d12;
+
       --heading: #e8e8e8;
+
       --black: #080808;
       --card: #121212;
+
       --text: #ffffff;
       --muted: #aaaaaa;
+
     }
+
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
       padding: 0;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
+
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background:
+
         radial-gradient(
+
           circle at 50% 0%,
-          rgba(200, 0, 0, 0.18),
+
+          rgba(
+            200,
+            0,
+            0,
+            0.18
+          ),
+
           transparent 30%
+
         ),
+
         var(--black);
+
       color: var(--text);
+
       line-height: 1.6;
+
     }
+
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
+
 
     img {
+
       max-width: 100%;
+
     }
+
 
     .container {
-      width: min(1180px, 92%);
+
+      width:
+        min(
+          1180px,
+          92%
+        );
+
       margin: auto;
+
     }
 
-    /* MENU */
+
+
+    /* =========================
+       MENU
+    ========================= */
+
 
     nav {
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
-      background: rgba(7, 7, 7, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(160, 0, 0, 0.35);
+
+      background:
+        rgba(
+          7,
+          7,
+          7,
+          0.96
+        );
+
+      backdrop-filter:
+        blur(12px);
+
+      border-bottom:
+        1px solid
+        rgba(
+          160,
+          0,
+          0,
+          0.35
+        );
+
     }
+
 
     .nav {
+
       min-height: 76px;
+
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       align-items: center;
+
       gap: 25px;
+
     }
+
 
     .brand {
+
       display: flex;
+
       align-items: center;
+
       flex-shrink: 0;
+
     }
+
 
     .brand-logo {
+
       width: 155px;
+
       max-height: 58px;
+
       object-fit: contain;
+
       display: block;
+
       transition: 0.2s;
+
     }
+
 
     .brand-logo:hover {
-      transform: scale(1.04);
-      filter: drop-shadow(0 0 10px rgba(160, 0, 0, 0.35));
+
+      transform:
+        scale(1.04);
+
+      filter:
+        drop-shadow(
+          0
+          0
+          10px
+          rgba(
+            160,
+            0,
+            0,
+            0.35
+          )
+        );
+
     }
+
 
     .nav-links {
+
       display: flex;
+
       align-items: center;
-      justify-content: flex-end;
+
+      justify-content:
+        flex-end;
+
       gap: 18px;
+
       flex-wrap: wrap;
+
     }
 
+
     .nav-links a {
+
       position: relative;
+
       color: #dddddd;
-      font-size: 0.95rem;
+
+      font-size:
+        0.95rem;
+
       font-weight: 700;
+
       white-space: nowrap;
+
       transition: 0.2s;
+
     }
+
 
     .nav-links a:hover,
     .nav-links .active {
-      color: var(--red-light);
+
+      color:
+        var(--red-light);
+
     }
 
+
     .nav-links a::after {
+
       content: "";
+
       position: absolute;
+
       left: 50%;
+
       bottom: -7px;
+
       width: 0;
+
       height: 2px;
-      background: var(--red);
-      transform: translateX(-50%);
-      transition: width 0.2s;
+
+      background:
+        var(--red);
+
+      transform:
+        translateX(-50%);
+
+      transition:
+        width 0.2s;
+
     }
+
 
     .nav-links a:hover::after,
     .nav-links .active::after {
+
       width: 100%;
+
     }
 
-    /* POST */
+
+
+    /* =========================
+       POST
+    ========================= */
+
 
     .post-section {
-      padding: 80px 0 100px;
+
+      padding:
+        80px
+        0
+        100px;
+
     }
+
 
     .post-container {
-      max-width: 1000px;
+
+      max-width:
+        1000px;
+
       margin: auto;
+
     }
+
 
     .back-link {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 25px;
-      color: #aaaaaa;
-      font-weight: 700;
-      transition: 0.2s;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      margin-bottom:
+        25px;
+
+      color:
+        #aaaaaa;
+
+      font-weight:
+        700;
+
+      transition:
+        0.2s;
+
     }
+
 
     .back-link:hover {
-      color: var(--red-light);
+
+      color:
+        var(--red-light);
+
     }
+
 
     .post-card {
+
       background:
+
         linear-gradient(
+
           135deg,
-          rgba(150, 0, 0, 0.10),
+
+          rgba(
+            150,
+            0,
+            0,
+            0.10
+          ),
+
           transparent 55%
+
         ),
+
         var(--card);
-      border: 1px solid rgba(180, 20, 20, 0.35);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+
+      border:
+        1px solid
+        rgba(
+          180,
+          20,
+          20,
+          0.35
+        );
+
+      border-radius:
+        20px;
+
+      overflow:
+        hidden;
+
+      box-shadow:
+
+        0
+        20px
+        60px
+        rgba(
+          0,
+          0,
+          0,
+          0.4
+        );
+
     }
+
 
     .post-image {
+
       width: 100%;
-      aspect-ratio: 16 / 9;
+
+      aspect-ratio:
+        16 / 9;
+
       object-fit: cover;
+
       display: block;
+
     }
+
 
     .post-content {
-      padding: 40px 46px 46px;
+
+      padding:
+        40px
+        46px
+        46px;
+
     }
+
 
     .post-meta {
+
       display: flex;
+
       align-items: center;
+
       gap: 12px;
+
       flex-wrap: wrap;
-      margin-bottom: 18px;
+
+      margin-bottom:
+        18px;
+
     }
+
 
     .post-category {
-      padding: 5px 11px;
-      background: var(--red);
-      border-radius: 7px;
-      font-size: 0.78rem;
-      font-weight: 900;
+
+      padding:
+        5px
+        11px;
+
+      background:
+        var(--red);
+
+      border-radius:
+        7px;
+
+      font-size:
+        0.78rem;
+
+      font-weight:
+        900;
+
     }
+
 
     .post-date {
-      color: #888888;
-      font-size: 0.88rem;
-      font-weight: 700;
+
+      color:
+        #888888;
+
+      font-size:
+        0.88rem;
+
+      font-weight:
+        700;
+
     }
+
 
     .post-title {
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1.2;
-      color: #f1f1f1;
-      margin-bottom: 30px;
+
+      font-size:
+        clamp(
+          1.8rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height:
+        1.2;
+
+      color:
+        #f1f1f1;
+
+      margin-bottom:
+        30px;
+
     }
+
 
     .post-text {
-      color: #c4c4c4;
-      font-size: 1.03rem;
-      line-height: 1.85;
-      white-space: pre-line;
-      margin-bottom: 35px;
+
+      color:
+        #c4c4c4;
+
+      font-size:
+        1.03rem;
+
+      line-height:
+        1.85;
+
+      margin-bottom:
+        35px;
+
     }
+
 
     .post-text a {
-      color: #ffb347;
-      text-decoration: underline;
-      overflow-wrap: anywhere;
+
+      color:
+        #ffb347;
+
+      text-decoration:
+        underline;
+
+      overflow-wrap:
+        anywhere;
+
     }
 
-    /* PRZYCISK YOUTUBE */
+
+
+    /* =========================
+       PIERWSZA LINIA
+    ========================= */
+
+
+    .post-intro-heading {
+
+      display: block;
+
+      margin-bottom:
+        28px;
+
+      color:
+        #ffffff;
+
+      font-size:
+        1.2rem;
+
+      font-weight:
+        900;
+
+      line-height:
+        1.45;
+
+    }
+
+
+
+    /* =========================
+       ŚRÓDTYTUŁY
+    ========================= */
+
+
+    .post-subheading {
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      margin:
+        34px
+        0
+        19px;
+
+      padding:
+        13px
+        17px;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(
+            201,
+            21,
+            27,
+            0.18
+          ),
+
+          rgba(
+            201,
+            21,
+            27,
+            0.025
+          )
+
+        );
+
+      border-left:
+        4px solid
+        var(--red);
+
+      border-radius:
+        7px;
+
+      color:
+        #f2f2f2;
+
+      font-size:
+        1.03rem;
+
+      font-weight:
+        900;
+
+      line-height:
+        1.45;
+
+      letter-spacing:
+        0.2px;
+
+    }
+
+
+    .post-paragraph {
+
+      margin-bottom:
+        22px;
+
+    }
+
+
+    .post-line {
+
+      display: block;
+
+      margin-bottom:
+        6px;
+
+    }
+
+
+
+    /* =========================
+       PRZYCISKI
+    ========================= */
+
+
+    .post-buttons {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+
+      margin-top:
+        8px;
+
+    }
+
+
+
+    /* =========================
+       YOUTUBE
+    ========================= */
+
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
       gap: 10px;
-      min-height: 54px;
-      padding: 11px 22px;
-      background: var(--red);
-      border: 1px solid var(--red);
-      border-radius: 10px;
-      color: #ffffff;
-      font-weight: 900;
-      transition: 0.2s;
+
+      min-height:
+        54px;
+
+      padding:
+        11px
+        22px;
+
+      background:
+        var(--red);
+
+      border:
+        1px solid
+        var(--red);
+
+      border-radius:
+        10px;
+
+      color:
+        #ffffff;
+
+      font-weight:
+        900;
+
+      transition:
+
+        transform 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+
     }
+
 
     .btn:hover {
-      transform: translateY(-2px);
-      background: #dd1b22;
-      box-shadow: 0 8px 25px rgba(150, 0, 0, 0.25);
+
+      transform:
+        translateY(-2px);
+
+      background:
+        #dd1b22;
+
+      box-shadow:
+
+        0
+        8px
+        25px
+        rgba(
+          150,
+          0,
+          0,
+          0.25
+        );
+
     }
+
 
     .btn img {
+
       width: 30px;
+
       height: 30px;
+
       object-fit: contain;
+
     }
+
+
+
+    /* =========================
+       STEAM
+    ========================= */
+
+
+    .btn-steam {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap: 11px;
+
+      min-height:
+        54px;
+
+      padding:
+        11px
+        22px;
+
+      background:
+
+        linear-gradient(
+
+          135deg,
+
+          #1b2838 0%,
+
+          #16202d 48%,
+
+          #0e141b 100%
+
+        );
+
+      border:
+        1px solid
+        rgba(
+          102,
+          192,
+          244,
+          0.45
+        );
+
+      border-radius:
+        10px;
+
+      color:
+        #ffffff;
+
+      font-weight:
+        900;
+
+      box-shadow:
+
+        inset
+        0
+        1px
+        0
+        rgba(
+          255,
+          255,
+          255,
+          0.05
+        ),
+
+        0
+        6px
+        20px
+        rgba(
+          0,
+          0,
+          0,
+          0.22
+        );
+
+      transition:
+
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+
+    }
+
+
+    .btn-steam:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+
+        linear-gradient(
+
+          135deg,
+
+          #20364a 0%,
+
+          #1b4059 50%,
+
+          #132838 100%
+
+        );
+
+      border-color:
+        #66c0f4;
+
+      box-shadow:
+
+        0
+        8px
+        26px
+        rgba(
+          0,
+          0,
+          0,
+          0.35
+        ),
+
+        0
+        0
+        18px
+        rgba(
+          102,
+          192,
+          244,
+          0.18
+        );
+
+    }
+
+
+    .btn-steam img {
+
+      width: 30px;
+
+      height: 30px;
+
+      object-fit:
+        contain;
+
+      flex-shrink: 0;
+
+    }
+
+
+
+    /* =========================
+       STATUS
+    ========================= */
+
 
     .status {
-      text-align: center;
-      color: #888888;
-      padding: 80px 20px;
+
+      text-align:
+        center;
+
+      color:
+        #888888;
+
+      padding:
+        80px
+        20px;
+
     }
 
-    /* STOPKA */
+
+
+    /* =========================
+       STOPKA
+    ========================= */
+
 
     footer {
-      padding: 35px 0;
-      text-align: center;
-      border-top: 1px solid #222222;
-      background: #050505;
-      color: #777777;
+
+      padding:
+        35px
+        0;
+
+      text-align:
+        center;
+
+      border-top:
+        1px solid
+        #222222;
+
+      background:
+        #050505;
+
+      color:
+        #777777;
+
     }
+
 
     .footer-content {
+
       display: flex;
-      flex-direction: column;
-      align-items: center;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
       gap: 8px;
+
     }
+
 
     .footer-logo {
-      width: 140px;
-      max-height: 50px;
-      object-fit: contain;
-      display: block;
+
+      width:
+        140px;
+
+      max-height:
+        50px;
+
+      object-fit:
+        contain;
+
+      display:
+        block;
+
     }
 
-    /* TABLET */
 
-    @media (max-width: 1050px) {
+
+    /* =========================
+       TABLET
+    ========================= */
+
+
+    @media (
+      max-width:
+      1050px
+    ) {
+
       .nav {
-        flex-direction: column;
-        justify-content: center;
-        padding: 14px 0 17px;
+
+        flex-direction:
+          column;
+
+        justify-content:
+          center;
+
+        padding:
+          14px
+          0
+          17px;
+
       }
+
 
       .nav-links {
-        justify-content: center;
+
+        justify-content:
+          center;
+
       }
+
     }
 
-    /* MOBILE */
 
-    @media (max-width: 760px) {
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+
+    @media (
+      max-width:
+      760px
+    ) {
+
       .nav {
-        padding: 16px 0;
+
+        padding:
+          16px
+          0;
+
       }
+
 
       .brand-logo {
-        width: 145px;
+
+        width:
+          145px;
+
       }
+
 
       .nav-links {
-        justify-content: center;
-        gap: 12px 14px;
+
+        justify-content:
+          center;
+
+        gap:
+          12px
+          14px;
+
       }
+
 
       .nav-links a {
-        font-size: 0.88rem;
+
+        font-size:
+          0.88rem;
+
       }
+
 
       .post-section {
-        padding: 55px 0 75px;
+
+        padding:
+          55px
+          0
+          75px;
+
       }
+
 
       .post-content {
-        padding: 27px 22px 32px;
+
+        padding:
+          27px
+          22px
+          32px;
+
       }
+
 
       .post-title {
-        font-size: 1.65rem;
+
+        font-size:
+          1.65rem;
+
       }
+
 
       .post-text {
-        font-size: 0.97rem;
-        line-height: 1.75;
+
+        font-size:
+          0.97rem;
+
+        line-height:
+          1.75;
+
       }
 
-      .btn {
-        width: 100%;
+
+      .post-intro-heading {
+
+        font-size:
+          1.08rem;
+
       }
+
+
+      .post-subheading {
+
+        margin:
+          28px
+          0
+          17px;
+
+        padding:
+          12px
+          14px;
+
+        font-size:
+          0.96rem;
+
+      }
+
+
+      .post-buttons {
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+        gap:
+          12px;
+
+      }
+
+
+      .btn,
+      .btn-steam {
+
+        width:
+          100%;
+
+      }
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
-  <!-- MENU -->
+
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
 
   <nav>
+
     <div class="container nav">
-      <a href="index.html" class="brand">
+
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
         <img
           src="napis-smokol.png?v=28"
           alt="Smokol"
           class="brand-logo"
         >
+
       </a>
 
+
+
       <div class="nav-links">
-        <a href="aktualnosci.html" class="active">
+
+        <a
+          href="aktualnosci.html"
+          class="active"
+        >
           Aktualności
         </a>
 
+
         <a href="index.html#live">
+
           Live
+
         </a>
+
 
         <a href="transmisje.html">
+
           Ostatnie transmisje
+
         </a>
+
 
         <a href="index.html#serie">
+
           Serie
+
         </a>
+
 
         <a href="index.html#hub">
+
           Smokol Hub
+
         </a>
+
 
         <a href="index.html#baza">
+
           Baza Smokola
+
         </a>
+
 
         <a href="index.html#linki">
+
           Linki
+
         </a>
+
       </div>
+
+
     </div>
+
   </nav>
 
-  <!-- POST -->
+
+
+  <!-- =========================
+       POST
+  ========================= -->
+
 
   <main>
+
     <section class="post-section">
+
       <div class="container">
+
         <div class="post-container">
-          <a href="aktualnosci.html" class="back-link">
+
+
+          <a
+            href="aktualnosci.html"
+            class="back-link"
+          >
+
             ← Wróć do aktualności
+
           </a>
 
+
+
           <div id="post-area">
+
             <div class="status">
+
               Ładowanie posta...
+
             </div>
+
           </div>
+
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <!-- STOPKA -->
+
+
+  <!-- =========================
+       STOPKA
+  ========================= -->
+
 
   <footer>
+
     <div class="container footer-content">
+
+
       <img
         src="napis-smokol.png?v=28"
         alt="Smokol"
         class="footer-logo"
       >
 
-      <span>
-        Symulacja to moja pasja
-      </span>
 
       <span>
-        © 2026 Smokol
+
+        Symulacja to moja pasja
+
       </span>
+
+
+      <span>
+
+        © 2026 Smokol
+
+      </span>
+
+
     </div>
+
   </footer>
 
-  <!-- WCZYTYWANIE POSTA -->
+
+
+  <!-- =========================
+       POST SCRIPT
+  ========================= -->
+
 
   <script>
+
+
     async function loadPost() {
-      const area = document.getElementById("post-area");
-      const params = new URLSearchParams(window.location.search);
-      const postId = params.get("id");
+
+
+      const area =
+        document.getElementById(
+          "post-area"
+        );
+
+
+      const params =
+        new URLSearchParams(
+          window.location.search
+        );
+
+
+      const postId =
+        params.get("id");
+
+
+
+      /* =========================
+         BRAK ID
+      ========================= */
+
 
       if (!postId) {
+
+
         area.innerHTML =
+
           '<div class="status">Nie znaleziono posta.</div>';
+
+
         return;
+
+
       }
+
+
 
       try {
-        const response = await fetch("./posts.json?version=3");
 
-        if (!response.ok) {
-          throw new Error("Nie udało się pobrać posts.json");
-        }
 
-        const posts = await response.json();
-        const post = posts.find(item => item.id === postId);
 
-        if (!post) {
-          area.innerHTML =
-            '<div class="status">Nie znaleziono posta.</div>';
-          return;
-        }
+        /* =========================
+           POSTS.JSON
+        ========================= */
 
-        document.title = `${post.title} | Smokol`;
 
-        area.innerHTML = `
-          <article class="post-card">
-            <img
-              src="${post.image}"
-              alt="${post.title}"
-              class="post-image"
-            >
-
-            <div class="post-content">
-              <div class="post-meta">
-                <span class="post-category">
-                  ${post.category}
-                </span>
-
-                <span class="post-date">
-                  ${post.displayDate}
-                </span>
-              </div>
-
-              <h1 class="post-title">
-                ${post.title}
-              </h1>
-
-              <div
-                id="post-text"
-                class="post-text"
-              ></div>
-
-              <a
-                href="${post.link}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-              >
-                <img
-                  src="logo-youtube-white.png"
-                  alt="YouTube"
-                >
-
-                <span>
-                  ${post.button}
-                </span>
-              </a>
-            </div>
-          </article>
-        `;
-
-        const postText = document.getElementById("post-text");
-        const text = String(post.text || "");
-        const urlPattern = /https?:\/\/[^\s<>"']+/g;
-        let cursor = 0;
-
-        for (const match of text.matchAll(urlPattern)) {
-          postText.appendChild(
-            document.createTextNode(
-              text.slice(cursor, match.index)
-            )
+        const response =
+          await fetch(
+            "./posts.json?version=4"
           );
 
-          const link = document.createElement("a");
-          link.href = match[0];
-          link.textContent = match[0];
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
 
-          postText.appendChild(link);
-          cursor = match.index + match[0].length;
+
+        if (!response.ok) {
+
+
+          throw new Error(
+
+            "Nie udało się pobrać posts.json"
+
+          );
+
+
         }
 
-        postText.appendChild(
-          document.createTextNode(text.slice(cursor))
+
+
+        const posts =
+          await response.json();
+
+
+
+        const post =
+          posts.find(
+
+            item =>
+              item.id === postId
+
+          );
+
+
+
+        /* =========================
+           POST NIE ISTNIEJE
+        ========================= */
+
+
+        if (!post) {
+
+
+          area.innerHTML =
+
+            '<div class="status">Nie znaleziono posta.</div>';
+
+
+          return;
+
+
+        }
+
+
+
+        /* =========================
+           TYTUŁ STRONY
+        ========================= */
+
+
+        document.title =
+
+          `${post.title} | Smokol`;
+
+
+
+        /* =========================
+           KARTA POSTA
+        ========================= */
+
+
+        area.innerHTML = `
+
+
+          <article class="post-card">
+
+
+            <img
+
+              src="${post.image}"
+
+              alt="${post.title}"
+
+              class="post-image"
+
+            >
+
+
+
+            <div class="post-content">
+
+
+
+              <div class="post-meta">
+
+
+                <span class="post-category">
+
+                  ${post.category}
+
+                </span>
+
+
+
+                <span class="post-date">
+
+                  ${post.displayDate}
+
+                </span>
+
+
+              </div>
+
+
+
+              <h1 class="post-title">
+
+                ${post.title}
+
+              </h1>
+
+
+
+              <div
+
+                id="post-text"
+
+                class="post-text"
+
+              ></div>
+
+
+
+              <div
+
+                id="post-buttons"
+
+                class="post-buttons"
+
+              >
+
+
+
+                ${
+                  post.link
+                    ? `
+
+                      <a
+
+                        href="${post.link}"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+
+                        class="btn"
+
+                      >
+
+
+                        <img
+
+                          src="logo-youtube-white.png"
+
+                          alt="YouTube"
+
+                        >
+
+
+                        <span>
+
+                          ${
+                            post.button ||
+                            "Oglądaj na YouTube"
+                          }
+
+                        </span>
+
+
+                      </a>
+
+                    `
+                    : ""
+                }
+
+
+
+              </div>
+
+
+            </div>
+
+
+          </article>
+
+
+        `;
+
+
+
+        const postText =
+          document.getElementById(
+            "post-text"
+          );
+
+
+        const postButtons =
+          document.getElementById(
+            "post-buttons"
+          );
+
+
+        const text =
+          String(
+            post.text || ""
+          );
+
+
+
+        let steamLink =
+          null;
+
+
+
+        /* =========================
+           LINKI W TEKŚCIE
+        ========================= */
+
+
+        function appendTextWithLinks(
+
+          container,
+
+          value
+
+        ) {
+
+
+          const urlPattern =
+
+            /https?:\/\/[^\s<>"']+/g;
+
+
+          let cursor = 0;
+
+
+
+          for (
+
+            const match
+            of value.matchAll(
+              urlPattern
+            )
+
+          ) {
+
+
+            container.appendChild(
+
+              document.createTextNode(
+
+                value.slice(
+
+                  cursor,
+
+                  match.index
+
+                )
+
+              )
+
+            );
+
+
+
+            const url =
+              match[0];
+
+
+
+            let parsedUrl =
+              null;
+
+
+
+            try {
+
+
+              parsedUrl =
+                new URL(url);
+
+
+            }
+
+
+            catch (error) {
+
+
+              parsedUrl =
+                null;
+
+
+            }
+
+
+
+            const hostname =
+
+              parsedUrl
+                ? parsedUrl.hostname
+                    .toLowerCase()
+                : "";
+
+
+
+            const isSteam =
+
+              hostname ===
+                "store.steampowered.com" ||
+
+              hostname ===
+                "www.store.steampowered.com";
+
+
+
+            /* =========================
+               STEAM
+            ========================= */
+
+
+            if (isSteam) {
+
+
+              if (!steamLink) {
+
+
+                steamLink =
+                  url;
+
+
+              }
+
+
+            }
+
+
+
+            /* =========================
+               ZWYKŁY LINK
+            ========================= */
+
+
+            else {
+
+
+              const link =
+                document.createElement(
+                  "a"
+                );
+
+
+              link.href =
+                url;
+
+
+              link.textContent =
+                url;
+
+
+              link.target =
+                "_blank";
+
+
+              link.rel =
+                "noopener noreferrer";
+
+
+              container.appendChild(
+                link
+              );
+
+
+            }
+
+
+
+            cursor =
+
+              match.index +
+              url.length;
+
+
+          }
+
+
+
+          container.appendChild(
+
+            document.createTextNode(
+
+              value.slice(cursor)
+
+            )
+
+          );
+
+
+        }
+
+
+
+        /* =========================
+           ANALIZA LINII
+        ========================= */
+
+
+        const lines =
+          text.split("\n");
+
+
+
+        let introCreated =
+          false;
+
+
+
+        let paragraphLines =
+          [];
+
+
+
+        function flushParagraph() {
+
+
+          if (
+            paragraphLines.length === 0
+          ) {
+
+            return;
+
+          }
+
+
+
+          const paragraph =
+            document.createElement(
+              "div"
+            );
+
+
+          paragraph.className =
+            "post-paragraph";
+
+
+
+          paragraphLines.forEach(
+
+            line => {
+
+
+              const lineElement =
+                document.createElement(
+                  "span"
+                );
+
+
+              lineElement.className =
+                "post-line";
+
+
+              appendTextWithLinks(
+
+                lineElement,
+
+                line
+
+              );
+
+
+              paragraph.appendChild(
+                lineElement
+              );
+
+
+            }
+
+          );
+
+
+
+          postText.appendChild(
+            paragraph
+          );
+
+
+
+          paragraphLines = [];
+
+
+        }
+
+
+
+        lines.forEach(
+
+          rawLine => {
+
+
+            const line =
+              rawLine.trim();
+
+
+
+            /* =========================
+               PUSTA LINIA
+            ========================= */
+
+
+            if (!line) {
+
+
+              flushParagraph();
+
+
+              return;
+
+
+            }
+
+
+
+            /* =========================
+               PIERWSZA LINIA
+            ========================= */
+
+
+            if (!introCreated) {
+
+
+              flushParagraph();
+
+
+
+              const intro =
+                document.createElement(
+                  "div"
+                );
+
+
+              intro.className =
+                "post-intro-heading";
+
+
+              appendTextWithLinks(
+
+                intro,
+
+                line
+
+              );
+
+
+              postText.appendChild(
+                intro
+              );
+
+
+              introCreated =
+                true;
+
+
+              return;
+
+
+            }
+
+
+
+            /* =========================
+               WYKRYWANIE ŚRÓDTYTUŁU
+            ========================= */
+
+
+            const letters =
+
+              line.replace(
+
+                /[^A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/g,
+
+                ""
+
+              );
+
+
+
+            const upperLetters =
+
+              letters.replace(
+
+                /[^A-ZĄĆĘŁŃÓŚŹŻ]/g,
+
+                ""
+
+              );
+
+
+
+            const uppercaseRatio =
+
+              letters.length > 0
+
+                ?
+
+                upperLetters.length /
+                letters.length
+
+                :
+
+                0;
+
+
+
+            const isSubheading =
+
+              line.length <= 100 &&
+
+              uppercaseRatio >= 0.68 &&
+
+              !line.startsWith("http") &&
+
+              !line.endsWith(".") &&
+
+              !line.endsWith(",") &&
+
+              !line.endsWith(";");
+
+
+
+            if (isSubheading) {
+
+
+              flushParagraph();
+
+
+
+              const heading =
+                document.createElement(
+                  "div"
+                );
+
+
+              heading.className =
+                "post-subheading";
+
+
+              appendTextWithLinks(
+
+                heading,
+
+                line
+
+              );
+
+
+              postText.appendChild(
+                heading
+              );
+
+
+              return;
+
+
+            }
+
+
+
+            /* =========================
+               ZWYKŁA LINIA
+            ========================= */
+
+
+            paragraphLines.push(
+              line
+            );
+
+
+          }
+
         );
-      } catch (error) {
+
+
+
+        flushParagraph();
+
+
+
+        /* =========================
+           STEAM BUTTON
+        ========================= */
+
+
+        if (steamLink) {
+
+
+          const steamButton =
+            document.createElement(
+              "a"
+            );
+
+
+          steamButton.href =
+            steamLink;
+
+
+          steamButton.target =
+            "_blank";
+
+
+          steamButton.rel =
+            "noopener noreferrer";
+
+
+          steamButton.className =
+            "btn-steam";
+
+
+
+          const steamLogo =
+            document.createElement(
+              "img"
+            );
+
+
+          steamLogo.src =
+            "logo-steam.png";
+
+
+          steamLogo.alt =
+            "Steam";
+
+
+
+          const steamLabel =
+            document.createElement(
+              "span"
+            );
+
+
+          steamLabel.textContent =
+            "Zobacz na Steam";
+
+
+
+          steamButton.appendChild(
+            steamLogo
+          );
+
+
+          steamButton.appendChild(
+            steamLabel
+          );
+
+
+          postButtons.appendChild(
+            steamButton
+          );
+
+
+        }
+
+
+
+        /* =========================
+           BRAK PRZYCISKÓW
+        ========================= */
+
+
+        if (
+          postButtons.children.length === 0
+        ) {
+
+
+          postButtons.style.display =
+            "none";
+
+
+        }
+
+
+
+      }
+
+
+      catch (error) {
+
+
         area.innerHTML =
+
           '<div class="status">Nie udało się wczytać posta.</div>';
 
+
+
         console.error(error);
+
+
       }
+
+
     }
 
+
+
     loadPost();
+
+
   </script>
+
+
 </body>
+
 </html>
