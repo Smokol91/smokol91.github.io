@@ -23,12 +23,9 @@
       --red: #c9151b;
       --red-light: #e34b4f;
       --red-dark: #8f0d12;
-
       --heading: #e8e8e8;
-
       --black: #080808;
       --card: #121212;
-
       --text: #ffffff;
       --muted: #aaaaaa;
 
@@ -74,7 +71,8 @@
 
       min-height: 100vh;
 
-      text-rendering: optimizeLegibility;
+      text-rendering:
+        optimizeLegibility;
 
       -webkit-font-smoothing:
         antialiased;
@@ -516,6 +514,15 @@
           0,
           0,
           0.38
+        ),
+        0
+        0
+        22px
+        rgba(
+          201,
+          21,
+          27,
+          0.07
         );
     }
 
@@ -592,6 +599,8 @@
       background:
         var(--red);
 
+      color: #ffffff;
+
       font-size: 0.74rem;
 
       font-weight: 900;
@@ -615,7 +624,8 @@
 
       margin-bottom: 11px;
 
-      color: #f2f2f2;
+      color:
+        #f2f2f2;
     }
 
 
@@ -626,25 +636,23 @@
 
       line-height: 1.68;
 
-      margin-bottom: 19px;
+      margin-bottom: 22px;
 
       flex: 1;
     }
 
 
+
+    /* =========================
+       OGLĄDAJ NA YOUTUBE
+    ========================= */
+
+
     .stream-actions {
       display: flex;
 
-      gap: 10px;
-
-      flex-wrap: wrap;
+      width: 100%;
     }
-
-
-
-    /* =========================
-       YOUTUBE
-    ========================= */
 
 
     .btn {
@@ -656,7 +664,9 @@
 
       gap: 10px;
 
-      min-height: 50px;
+      width: 100%;
+
+      min-height: 52px;
 
       padding:
         10px
@@ -671,9 +681,23 @@
       background:
         var(--red);
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
       font-weight: 900;
+
+      text-align: center;
+
+      box-shadow:
+        0
+        7px
+        20px
+        rgba(
+          0,
+          0,
+          0,
+          0.20
+        );
 
       transition:
         transform 0.2s,
@@ -697,7 +721,7 @@
           150,
           0,
           0,
-          0.23
+          0.28
         );
     }
 
@@ -708,58 +732,8 @@
       height: 28px;
 
       object-fit: contain;
-    }
 
-
-
-    /* =========================
-       SZCZEGÓŁY
-    ========================= */
-
-
-    .btn-secondary {
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      min-height: 46px;
-
-      padding:
-        9px
-        15px;
-
-      border:
-        1px solid
-        #555555;
-
-      border-radius: 7px;
-
-      background:
-        transparent;
-
-      color: #d7d7d7;
-
-      font-weight: 800;
-
-      transition:
-        0.2s;
-    }
-
-
-    .btn-secondary:hover {
-      border-color:
-        #888888;
-
-      background:
-        #1d1d1d;
-
-      color:
-        #ffffff;
-
-      transform:
-        translateY(-1px);
+      flex-shrink: 0;
     }
 
 
@@ -784,6 +758,8 @@
 
 
     .status-error {
+      padding: 22px;
+
       border:
         1px solid
         rgba(
@@ -802,8 +778,6 @@
           27,
           0.06
         );
-
-      padding: 22px;
     }
 
 
@@ -947,14 +921,12 @@
 
 
       .brand-logo {
-        width:
-          145px;
+        width: 145px;
       }
 
 
       .nav-links {
-        justify-content:
-          center;
+        justify-content: center;
 
         gap:
           12px
@@ -963,8 +935,7 @@
 
 
       .nav-links a {
-        font-size:
-          0.86rem;
+        font-size: 0.86rem;
       }
 
 
@@ -977,8 +948,7 @@
 
 
       .page-header h1 {
-        font-size:
-          2.35rem;
+        font-size: 2.35rem;
       }
 
     }
@@ -996,20 +966,7 @@
 
 
       .stream-body {
-        padding:
-          21px;
-      }
-
-
-      .stream-actions {
-        flex-direction:
-          column;
-      }
-
-
-      .stream-actions > * {
-        width:
-          100%;
+        padding: 21px;
       }
 
     }
@@ -1225,7 +1182,7 @@
 
 
   <!-- =========================
-       POSTS.JSON + LIVE.JSON
+       AUTOMATYKA TRANSMISJI
   ========================= -->
 
 
@@ -1246,7 +1203,7 @@
 
 
         /* =========================
-           WCZYTANIE POSTS + LIVE
+           POSTS.JSON + LIVE.JSON
         ========================= */
 
 
@@ -1326,7 +1283,7 @@
 
 
         /* =========================
-           WYCIĄGANIE ID YOUTUBE
+           ID YOUTUBE
         ========================= */
 
 
@@ -1336,7 +1293,9 @@
 
 
           if (!url) {
+
             return "";
+
           }
 
 
@@ -1347,15 +1306,21 @@
               new URL(url);
 
 
+            const hostname =
+              parsed.hostname
+                .toLowerCase();
+
+
             if (
-              parsed.hostname ===
+              hostname ===
                 "youtu.be" ||
-              parsed.hostname ===
+              hostname ===
                 "www.youtu.be"
             ) {
 
               return parsed.pathname
-                .replace("/", "")
+                .replace(/^\/+/, "")
+                .split("/")[0]
                 .trim();
 
             }
@@ -1375,16 +1340,15 @@
             }
 
 
-            if (
-              parsed.pathname.startsWith(
-                "/watch"
-              )
-            ) {
+            const watchId =
+              parsed.searchParams.get(
+                "v"
+              );
 
-              return (
-                parsed.searchParams.get("v") ||
-                ""
-              ).trim();
+
+            if (watchId) {
+
+              return watchId.trim();
 
             }
 
@@ -1406,7 +1370,7 @@
 
 
         /* =========================
-           FILTROWANIE
+           3 POPRZEDNIE LIVE
         ========================= */
 
 
@@ -1428,7 +1392,9 @@
 
 
                 if (!isLive) {
+
                   return false;
+
                 }
 
 
@@ -1438,17 +1404,6 @@
                     post.link
                   );
 
-
-
-                /*
-                  NAJWAŻNIEJSZE:
-
-                  Jeżeli transmisja
-                  jest aktualnie
-                  ustawiona w live.json,
-                  NIE pokazujemy jej
-                  w Ostatnich transmisjach.
-                */
 
 
                 if (
@@ -1476,6 +1431,11 @@
                 new Date(b.date) -
                 new Date(a.date)
 
+            )
+
+            .slice(
+              0,
+              3
             );
 
 
@@ -1532,15 +1492,6 @@
                 index * 45,
                 180
               ) + "ms";
-
-
-
-            const detailUrl =
-
-              "post.html?id=" +
-              encodeURIComponent(
-                post.id
-              );
 
 
 
@@ -1620,19 +1571,16 @@
                       alt="YouTube"
                     >
 
+
                     <span>
-                      Obejrzyj
+
+                      ${
+                        post.button ||
+                        "Oglądaj na YouTube"
+                      }
+
                     </span>
 
-                  </a>
-
-
-                  <a
-                    class="btn-secondary"
-                    href="${detailUrl}"
-                  >
-
-                    Zobacz szczegóły
 
                   </a>
 
@@ -1693,7 +1641,7 @@
 
 
     /* =========================
-       ANIMACJA
+       ANIMACJE
     ========================= */
 
 
