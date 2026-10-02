@@ -23,9 +23,12 @@
       --red: #c9151b;
       --red-light: #e34b4f;
       --red-dark: #8f0d12;
+
       --heading: #e8e8e8;
+
       --black: #080808;
       --card: #121212;
+
       --text: #ffffff;
       --muted: #aaaaaa;
 
@@ -40,14 +43,20 @@
 
 
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      box-sizing:
+        border-box;
+
+      margin:
+        0;
+
+      padding:
+        0;
     }
 
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior:
+        smooth;
     }
 
 
@@ -60,16 +69,24 @@
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(200, 0, 0, 0.16),
+          rgba(
+            200,
+            0,
+            0,
+            0.16
+          ),
           transparent 30%
         ),
         var(--black);
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      line-height: 1.6;
+      line-height:
+        1.6;
 
-      min-height: 100vh;
+      min-height:
+        100vh;
 
       text-rendering:
         optimizeLegibility;
@@ -80,13 +97,17 @@
 
 
     a {
-      color: inherit;
-      text-decoration: none;
+      color:
+        inherit;
+
+      text-decoration:
+        none;
     }
 
 
     img {
-      max-width: 100%;
+      max-width:
+        100%;
     }
 
 
@@ -97,7 +118,8 @@
           92%
         );
 
-      margin: auto;
+      margin:
+        auto;
     }
 
 
@@ -110,7 +132,8 @@
           0.78
         );
 
-      color: #ffffff;
+      color:
+        #ffffff;
     }
 
 
@@ -119,9 +142,11 @@
         2px solid
         var(--red-light);
 
-      outline-offset: 4px;
+      outline-offset:
+        4px;
 
-      border-radius: 6px;
+      border-radius:
+        6px;
     }
 
 
@@ -132,11 +157,14 @@
 
 
     nav {
-      position: sticky;
+      position:
+        sticky;
 
-      top: 0;
+      top:
+        0;
 
-      z-index: 1000;
+      z-index:
+        1000;
 
       background:
         rgba(
@@ -172,38 +200,50 @@
 
 
     .nav {
-      min-height: 76px;
+      min-height:
+        76px;
 
-      display: flex;
+      display:
+        flex;
 
       justify-content:
         space-between;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 25px;
+      gap:
+        25px;
     }
 
 
     .brand {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      flex-shrink: 0;
+      flex-shrink:
+        0;
     }
 
 
     .brand-logo {
-      width: 155px;
+      width:
+        155px;
 
-      max-height: 58px;
+      max-height:
+        58px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
-      display: block;
+      display:
+        block;
 
-      transition: 0.2s;
+      transition:
+        0.2s;
     }
 
 
@@ -227,31 +267,41 @@
 
 
     .nav-links {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
       justify-content:
         flex-end;
 
-      gap: 18px;
+      gap:
+        18px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
     }
 
 
     .nav-links a {
-      position: relative;
+      position:
+        relative;
 
-      color: #dddddd;
+      color:
+        #dddddd;
 
-      font-size: 0.95rem;
+      font-size:
+        0.95rem;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      white-space: nowrap;
+      white-space:
+        nowrap;
 
-      transition: 0.2s;
+      transition:
+        0.2s;
     }
 
 
@@ -263,17 +313,23 @@
 
 
     .nav-links a::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 50%;
+      left:
+        50%;
 
-      bottom: -7px;
+      bottom:
+        -7px;
 
-      width: 0;
+      width:
+        0;
 
-      height: 2px;
+      height:
+        2px;
 
       background:
         var(--red);
@@ -288,7 +344,8 @@
 
     .nav-links a:hover::after,
     .nav-links .active::after {
-      width: 100%;
+      width:
+        100%;
     }
 
 
@@ -305,17 +362,23 @@
         Arial,
         sans-serif;
 
-      font-weight: 900;
+      font-weight:
+        900;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      letter-spacing: 1px;
+      letter-spacing:
+        1px;
 
-      line-height: 1.02;
+      line-height:
+        1.02;
 
-      display: inline-block;
+      display:
+        inline-block;
 
-      position: relative;
+      position:
+        relative;
 
       color:
         var(--heading);
@@ -329,19 +392,26 @@
 
 
     .smokol-heading::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 8%;
+      left:
+        8%;
 
-      right: 8%;
+      right:
+        8%;
 
-      bottom: -9px;
+      bottom:
+        -9px;
 
-      height: 4px;
+      height:
+        4px;
 
-      border-radius: 100%;
+      border-radius:
+        100%;
 
       background:
         linear-gradient(
@@ -390,7 +460,8 @@
         0
         48px;
 
-      text-align: center;
+      text-align:
+        center;
     }
 
 
@@ -402,18 +473,23 @@
           4.2rem
         );
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
     }
 
 
     .page-header p {
-      max-width: 720px;
+      max-width:
+        720px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      color: #aaaaaa;
+      color:
+        #aaaaaa;
 
-      line-height: 1.75;
+      line-height:
+        1.75;
     }
 
 
@@ -432,7 +508,8 @@
 
 
     .streams-grid {
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         repeat(
@@ -443,16 +520,20 @@
           )
         );
 
-      gap: 24px;
+      gap:
+        24px;
     }
 
 
     .stream-card {
-      display: flex;
+      display:
+        flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      min-width: 0;
+      min-width:
+        0;
 
       background:
         linear-gradient(
@@ -471,9 +552,11 @@
         1px solid
         #262626;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
       box-shadow:
         0
@@ -528,12 +611,14 @@
 
 
     .stream-thumb {
-      display: block;
+      display:
+        block;
 
       aspect-ratio:
         16 / 9;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
       background:
         #0b0b0b;
@@ -541,13 +626,17 @@
 
 
     .stream-thumb img {
-      width: 100%;
+      width:
+        100%;
 
-      height: 100%;
+      height:
+        100%;
 
-      object-fit: cover;
+      object-fit:
+        cover;
 
-      display: block;
+      display:
+        block;
 
       transition:
         transform 0.35s var(--ease),
@@ -566,26 +655,35 @@
 
 
     .stream-body {
-      display: flex;
+      display:
+        flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      flex: 1;
+      flex:
+        1;
 
-      padding: 23px;
+      padding:
+        23px;
     }
 
 
     .stream-meta {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 9px;
+      gap:
+        9px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
     }
 
 
@@ -594,16 +692,20 @@
         4px
         9px;
 
-      border-radius: 7px;
+      border-radius:
+        7px;
 
       background:
         var(--red);
 
-      color: #ffffff;
+      color:
+        #ffffff;
 
-      font-size: 0.74rem;
+      font-size:
+        0.74rem;
 
-      font-weight: 900;
+      font-weight:
+        900;
     }
 
 
@@ -611,18 +713,23 @@
       color:
         #858585;
 
-      font-size: 0.82rem;
+      font-size:
+        0.82rem;
 
-      font-weight: 700;
+      font-weight:
+        700;
     }
 
 
     .stream-card h2 {
-      font-size: 1.15rem;
+      font-size:
+        1.15rem;
 
-      line-height: 1.32;
+      line-height:
+        1.32;
 
-      margin-bottom: 11px;
+      margin-bottom:
+        11px;
 
       color:
         #f2f2f2;
@@ -630,49 +737,63 @@
 
 
     .stream-card p {
-      color: #aaaaaa;
+      color:
+        #aaaaaa;
 
-      font-size: 0.93rem;
+      font-size:
+        0.93rem;
 
-      line-height: 1.68;
+      line-height:
+        1.68;
 
-      margin-bottom: 22px;
+      margin-bottom:
+        22px;
 
-      flex: 1;
+      flex:
+        1;
     }
 
 
 
     /* =========================
-       OGLĄDAJ NA YOUTUBE
+       PRZYCISK YOUTUBE
     ========================= */
 
 
     .stream-actions {
-      display: flex;
+      display:
+        flex;
 
-      width: 100%;
+      width:
+        100%;
     }
 
 
-    .btn {
-      display: inline-flex;
+    .youtube-btn {
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      gap: 10px;
+      gap:
+        10px;
 
-      width: 100%;
+      width:
+        100%;
 
-      min-height: 52px;
+      min-height:
+        52px;
 
       padding:
         10px
         19px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
       border:
         1px solid
@@ -684,9 +805,11 @@
       color:
         #ffffff;
 
-      font-weight: 900;
+      font-weight:
+        900;
 
-      text-align: center;
+      text-align:
+        center;
 
       box-shadow:
         0
@@ -706,7 +829,7 @@
     }
 
 
-    .btn:hover {
+    .youtube-btn:hover {
       transform:
         translateY(-2px);
 
@@ -726,14 +849,18 @@
     }
 
 
-    .btn img {
-      width: 28px;
+    .youtube-btn img {
+      width:
+        28px;
 
-      height: 28px;
+      height:
+        28px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
-      flex-shrink: 0;
+      flex-shrink:
+        0;
     }
 
 
@@ -747,9 +874,11 @@
       grid-column:
         1 / -1;
 
-      text-align: center;
+      text-align:
+        center;
 
-      color: #888888;
+      color:
+        #888888;
 
       padding:
         70px
@@ -758,7 +887,8 @@
 
 
     .status-error {
-      padding: 22px;
+      padding:
+        22px;
 
       border:
         1px solid
@@ -769,7 +899,8 @@
           0.35
         );
 
-      border-radius: 12px;
+      border-radius:
+        12px;
 
       background:
         rgba(
@@ -788,7 +919,8 @@
 
 
     .reveal {
-      opacity: 0;
+      opacity:
+        0;
 
       transform:
         translateY(18px);
@@ -800,9 +932,11 @@
 
 
     .reveal.is-visible {
-      opacity: 1;
+      opacity:
+        1;
 
-      transform: none;
+      transform:
+        none;
     }
 
 
@@ -817,7 +951,8 @@
         35px
         0;
 
-      text-align: center;
+      text-align:
+        center;
 
       border-top:
         1px solid
@@ -832,24 +967,32 @@
 
 
     .footer-content {
-      display: flex;
+      display:
+        flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 8px;
+      gap:
+        8px;
     }
 
 
     .footer-logo {
-      width: 140px;
+      width:
+        140px;
 
-      max-height: 50px;
+      max-height:
+        50px;
 
-      object-fit: contain;
+      object-fit:
+        contain;
 
-      display: block;
+      display:
+        block;
     }
 
 
@@ -865,9 +1008,11 @@
     ) {
 
       .nav {
-        flex-direction: column;
+        flex-direction:
+          column;
 
-        justify-content: center;
+        justify-content:
+          center;
 
         padding:
           14px
@@ -877,7 +1022,8 @@
 
 
       .nav-links {
-        justify-content: center;
+        justify-content:
+          center;
       }
 
     }
@@ -921,12 +1067,14 @@
 
 
       .brand-logo {
-        width: 145px;
+        width:
+          145px;
       }
 
 
       .nav-links {
-        justify-content: center;
+        justify-content:
+          center;
 
         gap:
           12px
@@ -935,7 +1083,8 @@
 
 
       .nav-links a {
-        font-size: 0.86rem;
+        font-size:
+          0.86rem;
       }
 
 
@@ -948,7 +1097,8 @@
 
 
       .page-header h1 {
-        font-size: 2.35rem;
+        font-size:
+          2.35rem;
       }
 
     }
@@ -966,7 +1116,8 @@
 
 
       .stream-body {
-        padding: 21px;
+        padding:
+          21px;
       }
 
     }
@@ -995,9 +1146,11 @@
 
 
       .reveal {
-        opacity: 1;
+        opacity:
+          1;
 
-        transform: none;
+        transform:
+          none;
       }
 
     }
@@ -1203,18 +1356,21 @@
 
 
         /* =========================
-           POSTS.JSON + LIVE.JSON
+           TRANSMISJE.JSON
+           +
+           LIVE.JSON
         ========================= */
 
 
         const [
-          postsResponse,
+          streamsResponse,
           liveResponse
         ] = await Promise.all([
 
+
           fetch(
 
-            "./posts.json?cache=" +
+            "./transmisje.json?cache=" +
             Date.now(),
 
             {
@@ -1223,6 +1379,7 @@
             }
 
           ),
+
 
           fetch(
 
@@ -1236,22 +1393,25 @@
 
           )
 
+
         ]);
 
 
 
-        if (!postsResponse.ok) {
+        if (
+          !streamsResponse.ok
+        ) {
 
           throw new Error(
-            "Nie udało się pobrać posts.json"
+            "Nie udało się pobrać transmisje.json"
           );
 
         }
 
 
 
-        const allPosts =
-          await postsResponse.json();
+        const allStreams =
+          await streamsResponse.json();
 
 
 
@@ -1260,7 +1420,9 @@
 
 
 
-        if (liveResponse.ok) {
+        if (
+          liveResponse.ok
+        ) {
 
           currentLive =
             await liveResponse.json();
@@ -1283,132 +1445,29 @@
 
 
         /* =========================
-           ID YOUTUBE
+           3 OSTATNIE
+           Z WYJĄTKIEM
+           AKTUALNEGO LIVE
         ========================= */
 
 
-        function getYouTubeVideoId(
-          url
-        ) {
-
-
-          if (!url) {
-
-            return "";
-
-          }
-
-
-          try {
-
-
-            const parsed =
-              new URL(url);
-
-
-            const hostname =
-              parsed.hostname
-                .toLowerCase();
-
-
-            if (
-              hostname ===
-                "youtu.be" ||
-              hostname ===
-                "www.youtu.be"
-            ) {
-
-              return parsed.pathname
-                .replace(/^\/+/, "")
-                .split("/")[0]
-                .trim();
-
-            }
-
-
-            if (
-              parsed.pathname.startsWith(
-                "/live/"
-              )
-            ) {
-
-              return parsed.pathname
-                .split("/live/")[1]
-                .split("/")[0]
-                .trim();
-
-            }
-
-
-            const watchId =
-              parsed.searchParams.get(
-                "v"
-              );
-
-
-            if (watchId) {
-
-              return watchId.trim();
-
-            }
-
-
-          }
-
-
-          catch (error) {
-
-            return "";
-
-          }
-
-
-          return "";
-
-        }
-
-
-
-        /* =========================
-           3 POPRZEDNIE LIVE
-        ========================= */
-
-
-        const posts =
-          allPosts
+        const streams =
+          allStreams
 
             .filter(
 
-              post => {
+              stream => {
 
 
-                const isLive =
-
+                const videoId =
                   String(
-                    post.category || ""
-                  )
-                    .toUpperCase() ===
-                  "LIVE";
-
-
-                if (!isLive) {
-
-                  return false;
-
-                }
-
-
-
-                const postVideoId =
-                  getYouTubeVideoId(
-                    post.link
-                  );
-
+                    stream.videoId || ""
+                  ).trim();
 
 
                 if (
                   currentVideoId &&
-                  postVideoId ===
+                  videoId ===
                     currentVideoId
                 ) {
 
@@ -1445,7 +1504,9 @@
 
 
 
-        if (!posts.length) {
+        if (
+          !streams.length
+        ) {
 
 
           container.innerHTML = `
@@ -1467,13 +1528,13 @@
 
 
         /* =========================
-           KARTY
+           TWORZENIE KART
         ========================= */
 
 
-        posts.forEach(
+        streams.forEach(
 
-          (post, index) => {
+          (stream, index) => {
 
 
             const card =
@@ -1495,19 +1556,73 @@
 
 
 
+            const videoId =
+              String(
+                stream.videoId || ""
+              ).trim();
+
+
+
+            const youtubeUrl =
+
+              "https://youtube.com/live/" +
+              videoId;
+
+
+
+            const imageUrl =
+
+              "https://img.youtube.com/vi/" +
+              videoId +
+              "/maxresdefault.jpg";
+
+
+
+            const fallbackImage =
+
+              "https://img.youtube.com/vi/" +
+              videoId +
+              "/hqdefault.jpg";
+
+
+
+            const episode =
+
+              stream.episode
+
+                ? ` ${stream.episode}`
+
+                : "";
+
+
+
+            const title =
+
+              `${stream.game}${episode}${
+                stream.title
+                  ? ` — ${stream.title}`
+                  : ""
+              }`;
+
+
+
             card.innerHTML = `
 
               <a
                 class="stream-thumb"
-                href="${post.link}"
+                href="${youtubeUrl}"
                 target="_blank"
                 rel="noopener noreferrer"
               >
 
                 <img
-                  src="${post.image}"
-                  alt="${post.title}"
+                  src="${imageUrl}"
+                  alt="${title}"
                   loading="lazy"
+                  onerror="
+                    this.onerror=null;
+                    this.src='${fallbackImage}';
+                  "
                 >
 
               </a>
@@ -1529,7 +1644,7 @@
                   <span class="stream-date">
 
                     ${
-                      post.displayDate ||
+                      stream.displayDate ||
                       ""
                     }
 
@@ -1541,7 +1656,7 @@
 
                 <h2>
 
-                  ${post.title}
+                  ${title}
 
                 </h2>
 
@@ -1549,8 +1664,8 @@
                 <p>
 
                   ${
-                    post.excerpt ||
-                    "Zobacz zapis transmisji na kanale Smokol."
+                    stream.description ||
+                    ""
                   }
 
                 </p>
@@ -1560,8 +1675,8 @@
 
 
                   <a
-                    class="btn"
-                    href="${post.link}"
+                    class="youtube-btn"
+                    href="${youtubeUrl}"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1574,10 +1689,7 @@
 
                     <span>
 
-                      ${
-                        post.button ||
-                        "Oglądaj na YouTube"
-                      }
+                      Oglądaj na YouTube
 
                     </span>
 
@@ -1611,7 +1723,9 @@
       }
 
 
-      catch (error) {
+      catch (
+        error
+      ) {
 
 
         console.error(
