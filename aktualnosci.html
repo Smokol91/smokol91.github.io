@@ -774,7 +774,7 @@
 
 
     /* =========================
-       GUZIK ZOBACZ SZCZEGÓŁY
+       ZOBACZ SZCZEGÓŁY
     ========================= */
 
 
@@ -792,14 +792,14 @@
         flex-start;
 
       gap:
-        7px;
+        8px;
 
       min-height:
         40px;
 
       padding:
         7px
-        13px;
+        14px;
 
       border:
         1px solid
@@ -820,44 +820,81 @@
       font-size:
         0.88rem;
 
+      line-height:
+        1;
+
+      text-align:
+        center;
+
       transition:
         background 0.2s,
         border-color 0.2s,
         color 0.2s,
-        transform 0.2s;
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
 
     .news-read::after {
       content:
-        "→";
+        "↗";
+
+      display:
+        inline-block;
 
       color:
         #bdbdbd;
 
+      font-size:
+        1rem;
+
+      font-weight:
+        900;
+
+      line-height:
+        1;
+
       transition:
-        transform 0.2s;
+        transform 0.2s,
+        color 0.2s;
     }
 
 
     .news-read:hover {
       background:
-        #1d1d1d;
+        #2d2d2d;
 
       border-color:
-        #a8a8a8;
+        #ffffff;
 
       color:
         #ffffff;
 
       transform:
         translateY(-1px);
+
+      box-shadow:
+        0
+        7px
+        18px
+        rgba(
+          0,
+          0,
+          0,
+          0.22
+        );
     }
 
 
     .news-read:hover::after {
       transform:
-        translateX(3px);
+        translate(
+          2px,
+          -2px
+        );
+
+      color:
+        #ffffff;
     }
 
 
