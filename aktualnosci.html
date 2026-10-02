@@ -24,11 +24,26 @@
       --red-light: #e34b4f;
       --red-dark: #8f0d12;
       --heading: #e8e8e8;
+
       --black: #080808;
       --card: #121212;
+      --card-2: #171717;
+
       --text: #ffffff;
       --muted: #aaaaaa;
+
+      --line: rgba(255, 255, 255, 0.08);
+      --blue: #2da8ff;
+
+      --ease:
+        cubic-bezier(
+          0.2,
+          0.75,
+          0.25,
+          1
+        );
     }
+
 
     * {
       box-sizing: border-box;
@@ -36,9 +51,11 @@
       padding: 0;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       font-family:
@@ -49,148 +66,274 @@
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(200, 0, 0, 0.18),
+          rgba(200, 0, 0, 0.16),
           transparent 30%
         ),
         var(--black);
 
       color: var(--text);
+
       line-height: 1.6;
+
+      min-height: 100vh;
+
+      text-rendering:
+        optimizeLegibility;
+
+      -webkit-font-smoothing:
+        antialiased;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
+
     img {
       max-width: 100%;
     }
 
+
     .container {
-      width: min(1180px, 92%);
+      width:
+        min(
+          1180px,
+          92%
+        );
+
       margin: auto;
     }
+
+
+    ::selection {
+      background:
+        rgba(
+          201,
+          21,
+          27,
+          0.78
+        );
+
+      color: #ffffff;
+    }
+
+
+    :focus-visible {
+      outline:
+        2px solid
+        var(--red-light);
+
+      outline-offset:
+        4px;
+
+      border-radius:
+        6px;
+    }
+
 
 
     /* =========================
        MENU
     ========================= */
 
+
     nav {
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
       background:
-        rgba(7, 7, 7, 0.96);
+        rgba(
+          7,
+          7,
+          7,
+          0.96
+        );
 
       backdrop-filter:
         blur(12px);
 
       border-bottom:
         1px solid
-        rgba(160, 0, 0, 0.35);
-    }
+        rgba(
+          160,
+          0,
+          0,
+          0.35
+        );
 
-    .nav {
-      min-height: 76px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .brand-logo {
-      width: 155px;
-      max-height: 58px;
-
-      object-fit: contain;
-      display: block;
-
-      transition: 0.2s;
-    }
-
-    .brand-logo:hover {
-      transform: scale(1.04);
-
-      filter:
-        drop-shadow(
-          0 0 10px
-          rgba(160, 0, 0, 0.35)
+      box-shadow:
+        0
+        8px
+        30px
+        rgba(
+          0,
+          0,
+          0,
+          0.22
         );
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
 
-      gap: 18px;
+    .nav {
+      min-height:
+        76px;
 
-      flex-wrap: wrap;
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      gap:
+        25px;
     }
+
+
+    .brand {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      flex-shrink:
+        0;
+    }
+
+
+    .brand-logo {
+      width:
+        155px;
+
+      max-height:
+        58px;
+
+      object-fit:
+        contain;
+
+      display:
+        block;
+
+      transition:
+        0.2s;
+    }
+
+
+    .brand-logo:hover {
+      transform:
+        scale(1.04);
+
+      filter:
+        drop-shadow(
+          0
+          0
+          10px
+          rgba(
+            160,
+            0,
+            0,
+            0.35
+          )
+        );
+    }
+
+
+    .nav-links {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        flex-end;
+
+      gap:
+        18px;
+
+      flex-wrap:
+        wrap;
+    }
+
 
     .nav-links a {
-      position: relative;
+      position:
+        relative;
 
-      color: #dddddd;
+      color:
+        #dddddd;
 
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size:
+        0.95rem;
 
-      white-space: nowrap;
+      font-weight:
+        700;
 
-      transition: 0.2s;
+      white-space:
+        nowrap;
+
+      transition:
+        0.2s;
     }
+
 
     .nav-links a:hover,
     .nav-links .active {
-      color: var(--red-light);
+      color:
+        var(--red-light);
     }
+
 
     .nav-links a::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 50%;
-      bottom: -7px;
+      left:
+        50%;
 
-      width: 0;
-      height: 2px;
+      bottom:
+        -7px;
 
-      background: var(--red);
+      width:
+        0;
 
-      transform: translateX(-50%);
+      height:
+        2px;
 
-      transition: width 0.2s;
+      background:
+        var(--red);
+
+      transform:
+        translateX(-50%);
+
+      transition:
+        width 0.2s;
     }
+
 
     .nav-links a:hover::after,
     .nav-links .active::after {
-      width: 100%;
+      width:
+        100%;
     }
+
 
 
     /* =========================
-       NAGŁÓWEK
+       NAGŁÓWKI SMOKOL
     ========================= */
 
-    .page-header {
-      padding:
-        100px 0 65px;
-
-      text-align: center;
-    }
 
     .smokol-heading {
       font-family:
@@ -199,19 +342,25 @@
         Arial,
         sans-serif;
 
-      font-weight: 900;
+      font-weight:
+        900;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      letter-spacing: 1px;
+      letter-spacing:
+        1px;
 
-      display: inline-block;
+      line-height:
+        1.02;
 
-      position: relative;
+      display:
+        inline-block;
 
-      color: var(--heading);
+      position:
+        relative;
 
-      -webkit-text-fill-color:
+      color:
         var(--heading);
 
       text-shadow:
@@ -221,18 +370,28 @@
         0 10px 18px rgba(0, 0, 0, 0.85);
     }
 
+
     .smokol-heading::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 8%;
-      right: 8%;
-      bottom: -9px;
+      left:
+        8%;
 
-      height: 4px;
+      right:
+        8%;
 
-      border-radius: 100%;
+      bottom:
+        -9px;
+
+      height:
+        4px;
+
+      border-radius:
+        100%;
 
       background:
         linear-gradient(
@@ -245,14 +404,20 @@
         );
 
       box-shadow:
-        0 0 8px
-        rgba(160, 0, 0, 0.35);
+        0
+        0
+        8px
+        rgba(
+          160,
+          0,
+          0,
+          0.35
+        );
     }
 
-    .smokol-red {
-      color: var(--red);
 
-      -webkit-text-fill-color:
+    .smokol-red {
+      color:
         var(--red);
 
       text-shadow:
@@ -262,38 +427,65 @@
         0 7px 15px rgba(0, 0, 0, 0.85);
     }
 
+
+
+    /* =========================
+       NAGŁÓWEK STRONY
+    ========================= */
+
+
+    .page-header {
+      padding:
+        76px
+        0
+        48px;
+
+      text-align:
+        center;
+    }
+
+
     .page-header h1 {
       font-size:
         clamp(
-          2.4rem,
+          2.35rem,
           6vw,
-          4.4rem
+          4.2rem
         );
 
       margin-bottom:
-        30px;
+        28px;
     }
 
-    .page-header p {
-      color:
-        #999999;
 
+    .page-header p {
       max-width:
         720px;
 
       margin:
         auto;
+
+      color:
+        #aaaaaa;
+
+      line-height:
+        1.75;
     }
+
 
 
     /* =========================
-       KARTY AKTUALNOŚCI
+       AKTUALNOŚCI
     ========================= */
 
-    .news {
+
+    main {
       padding:
-        25px 0 100px;
+        16px
+        0
+        90px;
     }
+
 
     .news-grid {
       display:
@@ -302,12 +494,16 @@
       grid-template-columns:
         repeat(
           3,
-          minmax(0, 1fr)
+          minmax(
+            0,
+            1fr
+          )
         );
 
       gap:
         24px;
     }
+
 
     .news-card {
       display:
@@ -316,17 +512,25 @@
       flex-direction:
         column;
 
+      min-width:
+        0;
+
       background:
         linear-gradient(
-          135deg,
-          rgba(150, 0, 0, 0.08),
-          transparent 55%
+          145deg,
+          rgba(
+            150,
+            0,
+            0,
+            0.07
+          ),
+          transparent 48%
         ),
         var(--card);
 
       border:
         1px solid
-        #292929;
+        #262626;
 
       border-radius:
         18px;
@@ -335,29 +539,56 @@
         hidden;
 
       box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.3);
+        0
+        14px
+        38px
+        rgba(
+          0,
+          0,
+          0,
+          0.24
+        );
 
       transition:
-        0.25s;
+        transform 0.28s var(--ease),
+        border-color 0.28s,
+        box-shadow 0.28s;
     }
+
 
     .news-card:hover {
       transform:
-        translateY(-5px);
+        translateY(-6px);
 
       border-color:
-        var(--red);
+        rgba(
+          227,
+          75,
+          79,
+          0.62
+        );
 
       box-shadow:
-        0 20px 45px
-        rgba(0, 0, 0, 0.42);
+        0
+        20px
+        48px
+        rgba(
+          0,
+          0,
+          0,
+          0.38
+        ),
+        0
+        0
+        22px
+        rgba(
+          201,
+          21,
+          27,
+          0.07
+        );
     }
 
-
-    /* =========================
-       MINIATURA
-    ========================= */
 
     .news-image-link {
       display:
@@ -365,34 +596,42 @@
 
       overflow:
         hidden;
-    }
-
-    .news-image {
-      display:
-        block;
-
-      width:
-        100%;
 
       aspect-ratio:
         16 / 9;
 
+      background:
+        #0b0b0b;
+    }
+
+
+    .news-image {
+      width:
+        100%;
+
+      height:
+        100%;
+
       object-fit:
         cover;
 
+      display:
+        block;
+
       transition:
-        0.3s;
+        transform 0.35s var(--ease),
+        filter 0.35s;
     }
+
 
     .news-card:hover .news-image {
       transform:
         scale(1.035);
+
+      filter:
+        brightness(1.05);
     }
 
-
-    /* =========================
-       TREŚĆ KARTY
-    ========================= */
 
     .news-content {
       display:
@@ -407,6 +646,7 @@
       padding:
         24px;
     }
+
 
     .news-meta {
       display:
@@ -425,26 +665,29 @@
         13px;
     }
 
+
     .news-category {
       padding:
-        4px 9px;
+        4px
+        9px;
+
+      border-radius:
+        7px;
 
       background:
         var(--red);
 
-      border-radius:
-        6px;
-
       font-size:
-        0.75rem;
+        0.74rem;
 
       font-weight:
         900;
     }
 
+
     .news-date {
       color:
-        #777777;
+        #858585;
 
       font-size:
         0.82rem;
@@ -453,82 +696,49 @@
         700;
     }
 
+
     .news-card h2 {
       font-size:
-        1.15rem;
+        1.16rem;
 
       line-height:
-        1.35;
-
-      color:
-        #eeeeee;
+        1.32;
 
       margin-bottom:
-        13px;
+        12px;
+
+      color:
+        #f2f2f2;
     }
 
-    .news-excerpt {
+
+    .news-card p {
       color:
-        #999999;
+        #aaaaaa;
 
       font-size:
         0.94rem;
 
       line-height:
-        1.65;
+        1.7;
 
       margin-bottom:
-        22px;
+        20px;
 
       flex:
         1;
-
-      display:
-        -webkit-box;
-
-      -webkit-box-orient:
-        vertical;
-
-      -webkit-line-clamp:
-        4;
-
-      overflow:
-        hidden;
     }
 
 
-    /* =========================
-       PRZYCISK
-    ========================= */
-
-    .btn {
+    .news-read {
       display:
         inline-flex;
-
-      justify-content:
-        center;
 
       align-items:
         center;
 
-      align-self:
-        flex-start;
-
-      min-height:
-        46px;
-
-      padding:
-        9px 17px;
-
-      background:
-        var(--red);
-
-      border:
-        1px solid
-        var(--red);
-
-      border-radius:
-        9px;
+      gap:
+        7px;
 
       color:
         #ffffff;
@@ -536,22 +746,28 @@
       font-weight:
         900;
 
+      font-size:
+        0.9rem;
+    }
+
+
+    .news-read::after {
+      content:
+        "→";
+
+      color:
+        var(--red-light);
+
       transition:
-        0.2s;
+        transform 0.2s;
     }
 
-    .btn:hover {
+
+    .news-read:hover::after {
       transform:
-        translateY(-2px);
-
-      background:
-        #dd1b22;
+        translateX(4px);
     }
 
-
-    /* =========================
-       STATUS
-    ========================= */
 
     .news-status {
       grid-column:
@@ -564,17 +780,75 @@
         #888888;
 
       padding:
-        50px;
+        70px
+        20px;
     }
+
+
+    .news-error {
+      padding:
+        22px;
+
+      border:
+        1px solid
+        rgba(
+          201,
+          21,
+          27,
+          0.35
+        );
+
+      border-radius:
+        12px;
+
+      background:
+        rgba(
+          201,
+          21,
+          27,
+          0.06
+        );
+    }
+
+
+
+    /* =========================
+       ANIMACJE
+    ========================= */
+
+
+    .reveal {
+      opacity:
+        0;
+
+      transform:
+        translateY(18px);
+
+      transition:
+        opacity 0.55s ease,
+        transform 0.55s var(--ease);
+    }
+
+
+    .reveal.is-visible {
+      opacity:
+        1;
+
+      transform:
+        none;
+    }
+
 
 
     /* =========================
        STOPKA
     ========================= */
 
+
     footer {
       padding:
-        35px 0;
+        35px
+        0;
 
       text-align:
         center;
@@ -590,6 +864,7 @@
         #777777;
     }
 
+
     .footer-content {
       display:
         flex;
@@ -603,6 +878,7 @@
       gap:
         8px;
     }
+
 
     .footer-logo {
       width:
@@ -619,11 +895,16 @@
     }
 
 
+
     /* =========================
        TABLET
     ========================= */
 
-    @media (max-width: 1050px) {
+
+    @media (
+      max-width:
+      1050px
+    ) {
 
       .nav {
         flex-direction:
@@ -633,8 +914,11 @@
           center;
 
         padding:
-          14px 0 17px;
+          14px
+          0
+          17px;
       }
+
 
       .nav-links {
         justify-content:
@@ -644,61 +928,128 @@
     }
 
 
-    @media (max-width: 900px) {
+    @media (
+      max-width:
+      940px
+    ) {
 
       .news-grid {
         grid-template-columns:
           repeat(
             2,
-            minmax(0, 1fr)
+            minmax(
+              0,
+              1fr
+            )
           );
       }
 
     }
 
 
+
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 760px) {
+
+    @media (
+      max-width:
+      760px
+    ) {
 
       .nav {
         padding:
-          16px 0;
+          15px
+          0;
       }
+
 
       .brand-logo {
         width:
           145px;
       }
 
+
       .nav-links {
         justify-content:
           center;
 
         gap:
-          12px 14px;
+          12px
+          14px;
       }
+
 
       .nav-links a {
         font-size:
-          0.88rem;
+          0.86rem;
       }
+
 
       .page-header {
         padding:
-          75px 0 50px;
+          58px
+          0
+          38px;
       }
+
+
+      .page-header h1 {
+        font-size:
+          2.35rem;
+      }
+
+    }
+
+
+    @media (
+      max-width:
+      640px
+    ) {
 
       .news-grid {
         grid-template-columns:
           1fr;
       }
 
-      .btn {
-        width:
-          100%;
+
+      .news-content {
+        padding:
+          21px;
+      }
+
+    }
+
+
+
+    /* =========================
+       MNIEJ ANIMACJI
+    ========================= */
+
+
+    @media (
+      prefers-reduced-motion:
+      reduce
+    ) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration:
+          0.01ms !important;
+
+        animation-duration:
+          0.01ms !important;
+      }
+
+
+      .reveal {
+        opacity:
+          1;
+
+        transform:
+          none;
       }
 
     }
@@ -715,9 +1066,11 @@
        MENU
   ========================= -->
 
+
   <nav>
 
     <div class="container nav">
+
 
       <a
         href="index.html"
@@ -725,7 +1078,7 @@
       >
 
         <img
-          src="napis-smokol.png?v=28"
+          src="napis-smokol.png?v=30"
           alt="Smokol"
           class="brand-logo"
         >
@@ -768,18 +1121,22 @@
 
       </div>
 
+
     </div>
 
   </nav>
+
 
 
   <!-- =========================
        NAGŁÓWEK
   ========================= -->
 
+
   <header class="page-header">
 
     <div class="container">
+
 
       <h1 class="smokol-heading">
 
@@ -793,27 +1150,34 @@
 
 
       <p>
+
         Zapowiedzi transmisji,
         informacje z kanału,
         Smokol Hub,
-        Bazy Smokola
-        i inne najważniejsze wiadomości.
+        Baza Smokola
+        i najważniejsze wiadomości
+        w jednym miejscu.
+
       </p>
+
 
     </div>
 
   </header>
 
 
+
   <!-- =========================
        AKTUALNOŚCI
   ========================= -->
 
+
   <main>
 
-    <section class="news">
+    <section>
 
       <div class="container">
+
 
         <div
           id="all-news"
@@ -821,10 +1185,13 @@
         >
 
           <div class="news-status">
+
             Ładowanie aktualności...
+
           </div>
 
         </div>
+
 
       </div>
 
@@ -833,49 +1200,72 @@
   </main>
 
 
+
   <!-- =========================
        STOPKA
   ========================= -->
+
 
   <footer>
 
     <div class="container footer-content">
 
+
       <img
-        src="napis-smokol.png?v=28"
+        src="napis-smokol.png?v=30"
         alt="Smokol"
         class="footer-logo"
       >
+
 
       <span>
         Symulacja to moja pasja
       </span>
 
+
       <span>
         © 2026 Smokol
       </span>
+
 
     </div>
 
   </footer>
 
 
+
   <!-- =========================
-       WCZYTYWANIE POSTÓW
+       POSTS.JSON
   ========================= -->
+
 
   <script>
 
+
     async function loadNews() {
 
+
       const container =
-        document.getElementById("all-news");
+        document.getElementById(
+          "all-news"
+        );
 
 
       try {
 
+
         const response =
-          await fetch("./posts.json?version=3");
+          await fetch(
+
+            "./posts.json?cache=" +
+            Date.now(),
+
+            {
+              cache:
+                "no-store"
+            }
+
+          );
 
 
         if (!response.ok) {
@@ -892,18 +1282,23 @@
 
 
         posts.sort(
+
           (a, b) =>
+
             new Date(b.date) -
             new Date(a.date)
+
         );
 
 
-        container.innerHTML = "";
+        container.innerHTML =
+          "";
 
 
-        if (posts.length === 0) {
+        if (!posts.length) {
 
           container.innerHTML =
+
             '<div class="news-status">Brak aktualności.</div>';
 
           return;
@@ -911,93 +1306,259 @@
         }
 
 
-        posts.forEach(post => {
+        posts.forEach(
 
-          const card =
-            document.createElement("article");
-
-
-          card.className =
-            "news-card";
+          (post, index) => {
 
 
-          const postUrl =
-            `post.html?id=${encodeURIComponent(post.id)}`;
+            const card =
+              document.createElement(
+                "article"
+              );
 
 
-          card.innerHTML = `
-
-            <a
-              href="${postUrl}"
-              class="news-image-link"
-            >
-
-              <img
-                src="${post.image}"
-                alt="${post.title}"
-                class="news-image"
-              >
-
-            </a>
+            card.className =
+              "news-card reveal";
 
 
-            <div class="news-content">
+            card.style.transitionDelay =
 
-              <div class="news-meta">
-
-                <span class="news-category">
-                  ${post.category}
-                </span>
-
-                <span class="news-date">
-                  ${post.displayDate}
-                </span>
-
-              </div>
+              Math.min(
+                index * 45,
+                180
+              ) + "ms";
 
 
-              <h2>
-                ${post.title}
-              </h2>
+            const detailUrl =
+
+              "post.html?id=" +
+              encodeURIComponent(
+                post.id
+              );
 
 
-              <div class="news-excerpt">
-                ${post.excerpt}
-              </div>
-
+            card.innerHTML = `
 
               <a
-                href="${postUrl}"
-                class="btn"
+                href="${detailUrl}"
+                class="news-image-link"
               >
-                Czytaj więcej
+
+                <img
+                  src="${post.image}"
+                  alt="${post.title}"
+                  class="news-image"
+                  loading="lazy"
+                >
+
               </a>
 
-            </div>
 
-          `;
+              <div class="news-content">
 
 
-          container.appendChild(card);
+                <div class="news-meta">
 
-        });
+
+                  <span class="news-category">
+
+                    ${
+                      post.category ||
+                      "NEWS"
+                    }
+
+                  </span>
+
+
+                  <span class="news-date">
+
+                    ${
+                      post.displayDate ||
+                      ""
+                    }
+
+                  </span>
+
+
+                </div>
+
+
+                <h2>
+
+                  <a href="${detailUrl}">
+
+                    ${post.title}
+
+                  </a>
+
+                </h2>
+
+
+                <p>
+
+                  ${
+                    post.excerpt ||
+                    "Kliknij, aby przeczytać pełną aktualność."
+                  }
+
+                </p>
+
+
+                <a
+                  href="${detailUrl}"
+                  class="news-read"
+                >
+
+                  Czytaj aktualność
+
+                </a>
+
+
+              </div>
+
+            `;
+
+
+            container.appendChild(
+              card
+            );
+
+
+          }
+
+        );
+
+
+        initReveal();
+
 
       }
 
 
       catch (error) {
 
-        container.innerHTML =
-          '<div class="news-status">Nie udało się wczytać aktualności.</div>';
 
-        console.error(error);
+        console.error(
+          error
+        );
+
+
+        container.innerHTML = `
+
+          <div
+            class="news-status news-error"
+          >
+
+            Nie udało się wczytać aktualności.
+            Odśwież stronę za chwilę.
+
+          </div>
+
+        `;
+
 
       }
+
 
     }
 
 
+
+    function initReveal() {
+
+
+      const targets =
+        document.querySelectorAll(
+          ".reveal"
+        );
+
+
+      if (
+        !(
+          "IntersectionObserver"
+          in window
+        )
+      ) {
+
+
+        targets.forEach(
+
+          element =>
+
+            element.classList.add(
+              "is-visible"
+            )
+
+        );
+
+
+        return;
+
+
+      }
+
+
+      const observer =
+        new IntersectionObserver(
+
+          entries => {
+
+
+            entries.forEach(
+
+              entry => {
+
+
+                if (
+                  entry.isIntersecting
+                ) {
+
+
+                  entry.target.classList.add(
+                    "is-visible"
+                  );
+
+
+                  observer.unobserve(
+                    entry.target
+                  );
+
+
+                }
+
+
+              }
+
+            );
+
+
+          },
+
+          {
+            threshold:
+              0.08
+          }
+
+        );
+
+
+      targets.forEach(
+
+        element =>
+
+          observer.observe(
+            element
+          )
+
+      );
+
+
+    }
+
+
+
     loadNews();
+
 
   </script>
 
