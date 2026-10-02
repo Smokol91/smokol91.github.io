@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Aktualność | Smokol</title>
 
@@ -18,7 +12,6 @@
   >
 
   <style>
-
     :root {
       --red: #c9151b;
       --red-light: #e34b4f;
@@ -31,27 +24,17 @@
     }
 
     * {
-      box-sizing:
-        border-box;
-
-      margin:
-        0;
-
-      padding:
-        0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
-      scroll-behavior:
-        smooth;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       background:
         radial-gradient(
           circle at 50% 0%,
@@ -59,236 +42,123 @@
           transparent 30%
         ),
         var(--black);
-
-      color:
-        var(--text);
-
-      line-height:
-        1.6;
+      color: var(--text);
+      line-height: 1.6;
     }
 
     a {
-      color:
-        inherit;
-
-      text-decoration:
-        none;
+      color: inherit;
+      text-decoration: none;
     }
 
     img {
-      max-width:
-        100%;
+      max-width: 100%;
     }
 
     .container {
-      width:
-        min(1180px, 92%);
-
-      margin:
-        auto;
+      width: min(1180px, 92%);
+      margin: auto;
     }
 
-
-    /* =========================
-       MENU
-    ========================= */
+    /* MENU */
 
     nav {
-      position:
-        sticky;
-
-      top:
-        0;
-
-      z-index:
-        1000;
-
-      background:
-        rgba(7, 7, 7, 0.96);
-
-      backdrop-filter:
-        blur(12px);
-
-      border-bottom:
-        1px solid
-        rgba(160, 0, 0, 0.35);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 7, 7, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(160, 0, 0, 0.35);
     }
 
     .nav {
-      min-height:
-        76px;
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      align-items:
-        center;
-
-      gap:
-        25px;
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
     }
 
     .brand {
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      flex-shrink:
-        0;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
     .brand-logo {
-      width:
-        155px;
-
-      max-height:
-        58px;
-
-      object-fit:
-        contain;
-
-      display:
-        block;
-
-      transition:
-        0.2s;
+      width: 155px;
+      max-height: 58px;
+      object-fit: contain;
+      display: block;
+      transition: 0.2s;
     }
 
     .brand-logo:hover {
-      transform:
-        scale(1.04);
-
-      filter:
-        drop-shadow(
-          0 0 10px
-          rgba(160, 0, 0, 0.35)
-        );
+      transform: scale(1.04);
+      filter: drop-shadow(0 0 10px rgba(160, 0, 0, 0.35));
     }
 
     .nav-links {
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        flex-end;
-
-      gap:
-        18px;
-
-      flex-wrap:
-        wrap;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      position:
-        relative;
-
-      color:
-        #dddddd;
-
-      font-size:
-        0.95rem;
-
-      font-weight:
-        700;
-
-      white-space:
-        nowrap;
-
-      transition:
-        0.2s;
+      position: relative;
+      color: #dddddd;
+      font-size: 0.95rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: 0.2s;
     }
 
     .nav-links a:hover,
     .nav-links .active {
-      color:
-        var(--red-light);
+      color: var(--red-light);
     }
 
     .nav-links a::after {
-      content:
-        "";
-
-      position:
-        absolute;
-
-      left:
-        50%;
-
-      bottom:
-        -7px;
-
-      width:
-        0;
-
-      height:
-        2px;
-
-      background:
-        var(--red);
-
-      transform:
-        translateX(-50%);
-
-      transition:
-        width 0.2s;
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transform: translateX(-50%);
+      transition: width 0.2s;
     }
 
     .nav-links a:hover::after,
     .nav-links .active::after {
-      width:
-        100%;
+      width: 100%;
     }
 
-
-    /* =========================
-       POST
-    ========================= */
+    /* POST */
 
     .post-section {
-      padding:
-        80px 0 100px;
+      padding: 80px 0 100px;
     }
 
     .post-container {
-      max-width:
-        1000px;
-
-      margin:
-        auto;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .back-link {
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      margin-bottom:
-        25px;
-
-      color:
-        #aaaaaa;
-
-      font-weight:
-        700;
-
-      transition:
-        0.2s;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 25px;
+      color: #aaaaaa;
+      font-weight: 700;
+      transition: 0.2s;
     }
 
     .back-link:hover {
-      color:
-        var(--red-light);
+      color: var(--red-light);
     }
 
     .post-card {
@@ -299,371 +169,198 @@
           transparent 55%
         ),
         var(--card);
-
-      border:
-        1px solid
-        rgba(180, 20, 20, 0.35);
-
-      border-radius:
-        20px;
-
-      overflow:
-        hidden;
-
-      box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(180, 20, 20, 0.35);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
 
     .post-image {
-      width:
-        100%;
-
-      aspect-ratio:
-        16 / 9;
-
-      object-fit:
-        cover;
-
-      display:
-        block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
     }
 
     .post-content {
-      padding:
-        40px 46px 46px;
+      padding: 40px 46px 46px;
     }
 
     .post-meta {
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      gap:
-        12px;
-
-      flex-wrap:
-        wrap;
-
-      margin-bottom:
-        18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
     .post-category {
-      padding:
-        5px 11px;
-
-      background:
-        var(--red);
-
-      border-radius:
-        7px;
-
-      font-size:
-        0.78rem;
-
-      font-weight:
-        900;
+      padding: 5px 11px;
+      background: var(--red);
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 900;
     }
 
     .post-date {
-      color:
-        #888888;
-
-      font-size:
-        0.88rem;
-
-      font-weight:
-        700;
+      color: #888888;
+      font-size: 0.88rem;
+      font-weight: 700;
     }
 
     .post-title {
-      font-size:
-        clamp(
-          1.8rem,
-          4vw,
-          2.7rem
-        );
-
-      line-height:
-        1.2;
-
-      color:
-        #f1f1f1;
-
-      margin-bottom:
-        30px;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      color: #f1f1f1;
+      margin-bottom: 30px;
     }
 
     .post-text {
-      color:
-        #c4c4c4;
-
-      font-size:
-        1.03rem;
-
-      line-height:
-        1.85;
-
-      white-space:
-        pre-line;
-
-      margin-bottom:
-        35px;
+      color: #c4c4c4;
+      font-size: 1.03rem;
+      line-height: 1.85;
+      white-space: pre-line;
+      margin-bottom: 35px;
     }
 
+    .post-text a {
+      color: #ffb347;
+      text-decoration: underline;
+      overflow-wrap: anywhere;
+    }
 
-    /* =========================
-       YOUTUBE BUTTON
-    ========================= */
+    /* PRZYCISK YOUTUBE */
 
     .btn {
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      gap:
-        10px;
-
-      min-height:
-        54px;
-
-      padding:
-        11px 22px;
-
-      background:
-        var(--red);
-
-      border:
-        1px solid
-        var(--red);
-
-      border-radius:
-        10px;
-
-      color:
-        #ffffff;
-
-      font-weight:
-        900;
-
-      transition:
-        0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 11px 22px;
+      background: var(--red);
+      border: 1px solid var(--red);
+      border-radius: 10px;
+      color: #ffffff;
+      font-weight: 900;
+      transition: 0.2s;
     }
 
     .btn:hover {
-      transform:
-        translateY(-2px);
-
-      background:
-        #dd1b22;
-
-      box-shadow:
-        0 8px 25px
-        rgba(150, 0, 0, 0.25);
+      transform: translateY(-2px);
+      background: #dd1b22;
+      box-shadow: 0 8px 25px rgba(150, 0, 0, 0.25);
     }
 
     .btn img {
-      width:
-        30px;
-
-      height:
-        30px;
-
-      object-fit:
-        contain;
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
     }
 
     .status {
-      text-align:
-        center;
-
-      color:
-        #888888;
-
-      padding:
-        80px 20px;
+      text-align: center;
+      color: #888888;
+      padding: 80px 20px;
     }
 
-
-    /* =========================
-       STOPKA
-    ========================= */
+    /* STOPKA */
 
     footer {
-      padding:
-        35px 0;
-
-      text-align:
-        center;
-
-      border-top:
-        1px solid
-        #222222;
-
-      background:
-        #050505;
-
-      color:
-        #777777;
+      padding: 35px 0;
+      text-align: center;
+      border-top: 1px solid #222222;
+      background: #050505;
+      color: #777777;
     }
 
     .footer-content {
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      align-items:
-        center;
-
-      gap:
-        8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
 
     .footer-logo {
-      width:
-        140px;
-
-      max-height:
-        50px;
-
-      object-fit:
-        contain;
-
-      display:
-        block;
+      width: 140px;
+      max-height: 50px;
+      object-fit: contain;
+      display: block;
     }
 
-
-    /* =========================
-       TABLET
-    ========================= */
+    /* TABLET */
 
     @media (max-width: 1050px) {
-
       .nav {
-        flex-direction:
-          column;
-
-        justify-content:
-          center;
-
-        padding:
-          14px 0 17px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0 17px;
       }
 
       .nav-links {
-        justify-content:
-          center;
+        justify-content: center;
       }
-
     }
 
-
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 760px) {
-
       .nav {
-        padding:
-          16px 0;
+        padding: 16px 0;
       }
 
       .brand-logo {
-        width:
-          145px;
+        width: 145px;
       }
 
       .nav-links {
-        justify-content:
-          center;
-
-        gap:
-          12px 14px;
+        justify-content: center;
+        gap: 12px 14px;
       }
 
       .nav-links a {
-        font-size:
-          0.88rem;
+        font-size: 0.88rem;
       }
 
       .post-section {
-        padding:
-          55px 0 75px;
+        padding: 55px 0 75px;
       }
 
       .post-content {
-        padding:
-          27px 22px 32px;
+        padding: 27px 22px 32px;
       }
 
       .post-title {
-        font-size:
-          1.65rem;
+        font-size: 1.65rem;
       }
 
       .post-text {
-        font-size:
-          0.97rem;
-
-        line-height:
-          1.75;
+        font-size: 0.97rem;
+        line-height: 1.75;
       }
 
       .btn {
-        width:
-          100%;
+        width: 100%;
       }
-
     }
-
   </style>
-
 </head>
 
-
 <body>
-
-
-  <!-- =========================
-       MENU
-  ========================= -->
+  <!-- MENU -->
 
   <nav>
-
     <div class="container nav">
-
-      <a
-        href="index.html"
-        class="brand"
-      >
-
+      <a href="index.html" class="brand">
         <img
           src="napis-smokol.png?v=28"
           alt="Smokol"
           class="brand-logo"
         >
-
       </a>
 
-
       <div class="nav-links">
-
-        <a
-          href="aktualnosci.html"
-          class="active"
-        >
+        <a href="aktualnosci.html" class="active">
           Aktualności
         </a>
 
@@ -690,59 +387,34 @@
         <a href="index.html#linki">
           Linki
         </a>
-
       </div>
-
     </div>
-
   </nav>
 
-
-  <!-- =========================
-       POST
-  ========================= -->
+  <!-- POST -->
 
   <main>
-
     <section class="post-section">
-
       <div class="container">
-
         <div class="post-container">
-
-          <a
-            href="aktualnosci.html"
-            class="back-link"
-          >
+          <a href="aktualnosci.html" class="back-link">
             ← Wróć do aktualności
           </a>
 
-
           <div id="post-area">
-
             <div class="status">
               Ładowanie posta...
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
   </main>
 
-
-  <!-- =========================
-       STOPKA
-  ========================= -->
+  <!-- STOPKA -->
 
   <footer>
-
     <div class="container footer-content">
-
       <img
         src="napis-smokol.png?v=28"
         alt="Smokol"
@@ -756,99 +428,51 @@
       <span>
         © 2026 Smokol
       </span>
-
     </div>
-
   </footer>
 
-
-  <!-- =========================
-       POST SCRIPT
-  ========================= -->
+  <!-- WCZYTYWANIE POSTA -->
 
   <script>
-
     async function loadPost() {
-
-      const area =
-        document.getElementById("post-area");
-
-
-      const params =
-        new URLSearchParams(
-          window.location.search
-        );
-
-
-      const postId =
-        params.get("id");
-
+      const area = document.getElementById("post-area");
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get("id");
 
       if (!postId) {
-
         area.innerHTML =
           '<div class="status">Nie znaleziono posta.</div>';
-
         return;
-
       }
 
-
       try {
-
-        const response =
-          await fetch("./posts.json?version=3");
-
+        const response = await fetch("./posts.json?version=3");
 
         if (!response.ok) {
-
-          throw new Error(
-            "Nie udało się pobrać posts.json"
-          );
-
+          throw new Error("Nie udało się pobrać posts.json");
         }
 
-
-        const posts =
-          await response.json();
-
-
-        const post =
-          posts.find(
-            item =>
-              item.id === postId
-          );
-
+        const posts = await response.json();
+        const post = posts.find(item => item.id === postId);
 
         if (!post) {
-
           area.innerHTML =
             '<div class="status">Nie znaleziono posta.</div>';
-
           return;
-
         }
 
-
-        document.title =
-          `${post.title} | Smokol`;
-
+        document.title = `${post.title} | Smokol`;
 
         area.innerHTML = `
-
           <article class="post-card">
-
             <img
               src="${post.image}"
               alt="${post.title}"
               class="post-image"
             >
 
-
             <div class="post-content">
-
               <div class="post-meta">
-
                 <span class="post-category">
                   ${post.category}
                 </span>
@@ -856,20 +480,16 @@
                 <span class="post-date">
                   ${post.displayDate}
                 </span>
-
               </div>
-
 
               <h1 class="post-title">
                 ${post.title}
               </h1>
 
-
               <div
                 id="post-text"
                 class="post-text"
               ></div>
-
 
               <a
                 href="${post.link}"
@@ -877,7 +497,6 @@
                 rel="noopener noreferrer"
                 class="btn"
               >
-
                 <img
                   src="logo-youtube-white.png"
                   alt="YouTube"
@@ -886,41 +505,45 @@
                 <span>
                   ${post.button}
                 </span>
-
               </a>
-
             </div>
-
           </article>
-
         `;
 
+        const postText = document.getElementById("post-text");
+        const text = String(post.text || "");
+        const urlPattern = /https?:\/\/[^\s<>"']+/g;
+        let cursor = 0;
 
-        document
-          .getElementById("post-text")
-          .textContent =
-            post.text;
+        for (const match of text.matchAll(urlPattern)) {
+          postText.appendChild(
+            document.createTextNode(
+              text.slice(cursor, match.index)
+            )
+          );
 
-      }
+          const link = document.createElement("a");
+          link.href = match[0];
+          link.textContent = match[0];
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
 
+          postText.appendChild(link);
+          cursor = match.index + match[0].length;
+        }
 
-      catch (error) {
-
+        postText.appendChild(
+          document.createTextNode(text.slice(cursor))
+        );
+      } catch (error) {
         area.innerHTML =
           '<div class="status">Nie udało się wczytać posta.</div>';
 
         console.error(error);
-
       }
-
     }
 
-
     loadPost();
-
   </script>
-
-
 </body>
-
 </html>
