@@ -10,20 +10,16 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Aktualność | Smokol
-  </title>
+  <title>Aktualność | Smokol</title>
 
   <meta
     name="description"
     content="Aktualności i wiadomości z kanału Smokol."
   >
 
-
   <style>
 
     :root {
-
       --red: #c9151b;
       --red-light: #e34b4f;
       --red-dark: #8f0d12;
@@ -32,89 +28,134 @@
 
       --black: #080808;
       --card: #121212;
+      --card-2: #171717;
 
       --text: #ffffff;
       --muted: #aaaaaa;
 
+      --line:
+        rgba(
+          255,
+          255,
+          255,
+          0.08
+        );
+
+      --ease:
+        cubic-bezier(
+          0.2,
+          0.75,
+          0.25,
+          1
+        );
     }
 
 
     * {
+      box-sizing:
+        border-box;
 
-      box-sizing: border-box;
+      margin:
+        0;
 
-      margin: 0;
-      padding: 0;
-
+      padding:
+        0;
     }
 
 
     html {
-
-      scroll-behavior: smooth;
-
+      scroll-behavior:
+        smooth;
     }
 
 
     body {
-
       font-family:
         Arial,
         Helvetica,
         sans-serif;
 
       background:
-
         radial-gradient(
-
           circle at 50% 0%,
-
           rgba(
             200,
             0,
             0,
-            0.18
+            0.16
           ),
-
           transparent 30%
-
         ),
-
         var(--black);
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      line-height: 1.6;
+      line-height:
+        1.6;
 
+      min-height:
+        100vh;
+
+      text-rendering:
+        optimizeLegibility;
+
+      -webkit-font-smoothing:
+        antialiased;
     }
 
 
     a {
+      color:
+        inherit;
 
-      color: inherit;
-
-      text-decoration: none;
-
+      text-decoration:
+        none;
     }
 
 
     img {
-
-      max-width: 100%;
-
+      max-width:
+        100%;
     }
 
 
     .container {
-
       width:
         min(
           1180px,
           92%
         );
 
-      margin: auto;
+      margin:
+        auto;
+    }
 
+
+    ::selection {
+      background:
+        rgba(
+          201,
+          21,
+          27,
+          0.78
+        );
+
+      color:
+        #ffffff;
+    }
+
+
+    :focus-visible {
+      outline:
+        2px solid
+        var(--red-light);
+
+      outline-offset:
+        4px;
+
+      border-radius:
+        6px;
     }
 
 
@@ -125,12 +166,14 @@
 
 
     nav {
+      position:
+        sticky;
 
-      position: sticky;
+      top:
+        0;
 
-      top: 0;
-
-      z-index: 1000;
+      z-index:
+        1000;
 
       background:
         rgba(
@@ -152,53 +195,68 @@
           0.35
         );
 
+      box-shadow:
+        0
+        8px
+        30px
+        rgba(
+          0,
+          0,
+          0,
+          0.22
+        );
     }
 
 
     .nav {
+      min-height:
+        76px;
 
-      min-height: 76px;
-
-      display: flex;
+      display:
+        flex;
 
       justify-content:
         space-between;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 25px;
-
+      gap:
+        25px;
     }
 
 
     .brand {
+      display:
+        flex;
 
-      display: flex;
+      align-items:
+        center;
 
-      align-items: center;
-
-      flex-shrink: 0;
-
+      flex-shrink:
+        0;
     }
 
 
     .brand-logo {
+      width:
+        155px;
 
-      width: 155px;
+      max-height:
+        58px;
 
-      max-height: 58px;
+      object-fit:
+        contain;
 
-      object-fit: contain;
+      display:
+        block;
 
-      display: block;
-
-      transition: 0.2s;
-
+      transition:
+        0.2s;
     }
 
 
     .brand-logo:hover {
-
       transform:
         scale(1.04);
 
@@ -214,66 +272,73 @@
             0.35
           )
         );
-
     }
 
 
     .nav-links {
+      display:
+        flex;
 
-      display: flex;
-
-      align-items: center;
+      align-items:
+        center;
 
       justify-content:
         flex-end;
 
-      gap: 18px;
+      gap:
+        18px;
 
-      flex-wrap: wrap;
-
+      flex-wrap:
+        wrap;
     }
 
 
     .nav-links a {
+      position:
+        relative;
 
-      position: relative;
-
-      color: #dddddd;
+      color:
+        #dddddd;
 
       font-size:
         0.95rem;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      white-space: nowrap;
+      white-space:
+        nowrap;
 
-      transition: 0.2s;
-
+      transition:
+        0.2s;
     }
 
 
     .nav-links a:hover,
     .nav-links .active {
-
       color:
         var(--red-light);
-
     }
 
 
     .nav-links a::after {
+      content:
+        "";
 
-      content: "";
+      position:
+        absolute;
 
-      position: absolute;
+      left:
+        50%;
 
-      left: 50%;
+      bottom:
+        -7px;
 
-      bottom: -7px;
+      width:
+        0;
 
-      width: 0;
-
-      height: 2px;
+      height:
+        2px;
 
       background:
         var(--red);
@@ -283,15 +348,13 @@
 
       transition:
         width 0.2s;
-
     }
 
 
     .nav-links a:hover::after,
     .nav-links .active::after {
-
-      width: 100%;
-
+      width:
+        100%;
     }
 
 
@@ -302,75 +365,68 @@
 
 
     .post-section {
-
       padding:
-        80px
+        78px
         0
         100px;
-
     }
 
 
     .post-container {
-
       max-width:
         1000px;
 
-      margin: auto;
-
+      margin:
+        auto;
     }
 
 
     .back-link {
-
       display:
         inline-flex;
 
       align-items:
         center;
 
+      gap:
+        8px;
+
       margin-bottom:
-        25px;
+        26px;
 
       color:
-        #aaaaaa;
+        #a8a8a8;
 
       font-weight:
-        700;
+        800;
 
       transition:
-        0.2s;
-
+        color 0.2s,
+        transform 0.2s;
     }
 
 
     .back-link:hover {
-
       color:
         var(--red-light);
 
+      transform:
+        translateX(-3px);
     }
 
 
     .post-card {
-
       background:
-
         linear-gradient(
-
           135deg,
-
           rgba(
             150,
             0,
             0,
             0.10
           ),
-
           transparent 55%
-
         ),
-
         var(--card);
 
       border:
@@ -389,7 +445,6 @@
         hidden;
 
       box-shadow:
-
         0
         20px
         60px
@@ -397,54 +452,83 @@
           0,
           0,
           0,
-          0.4
+          0.40
         );
+
+      animation:
+        postFadeIn
+        0.55s
+        var(--ease)
+        both;
+    }
+
+
+    @keyframes postFadeIn {
+
+      from {
+        opacity:
+          0;
+
+        transform:
+          translateY(16px);
+      }
+
+      to {
+        opacity:
+          1;
+
+        transform:
+          none;
+      }
 
     }
 
 
     .post-image {
-
-      width: 100%;
+      width:
+        100%;
 
       aspect-ratio:
         16 / 9;
 
-      object-fit: cover;
+      object-fit:
+        cover;
 
-      display: block;
+      display:
+        block;
 
+      background:
+        #0b0b0b;
     }
 
 
     .post-content {
-
       padding:
         40px
         46px
         46px;
-
     }
 
 
     .post-meta {
+      display:
+        flex;
 
-      display: flex;
+      align-items:
+        center;
 
-      align-items: center;
+      gap:
+        12px;
 
-      gap: 12px;
-
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
       margin-bottom:
         18px;
-
     }
 
 
     .post-category {
-
       padding:
         5px
         11px;
@@ -461,11 +545,12 @@
       font-weight:
         900;
 
+      letter-spacing:
+        0.2px;
     }
 
 
     .post-date {
-
       color:
         #888888;
 
@@ -474,11 +559,12 @@
 
       font-weight:
         700;
-
     }
 
 
     .post-title {
+      max-width:
+        850px;
 
       font-size:
         clamp(
@@ -494,13 +580,20 @@
         #f1f1f1;
 
       margin-bottom:
-        30px;
+        32px;
 
+      letter-spacing:
+        -0.4px;
     }
 
 
-    .post-text {
 
+    /* =========================
+       TREŚĆ POSTA
+    ========================= */
+
+
+    .post-text {
       color:
         #c4c4c4;
 
@@ -511,13 +604,11 @@
         1.85;
 
       margin-bottom:
-        35px;
-
+        36px;
     }
 
 
     .post-text a {
-
       color:
         #ffb347;
 
@@ -526,19 +617,12 @@
 
       overflow-wrap:
         anywhere;
-
     }
 
 
-
-    /* =========================
-       PIERWSZA LINIA
-    ========================= */
-
-
     .post-intro-heading {
-
-      display: block;
+      display:
+        block;
 
       margin-bottom:
         28px;
@@ -554,23 +638,18 @@
 
       line-height:
         1.45;
-
     }
 
 
-
-    /* =========================
-       ŚRÓDTYTUŁY
-    ========================= */
-
-
     .post-subheading {
+      display:
+        flex;
 
-      position: relative;
+      align-items:
+        center;
 
-      display: flex;
-
-      align-items: center;
+      width:
+        100%;
 
       margin:
         34px
@@ -582,25 +661,20 @@
         17px;
 
       background:
-
         linear-gradient(
-
           90deg,
-
           rgba(
             201,
             21,
             27,
             0.18
           ),
-
           rgba(
             201,
             21,
             27,
             0.025
           )
-
         );
 
       border-left:
@@ -624,25 +698,21 @@
 
       letter-spacing:
         0.2px;
-
     }
 
 
     .post-paragraph {
-
       margin-bottom:
         22px;
-
     }
 
 
     .post-line {
+      display:
+        block;
 
-      display: block;
-
-      margin-bottom:
-        6px;
-
+      min-height:
+        1px;
     }
 
 
@@ -653,29 +723,27 @@
 
 
     .post-buttons {
+      display:
+        flex;
 
-      display: flex;
+      align-items:
+        center;
 
-      align-items: center;
+      justify-content:
+        flex-start;
 
-      gap: 14px;
+      gap:
+        14px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      margin-top:
-        8px;
-
+      padding-top:
+        4px;
     }
 
 
-
-    /* =========================
-       YOUTUBE
-    ========================= */
-
-
     .btn {
-
       display:
         inline-flex;
 
@@ -685,7 +753,8 @@
       justify-content:
         center;
 
-      gap: 10px;
+      gap:
+        10px;
 
       min-height:
         54px;
@@ -710,17 +779,28 @@
       font-weight:
         900;
 
-      transition:
+      text-decoration:
+        none;
 
+      box-shadow:
+        0
+        7px
+        20px
+        rgba(
+          0,
+          0,
+          0,
+          0.22
+        );
+
+      transition:
         transform 0.2s,
         background 0.2s,
         box-shadow 0.2s;
-
     }
 
 
     .btn:hover {
-
       transform:
         translateY(-2px);
 
@@ -728,28 +808,27 @@
         #dd1b22;
 
       box-shadow:
-
         0
-        8px
-        25px
+        10px
+        28px
         rgba(
           150,
           0,
           0,
-          0.25
+          0.28
         );
-
     }
 
 
     .btn img {
+      width:
+        30px;
 
-      width: 30px;
+      height:
+        30px;
 
-      height: 30px;
-
-      object-fit: contain;
-
+      object-fit:
+        contain;
     }
 
 
@@ -760,7 +839,6 @@
 
 
     .btn-steam {
-
       display:
         inline-flex;
 
@@ -770,7 +848,8 @@
       justify-content:
         center;
 
-      gap: 11px;
+      gap:
+        11px;
 
       min-height:
         54px;
@@ -780,17 +859,11 @@
         22px;
 
       background:
-
         linear-gradient(
-
           135deg,
-
           #1b2838 0%,
-
           #16202d 48%,
-
           #0e141b 100%
-
         );
 
       border:
@@ -811,8 +884,10 @@
       font-weight:
         900;
 
-      box-shadow:
+      text-decoration:
+        none;
 
+      box-shadow:
         inset
         0
         1px
@@ -823,7 +898,6 @@
           255,
           0.05
         ),
-
         0
         6px
         20px
@@ -835,39 +909,29 @@
         );
 
       transition:
-
         transform 0.2s,
         border-color 0.2s,
         background 0.2s,
         box-shadow 0.2s;
-
     }
 
 
     .btn-steam:hover {
-
       transform:
         translateY(-2px);
 
       background:
-
         linear-gradient(
-
           135deg,
-
           #20364a 0%,
-
           #1b4059 50%,
-
           #132838 100%
-
         );
 
       border-color:
         #66c0f4;
 
       box-shadow:
-
         0
         8px
         26px
@@ -877,7 +941,6 @@
           0,
           0.35
         ),
-
         0
         0
         18px
@@ -887,21 +950,21 @@
           244,
           0.18
         );
-
     }
 
 
     .btn-steam img {
+      width:
+        30px;
 
-      width: 30px;
-
-      height: 30px;
+      height:
+        30px;
 
       object-fit:
         contain;
 
-      flex-shrink: 0;
-
+      flex-shrink:
+        0;
     }
 
 
@@ -912,7 +975,6 @@
 
 
     .status {
-
       text-align:
         center;
 
@@ -922,7 +984,32 @@
       padding:
         80px
         20px;
+    }
 
+
+    .status-error {
+      border:
+        1px solid
+        rgba(
+          201,
+          21,
+          27,
+          0.35
+        );
+
+      border-radius:
+        12px;
+
+      background:
+        rgba(
+          201,
+          21,
+          27,
+          0.06
+        );
+
+      padding:
+        24px;
     }
 
 
@@ -933,7 +1020,6 @@
 
 
     footer {
-
       padding:
         35px
         0;
@@ -950,13 +1036,12 @@
 
       color:
         #777777;
-
     }
 
 
     .footer-content {
-
-      display: flex;
+      display:
+        flex;
 
       flex-direction:
         column;
@@ -964,13 +1049,12 @@
       align-items:
         center;
 
-      gap: 8px;
-
+      gap:
+        8px;
     }
 
 
     .footer-logo {
-
       width:
         140px;
 
@@ -982,7 +1066,6 @@
 
       display:
         block;
-
     }
 
 
@@ -998,7 +1081,6 @@
     ) {
 
       .nav {
-
         flex-direction:
           column;
 
@@ -1009,15 +1091,12 @@
           14px
           0
           17px;
-
       }
 
 
       .nav-links {
-
         justify-content:
           center;
-
       }
 
     }
@@ -1035,91 +1114,75 @@
     ) {
 
       .nav {
-
         padding:
-          16px
+          15px
           0;
-
       }
 
 
       .brand-logo {
-
         width:
           145px;
-
       }
 
 
       .nav-links {
-
         justify-content:
           center;
 
         gap:
           12px
           14px;
-
       }
 
 
       .nav-links a {
-
         font-size:
-          0.88rem;
-
+          0.86rem;
       }
 
 
       .post-section {
-
         padding:
           55px
           0
           75px;
-
       }
 
 
       .post-content {
-
         padding:
           27px
           22px
           32px;
-
       }
 
 
       .post-title {
-
         font-size:
           1.65rem;
 
+        margin-bottom:
+          26px;
       }
 
 
       .post-text {
-
         font-size:
           0.97rem;
 
         line-height:
           1.75;
-
       }
 
 
       .post-intro-heading {
-
         font-size:
           1.08rem;
-
       }
 
 
       .post-subheading {
-
         margin:
           28px
           0
@@ -1131,30 +1194,46 @@
 
         font-size:
           0.96rem;
-
       }
 
 
       .post-buttons {
-
         flex-direction:
           column;
 
         align-items:
           stretch;
-
-        gap:
-          12px;
-
       }
 
 
       .btn,
       .btn-steam {
-
         width:
           100%;
+      }
 
+    }
+
+
+
+    /* =========================
+       MNIEJ ANIMACJI
+    ========================= */
+
+
+    @media (
+      prefers-reduced-motion:
+      reduce
+    ) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration:
+          0.01ms !important;
+
+        animation-duration:
+          0.01ms !important;
       }
 
     }
@@ -1164,9 +1243,7 @@
 </head>
 
 
-
 <body>
-
 
 
   <!-- =========================
@@ -1185,13 +1262,12 @@
       >
 
         <img
-          src="napis-smokol.png?v=28"
+          src="napis-smokol.png?v=30"
           alt="Smokol"
           class="brand-logo"
         >
 
       </a>
-
 
 
       <div class="nav-links">
@@ -1203,46 +1279,28 @@
           Aktualności
         </a>
 
-
         <a href="index.html#live">
-
           Live
-
         </a>
-
 
         <a href="transmisje.html">
-
           Ostatnie transmisje
-
         </a>
-
 
         <a href="index.html#serie">
-
           Serie
-
         </a>
-
 
         <a href="index.html#hub">
-
           Smokol Hub
-
         </a>
-
 
         <a href="index.html#baza">
-
           Baza Smokola
-
         </a>
 
-
         <a href="index.html#linki">
-
           Linki
-
         </a>
 
       </div>
@@ -1278,7 +1336,6 @@
           </a>
 
 
-
           <div id="post-area">
 
             <div class="status">
@@ -1311,23 +1368,19 @@
 
 
       <img
-        src="napis-smokol.png?v=28"
+        src="napis-smokol.png?v=30"
         alt="Smokol"
         class="footer-logo"
       >
 
 
       <span>
-
         Symulacja to moja pasja
-
       </span>
 
 
       <span>
-
         © 2026 Smokol
-
       </span>
 
 
@@ -1338,7 +1391,7 @@
 
 
   <!-- =========================
-       POST SCRIPT
+       POSTS.JSON
   ========================= -->
 
 
@@ -1373,9 +1426,17 @@
       if (!postId) {
 
 
-        area.innerHTML =
+        area.innerHTML = `
 
-          '<div class="status">Nie znaleziono posta.</div>';
+          <div
+            class="status status-error"
+          >
+
+            Nie znaleziono posta.
+
+          </div>
+
+        `;
 
 
         return;
@@ -1390,13 +1451,21 @@
 
 
         /* =========================
-           POSTS.JSON
+           WCZYTANIE POSTS.JSON
         ========================= */
 
 
         const response =
           await fetch(
-            "./posts.json?version=4"
+
+            "./posts.json?cache=" +
+            Date.now(),
+
+            {
+              cache:
+                "no-store"
+            }
+
           );
 
 
@@ -1405,9 +1474,7 @@
 
 
           throw new Error(
-
             "Nie udało się pobrać posts.json"
-
           );
 
 
@@ -1431,16 +1498,24 @@
 
 
         /* =========================
-           POST NIE ISTNIEJE
+           NIE MA POSTA
         ========================= */
 
 
         if (!post) {
 
 
-          area.innerHTML =
+          area.innerHTML = `
 
-            '<div class="status">Nie znaleziono posta.</div>';
+            <div
+              class="status status-error"
+            >
+
+              Nie znaleziono posta.
+
+            </div>
+
+          `;
 
 
           return;
@@ -1468,24 +1543,17 @@
 
         area.innerHTML = `
 
-
           <article class="post-card">
 
 
             <img
-
               src="${post.image}"
-
               alt="${post.title}"
-
               class="post-image"
-
             >
 
 
-
             <div class="post-content">
-
 
 
               <div class="post-meta">
@@ -1493,21 +1561,25 @@
 
                 <span class="post-category">
 
-                  ${post.category}
+                  ${
+                    post.category ||
+                    "NEWS"
+                  }
 
                 </span>
 
 
-
                 <span class="post-date">
 
-                  ${post.displayDate}
+                  ${
+                    post.displayDate ||
+                    ""
+                  }
 
                 </span>
 
 
               </div>
-
 
 
               <h1 class="post-title">
@@ -1517,25 +1589,17 @@
               </h1>
 
 
-
               <div
-
                 id="post-text"
-
                 class="post-text"
-
-              ></div>
-
+              >
+              </div>
 
 
               <div
-
                 id="post-buttons"
-
                 class="post-buttons"
-
               >
-
 
 
                 ${
@@ -1543,26 +1607,16 @@
                     ? `
 
                       <a
-
                         href="${post.link}"
-
                         target="_blank"
-
                         rel="noopener noreferrer"
-
                         class="btn"
-
                       >
 
-
                         <img
-
                           src="logo-youtube-white.png"
-
                           alt="YouTube"
-
                         >
-
 
                         <span>
 
@@ -1573,13 +1627,11 @@
 
                         </span>
 
-
                       </a>
 
                     `
                     : ""
                 }
-
 
 
               </div>
@@ -1589,7 +1641,6 @@
 
 
           </article>
-
 
         `;
 
@@ -1613,14 +1664,13 @@
           );
 
 
-
         let steamLink =
           null;
 
 
 
         /* =========================
-           LINKI W TEKŚCIE
+           DODAWANIE LINKÓW
         ========================= */
 
 
@@ -1638,7 +1688,8 @@
             /https?:\/\/[^\s<>"']+/g;
 
 
-          let cursor = 0;
+          let cursor =
+            0;
 
 
 
@@ -1657,11 +1708,8 @@
               document.createTextNode(
 
                 value.slice(
-
                   cursor,
-
                   match.index
-
                 )
 
               )
@@ -1672,7 +1720,6 @@
 
             const url =
               match[0];
-
 
 
             let parsedUrl =
@@ -1704,8 +1751,10 @@
             const hostname =
 
               parsedUrl
+
                 ? parsedUrl.hostname
                     .toLowerCase()
+
                 : "";
 
 
@@ -1721,7 +1770,7 @@
 
 
             /* =========================
-               STEAM
+               LINK STEAM
             ========================= */
 
 
@@ -1730,10 +1779,8 @@
 
               if (!steamLink) {
 
-
                 steamLink =
                   url;
-
 
               }
 
@@ -1795,7 +1842,9 @@
 
             document.createTextNode(
 
-              value.slice(cursor)
+              value.slice(
+                cursor
+              )
 
             )
 
@@ -1807,7 +1856,7 @@
 
 
         /* =========================
-           ANALIZA LINII
+           LINIE POSTA
         ========================= */
 
 
@@ -1815,15 +1864,18 @@
           text.split("\n");
 
 
-
         let introCreated =
           false;
-
 
 
         let paragraphLines =
           [];
 
+
+
+        /* =========================
+           ZWYKŁY AKAPIT
+        ========================= */
 
 
         function flushParagraph() {
@@ -1890,12 +1942,17 @@
           );
 
 
-
-          paragraphLines = [];
+          paragraphLines =
+            [];
 
 
         }
 
+
+
+        /* =========================
+           RENDEROWANIE TEKSTU
+        ========================= */
 
 
         lines.forEach(
@@ -1908,9 +1965,7 @@
 
 
 
-            /* =========================
-               PUSTA LINIA
-            ========================= */
+            /* PUSTA LINIA */
 
 
             if (!line) {
@@ -1974,7 +2029,7 @@
 
 
             /* =========================
-               WYKRYWANIE ŚRÓDTYTUŁU
+               WYKRYWANIE ŚRÓDTYTUŁÓW
             ========================= */
 
 
@@ -2006,14 +2061,10 @@
 
               letters.length > 0
 
-                ?
+                ? upperLetters.length /
+                  letters.length
 
-                upperLetters.length /
-                letters.length
-
-                :
-
-                0;
+                : 0;
 
 
 
@@ -2023,13 +2074,21 @@
 
               uppercaseRatio >= 0.68 &&
 
-              !line.startsWith("http") &&
+              !line.startsWith(
+                "http"
+              ) &&
 
-              !line.endsWith(".") &&
+              !line.endsWith(
+                "."
+              ) &&
 
-              !line.endsWith(",") &&
+              !line.endsWith(
+                ","
+              ) &&
 
-              !line.endsWith(";");
+              !line.endsWith(
+                ";"
+              );
 
 
 
@@ -2092,7 +2151,7 @@
 
 
         /* =========================
-           STEAM BUTTON
+           PRZYCISK STEAM
         ========================= */
 
 
@@ -2191,13 +2250,23 @@
       catch (error) {
 
 
-        area.innerHTML =
+        console.error(
+          error
+        );
 
-          '<div class="status">Nie udało się wczytać posta.</div>';
 
+        area.innerHTML = `
 
+          <div
+            class="status status-error"
+          >
 
-        console.error(error);
+            Nie udało się wczytać posta.
+            Odśwież stronę za chwilę.
+
+          </div>
+
+        `;
 
 
       }
