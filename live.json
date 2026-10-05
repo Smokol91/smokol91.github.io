@@ -1,11 +1,11 @@
 {
-  "videoId": "D8FoI2bDJLs",
-  "link": "https://youtube.com/live/D8FoI2bDJLs",
-  "start": "2026-10-03T19:00:00+02:00",
+  "videoId": "BVxvJGBpWmM",
+  "link": "https://youtube.com/live/BVxvJGBpWmM",
+  "start": "2026-10-05T19:00:00+02:00",
   "liveDurationMinutes": 150,
   "statusOverride": "",
-  "game": "Euro Truck Simulator 2",
-  "episode": "#116<br>",
-  "title": "Wyprawa do RPA | Część 1",
-  "description": "Czeka nas ogromne wyzwanie! Rozpoczynamy przepotężną wyprawę z Jembi w Kazachstanie aż do Colesbergu w Republice Południowej Afryki. Przed nami 11 322 km jazdy po lądzie oraz około 3500 km przeprawy promowej, co daje łącznie aż 14 822 kilometrów całej trasy. Gramy na ETS2 1.60 i profilu Giga Combo Map, który razem z modyfikacjami dźwiękowymi oraz dodatkami z Warsztatu Steam liczy aż 485 modyfikacji. W tę ekstremalnie długą podróż ruszamy podstawowym Renault T Evolution. To dopiero pierwsza część wyprawy do RPA!"
+  "game": "openOMSI",
+  "episode": "Symulacja to moja pasja",
+  "title": "Rewolucja czy ciekawostka?",
+  "description": "Dzisiaj bierzemy na warsztat openOMSI — projekt, który może mocno namieszać w świecie autobusowych symulatorów. Sprawdzimy, jak działa w praktyce, czym różni się od klasycznego OMSI 2 oraz jakie są jego największe plusy i minusy. Pokażę Wam swoje pierwsze odczucia, działanie sterowania, interfejsu, map i najważniejszych funkcji. Na koniec spróbujemy odpowiedzieć na najważniejsze pytanie: czy openOMSI to rewolucja, ewolucja, czy na razie przede wszystkim ciekawostka?"
 }
