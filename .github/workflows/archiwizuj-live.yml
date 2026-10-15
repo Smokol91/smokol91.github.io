@@ -1,0 +1,47 @@
+
+name: Automatyczne ostatnie transmisje
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - live.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ostatnie-transmisje
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz repozytorium wraz z historia
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Zapisz poprzedni live
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: python3 .github/scripts/archiwizuj_live.py
+
+      - name: Zapisz zmiany w GitHub
+        run: |
+          if git diff --quiet -- transmisje.json; then
+            echo "Brak zmian"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add transmisje.json
+          git commit -m "Automatycznie zarchiwizuj poprzedni live"
+          git push
