@@ -1,4 +1,32 @@
+
 [
+  {
+    "date": "2026-10-13",
+    "displayDate": "13.10.2026",
+    "game": "openOMSI",
+    "episode": "#1",
+    "title": "Deszczowy Londyn",
+    "videoId": "nrNpb-8-BVU",
+    "description": "Rozpoczynamy nową serię w openOMSI! Tym razem wybieramy się do deszczowego Londynu, aby sprawdzić możliwości symulatora, zachowanie autobusów oraz klimat brytyjskiej komunikacji miejskiej. Testujemy jazdę, obsługę kierownicy i kolejne funkcje projektu rozwijanego przez społeczność."
+  },
+  {
+    "date": "2026-10-10",
+    "displayDate": "10.10.2026",
+    "game": "Euro Truck Simulator 2",
+    "episode": "#117",
+    "title": "Wyprawa do RPA | Część 2",
+    "videoId": "WtBgKnHnP4A",
+    "description": "Kontynuujemy gigantyczną wyprawę z Kazachstanu do Republiki Południowej Afryki! W drugiej części naszej podróży pokonujemy kolejne kilometry na mapie Giga Combo Map. Przed nami długa trasa, nowe krajobrazy oraz dalsza droga do Colesberg w RPA."
+  },
+  {
+    "date": "2026-10-06",
+    "displayDate": "06.10.2026",
+    "game": "Horizon: Zero Dawn Remastered",
+    "episode": "#10",
+    "title": "Na pohybel ciemności",
+    "videoId": "nMZHkWnBO3g",
+    "description": "Wracamy do przygód Aloy w Horizon Zero Dawn Remastered! Po wydarzeniach związanych z misją Kurhan kontynuujemy główną fabułę. Przed nami zadanie Na pohybel ciemności, infiltracja bazy Zaćmienia, odkrywanie kolejnych tajemnic oraz przygotowania do dalszej podróży."
+  },
   {
     "date": "2026-10-05",
     "displayDate": "05.10.2026",
@@ -72,3 +100,4 @@
     "description": "Ruszamy w kierunku Liverpoolu i sprawdzamy DLC England oraz Tourism W410. Pierwsza część naszej brytyjskiej podróży w Fernbus Simulator."
   }
 ]
+
