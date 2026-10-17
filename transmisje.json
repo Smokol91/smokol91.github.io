@@ -1,5 +1,13 @@
-
 [
+  {
+    "date": "2026-10-15",
+    "displayDate": "15.10.2026",
+    "game": "American Truck Simulator",
+    "episode": "#45",
+    "title": "Samochodem po USA!",
+    "videoId": "oBAL2cchNiY",
+    "description": "W 45. odcinku American Truck Simulator odkładamy ciężarówki i przesiadamy się za kierownicę samochodów osobowych! Testujemy DLC Road Trip: Ford, które otwiera zupełnie nowe możliwości podróżowania po USA. Sprawdzimy cztery samochody marki Ford, ich model jazdy, personalizację oraz system Atlas pozwalający odkrywać atrakcje turystyczne i zbierać pocztówki. Przyjrzymy się również nowym zleceniom Quick Jobs i Dispatch Market. Czy Road Trip to prawdziwa rewolucja w ATS, czy tylko ciekawostka? Ruszamy samochodem po amerykańskich drogach!"
+  },
   {
     "date": "2026-10-13",
     "displayDate": "13.10.2026",
@@ -100,4 +108,3 @@
     "description": "Ruszamy w kierunku Liverpoolu i sprawdzamy DLC England oraz Tourism W410. Pierwsza część naszej brytyjskiej podróży w Fernbus Simulator."
   }
 ]
-
