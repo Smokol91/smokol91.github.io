@@ -28,7 +28,9 @@
   padding:0;
 }
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior:smooth;
+}
 
 body {
   font-family:Arial,Helvetica,sans-serif;
@@ -51,7 +53,9 @@ a {
   text-decoration:none;
 }
 
-img { max-width:100%; }
+img {
+  max-width:100%;
+}
 
 .container {
   width:min(1180px,92%);
@@ -107,7 +111,9 @@ nav {
 
 .brand-logo:hover {
   transform:scale(1.04);
-  filter:drop-shadow(0 0 10px rgba(160,0,0,.35));
+  filter:drop-shadow(
+    0 0 10px rgba(160,0,0,.35)
+  );
 }
 
 .nav-links {
@@ -303,7 +309,7 @@ nav {
 }
 
 /* =========================
-   PRZYCISK YOUTUBE
+   PRZYCISKI
 ========================= */
 
 .post-buttons {
@@ -314,6 +320,8 @@ nav {
   flex-wrap:wrap;
   padding-top:4px;
 }
+
+/* YOUTUBE */
 
 .btn {
   display:inline-flex;
@@ -348,30 +356,38 @@ nav {
 }
 
 /* =========================
-   PRZYCISK STEAM
+   STEAM
+   AUTOMATYCZNY PRZYCISK
 ========================= */
 
-.btn-steam {
+.btn-steam,
+.post-text a.btn-steam {
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:11px;
   min-height:54px;
+  max-width:100%;
   padding:11px 22px;
+
   background:linear-gradient(
     135deg,
     #1b2838 0%,
     #16202d 48%,
     #0e141b 100%
   );
+
   border:1px solid rgba(102,192,244,.45);
   border-radius:10px;
   color:#fff;
   font-weight:900;
   text-decoration:none;
+  text-align:center;
+
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.05),
     0 6px 20px rgba(0,0,0,.22);
+
   transition:
     transform .2s,
     border-color .2s,
@@ -379,21 +395,27 @@ nav {
     box-shadow .2s;
 }
 
-.btn-steam:hover {
+.btn-steam:hover,
+.post-text a.btn-steam:hover {
   transform:translateY(-2px);
+
   background:linear-gradient(
     135deg,
     #20364a 0%,
     #1b4059 50%,
     #132838 100%
   );
+
   border-color:#66c0f4;
+  color:#fff;
+
   box-shadow:
     0 8px 26px rgba(0,0,0,.35),
     0 0 18px rgba(102,192,244,.18);
 }
 
-.btn-steam img {
+.btn-steam img,
+.post-text a.btn-steam img {
   width:30px;
   height:30px;
   object-fit:contain;
@@ -403,7 +425,6 @@ nav {
 /* =========================
    STREFA OMSI
    AUTOMATYCZNE PRZYCISKI
-   POMARAŃCZOWO-BRĄZOWE
 ========================= */
 
 .btn-strefa,
@@ -425,7 +446,7 @@ nav {
   border:2px solid #f47716;
   border-radius:10px;
 
-  color:#ffffff;
+  color:#fff;
   font-size:.9rem;
   font-weight:900;
   line-height:1.3;
@@ -454,21 +475,23 @@ nav {
   );
 
   border-color:#ff9a3d;
-  color:#ffffff;
+  color:#fff;
 
   box-shadow:
     0 8px 24px rgba(244,119,22,.35);
 }
 
 .btn-strefa img,
-.post-text .btn-strefa img {
+.post-text a.btn-strefa img {
   width:105px;
   height:34px;
   object-fit:contain;
   flex-shrink:0;
 }
 
-.strefa-link-wrapper {
+/* MIEJSCE PRZYCISKU W ARTYKULE */
+
+.external-link-wrapper {
   display:block;
   margin:12px 0 20px;
 }
@@ -585,6 +608,7 @@ footer {
 ========================= */
 
 @media(max-width:760px) {
+
   .nav {
     padding:15px 0;
   }
@@ -639,6 +663,7 @@ footer {
   .btn-steam,
   .btn-extra,
   .btn-strefa,
+  .post-text a.btn-steam,
   .post-text a.btn-strefa {
     width:100%;
   }
@@ -656,6 +681,7 @@ footer {
     animation-duration:.01ms!important;
   }
 }
+
 </style>
 </head>
 
@@ -677,19 +703,32 @@ footer {
     </a>
 
     <div class="nav-links">
+
       <a href="aktualnosci.html" class="active">
         Aktualności
       </a>
+
       <a href="index.html#live">Live</a>
+
       <a href="transmisje.html">
         Ostatnie transmisje
       </a>
-      <a href="index.html#serie">Serie</a>
-      <a href="index.html#hub">Smokol Hub</a>
-      <a href="index.html#baza">Baza Smokola</a>
-      <a href="index.html#linki">Linki</a>
-    </div>
 
+      <a href="index.html#serie">Serie</a>
+
+      <a href="index.html#hub">
+        Smokol Hub
+      </a>
+
+      <a href="index.html#baza">
+        Baza Smokola
+      </a>
+
+      <a href="index.html#linki">
+        Linki
+      </a>
+
+    </div>
   </div>
 </nav>
 
@@ -723,13 +762,21 @@ footer {
 
 <footer>
   <div class="container footer-content">
+
     <img
       src="napis-smokol.png?v=30"
       alt="Smokol"
       class="footer-logo"
     >
-    <span>Symulacja to moja pasja</span>
-    <span>© 2026 Smokol</span>
+
+    <span>
+      Symulacja to moja pasja
+    </span>
+
+    <span>
+      © 2026 Smokol
+    </span>
+
   </div>
 </footer>
 
@@ -741,7 +788,9 @@ footer {
 
 async function loadPost() {
 
-  const area = document.getElementById("post-area");
+  const area = document.getElementById(
+    "post-area"
+  );
 
   const params = new URLSearchParams(
     window.location.search
@@ -750,18 +799,24 @@ async function loadPost() {
   const postId = params.get("id");
 
   if (!postId) {
+
     area.innerHTML =
       '<div class="status status-error">Nie znaleziono posta.</div>';
+
     return;
   }
 
   try {
 
-    /* POBIERANIE AKTUALNOŚCI */
+    /* =========================
+       POBIERANIE POSTS.JSON
+    ========================= */
 
     const response = await fetch(
       "./posts.json?cache=" + Date.now(),
-      { cache:"no-store" }
+      {
+        cache:"no-store"
+      }
     );
 
     if (!response.ok) {
@@ -777,14 +832,18 @@ async function loadPost() {
     );
 
     if (!post) {
+
       area.innerHTML =
         '<div class="status status-error">Nie znaleziono posta.</div>';
+
       return;
     }
 
     document.title = `${post.title} | Smokol`;
 
-    /* SZKIELET ARTYKUŁU */
+    /* =========================
+       STRUKTURA ARTYKUŁU
+    ========================= */
 
     area.innerHTML = `
       <article class="post-card">
@@ -798,6 +857,7 @@ async function loadPost() {
         <div class="post-content">
 
           <div class="post-meta">
+
             <span
               id="post-category"
               class="post-category"
@@ -807,6 +867,7 @@ async function loadPost() {
               id="post-date"
               class="post-date"
             ></span>
+
           </div>
 
           <h1
@@ -858,41 +919,44 @@ async function loadPost() {
 
     const text = String(post.text || "");
 
-    let steamLink = null;
-
     /* =========================
-       AUTOMATYCZNE ROZPOZNAWANIE
-       LINKÓW
+       ROZPOZNAWANIE LINKÓW
     ========================= */
 
     function getHostname(url) {
+
       try {
         return new URL(url).hostname.toLowerCase();
       } catch (error) {
         return "";
       }
+
     }
 
     function isSteamUrl(url) {
+
       const hostname = getHostname(url);
 
       return (
         hostname === "store.steampowered.com" ||
         hostname === "www.store.steampowered.com"
       );
+
     }
 
     function isStrefaUrl(url) {
+
       const hostname = getHostname(url);
 
       return (
         hostname === "strefa-omsi.pl" ||
         hostname === "www.strefa-omsi.pl"
       );
+
     }
 
     /* =========================
-       TWORZENIE PRZYCISKU
+       TWORZENIE PRZYCISKÓW
     ========================= */
 
     function createButton(
@@ -902,7 +966,9 @@ async function loadPost() {
       logo
     ) {
 
-      if (!url || !label) return null;
+      if (!url || !label) {
+        return null;
+      }
 
       let parsed;
 
@@ -926,12 +992,14 @@ async function loadPost() {
       button.className = className;
 
       if (logo) {
+
         const img = document.createElement("img");
 
         img.src = logo;
         img.alt = "";
 
         button.appendChild(img);
+
       }
 
       const span = document.createElement("span");
@@ -941,6 +1009,7 @@ async function loadPost() {
       button.appendChild(span);
 
       return button;
+
     }
 
     function addButton(
@@ -960,12 +1029,12 @@ async function loadPost() {
       if (button) {
         postButtons.appendChild(button);
       }
+
     }
 
     /* =========================
+       NAZWY PRZYCISKÓW
        STREFA OMSI
-       AUTOMATYCZNA NAZWA
-       PRZYCISKU
     ========================= */
 
     function getStrefaLabel(url) {
@@ -973,11 +1042,15 @@ async function loadPost() {
       let path = "";
 
       try {
+
         path = decodeURIComponent(
           new URL(url).pathname
         ).toLowerCase();
+
       } catch (error) {
+
         return "ZOBACZ NA STREFIE OMSI";
+
       }
 
       if (path.includes("autosan-h9")) {
@@ -997,11 +1070,12 @@ async function loadPost() {
       }
 
       return "ZOBACZ NA STREFIE OMSI";
+
     }
 
     /* =========================
-       LINKI W TREŚCI ARTYKUŁU
        AUTOMATYCZNE PRZYCISKI
+       STEAM I STREFA OMSI
     ========================= */
 
     function appendTextWithLinks(
@@ -1009,7 +1083,8 @@ async function loadPost() {
       value
     ) {
 
-      const urlPattern = /https?:\/\/[^\s<>"']+/g;
+      const urlPattern =
+        /https?:\/\/[^\s<>"']+/g;
 
       let cursor = 0;
 
@@ -1025,17 +1100,38 @@ async function loadPost() {
 
         const url = match[0];
 
-        /* STEAM */
+        /* =========================
+           STEAM
+           PRZYCISK W TREŚCI
+        ========================= */
 
         if (isSteamUrl(url)) {
 
-          if (!steamLink) {
-            steamLink = url;
+          const wrapper = document.createElement(
+            "div"
+          );
+
+          wrapper.className =
+            "external-link-wrapper";
+
+          const button = createButton(
+            url,
+            "ZOBACZ NA STEAM",
+            "btn-steam",
+            "logo-steam.png"
+          );
+
+          if (button) {
+            wrapper.appendChild(button);
+            container.appendChild(wrapper);
           }
 
         }
 
-        /* STREFA OMSI */
+        /* =========================
+           STREFA OMSI
+           PRZYCISK W TREŚCI
+        ========================= */
 
         else if (isStrefaUrl(url)) {
 
@@ -1044,7 +1140,7 @@ async function loadPost() {
           );
 
           wrapper.className =
-            "strefa-link-wrapper";
+            "external-link-wrapper";
 
           const button = createButton(
             url,
@@ -1060,7 +1156,9 @@ async function loadPost() {
 
         }
 
-        /* ZWYKŁE LINKI */
+        /* =========================
+           POZOSTAŁE LINKI
+        ========================= */
 
         else {
 
@@ -1133,8 +1231,11 @@ async function loadPost() {
       const line = rawLine.trim();
 
       if (!line) {
+
         flushParagraph();
+
         return;
+
       }
 
       /* PIERWSZY NAGŁÓWEK */
@@ -1157,9 +1258,10 @@ async function loadPost() {
         introCreated = true;
 
         return;
+
       }
 
-      /* WYKRYWANIE NAGŁÓWKÓW */
+      /* WYKRYWANIE ŚRÓDTYTUŁÓW */
 
       const letters = line.replace(
         /[^A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/g,
@@ -1199,6 +1301,7 @@ async function loadPost() {
         postText.appendChild(heading);
 
         return;
+
       }
 
       paragraphLines.push(line);
@@ -1238,7 +1341,7 @@ async function loadPost() {
           return;
         }
 
-        /* LINK DO STREFY OMSI */
+        /* STREFA OMSI */
 
         if (isStrefaUrl(item.url)) {
 
@@ -1251,7 +1354,7 @@ async function loadPost() {
 
         }
 
-        /* LINK DO STEAM */
+        /* STEAM */
 
         else if (isSteamUrl(item.url)) {
 
@@ -1264,7 +1367,7 @@ async function loadPost() {
 
         }
 
-        /* INNE DODATKOWE LINKI */
+        /* INNE PRZYCISKI */
 
         else {
 
@@ -1282,28 +1385,13 @@ async function loadPost() {
     }
 
     /* =========================
-       STEAM — DOTYCHCZASOWA
-       AUTOMATYKA
-    ========================= */
-
-    if (steamLink) {
-
-      addButton(
-        steamLink,
-        "Zobacz na Steam",
-        "btn-steam",
-        "logo-steam.png"
-      );
-
-    }
-
-    /* =========================
-       UKRYWANIE PUSTYCH
-       PRZYCISKÓW
+       UKRYWANIE PUSTEJ SEKCJI
     ========================= */
 
     if (postButtons.children.length === 0) {
+
       postButtons.style.display = "none";
+
     }
 
   }
