@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aktualność | Smokol</title>
 <meta name="description" content="Aktualności i wiadomości z kanału Smokol.">
+
 <style>
 :root {
   --red:#c9151b;
@@ -20,12 +21,23 @@
   --line:rgba(255,255,255,.08);
   --ease:cubic-bezier(.2,.75,.25,1);
 }
-* { box-sizing:border-box;margin:0;padding:0; }
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 html { scroll-behavior:smooth; }
+
 body {
   font-family:Arial,Helvetica,sans-serif;
   background:
-    radial-gradient(circle at 50% 0%,rgba(200,0,0,.16),transparent 30%),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(200,0,0,.16),
+      transparent 30%
+    ),
     var(--black);
   color:var(--text);
   line-height:1.6;
@@ -33,299 +45,708 @@ body {
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
-a { color:inherit;text-decoration:none; }
-img { max-width:100%; }
-.container { width:min(1180px,92%);margin:auto; }
-::selection { background:rgba(201,21,27,.78);color:#fff; }
-:focus-visible {
-  outline:2px solid var(--red-light);
-  outline-offset:4px;border-radius:6px;
+
+a {
+  color:inherit;
+  text-decoration:none;
 }
 
-/* MENU */
+img { max-width:100%; }
+
+.container {
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+::selection {
+  background:rgba(201,21,27,.78);
+  color:#fff;
+}
+
+:focus-visible {
+  outline:2px solid var(--red-light);
+  outline-offset:4px;
+  border-radius:6px;
+}
+
+/* =========================
+   MENU
+========================= */
+
 nav {
-  position:sticky;top:0;z-index:1000;
+  position:sticky;
+  top:0;
+  z-index:1000;
   background:rgba(7,7,7,.96);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(160,0,0,.35);
   box-shadow:0 8px 30px rgba(0,0,0,.22);
 }
+
 .nav {
-  min-height:76px;display:flex;
+  min-height:76px;
+  display:flex;
   justify-content:space-between;
-  align-items:center;gap:25px;
+  align-items:center;
+  gap:25px;
 }
-.brand { display:flex;align-items:center;flex-shrink:0; }
+
+.brand {
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+
 .brand-logo {
-  width:155px;max-height:58px;object-fit:contain;
-  display:block;transition:.2s;
+  width:155px;
+  max-height:58px;
+  object-fit:contain;
+  display:block;
+  transition:.2s;
 }
+
 .brand-logo:hover {
   transform:scale(1.04);
   filter:drop-shadow(0 0 10px rgba(160,0,0,.35));
 }
-.nav-links {
-  display:flex;align-items:center;
-  justify-content:flex-end;gap:18px;flex-wrap:wrap;
-}
-.nav-links a {
-  position:relative;color:#ddd;
-  font-size:.95rem;font-weight:700;
-  white-space:nowrap;transition:.2s;
-}
-.nav-links a:hover,.nav-links .active { color:var(--red-light); }
-.nav-links a::after {
-  content:"";position:absolute;left:50%;bottom:-7px;
-  width:0;height:2px;background:var(--red);
-  transform:translateX(-50%);transition:width .2s;
-}
-.nav-links a:hover::after,.nav-links .active::after { width:100%; }
 
-/* ARTYKUŁ */
-.post-section { padding:78px 0 100px; }
-.post-container { max-width:1000px;margin:auto; }
+.nav-links {
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.nav-links a {
+  position:relative;
+  color:#ddd;
+  font-size:.95rem;
+  font-weight:700;
+  white-space:nowrap;
+  transition:.2s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color:var(--red-light);
+}
+
+.nav-links a::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-7px;
+  width:0;
+  height:2px;
+  background:var(--red);
+  transform:translateX(-50%);
+  transition:width .2s;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+  width:100%;
+}
+
+/* =========================
+   ARTYKUŁ
+========================= */
+
+.post-section {
+  padding:78px 0 100px;
+}
+
+.post-container {
+  max-width:1000px;
+  margin:auto;
+}
+
 .back-link {
-  display:inline-flex;align-items:center;gap:8px;
-  margin-bottom:26px;color:#a8a8a8;font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:26px;
+  color:#a8a8a8;
+  font-weight:800;
   transition:color .2s,transform .2s;
 }
+
 .back-link:hover {
-  color:var(--red-light);transform:translateX(-3px);
+  color:var(--red-light);
+  transform:translateX(-3px);
 }
+
 .post-card {
   background:
-    linear-gradient(135deg,rgba(150,0,0,.10),transparent 55%),
+    linear-gradient(
+      135deg,
+      rgba(150,0,0,.10),
+      transparent 55%
+    ),
     var(--card);
   border:1px solid rgba(180,20,20,.35);
-  border-radius:20px;overflow:hidden;
+  border-radius:20px;
+  overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,.40);
   animation:postFadeIn .55s var(--ease) both;
 }
+
 @keyframes postFadeIn {
-  from { opacity:0;transform:translateY(16px); }
-  to { opacity:1;transform:none; }
-}
-.post-image {
-  width:100%;aspect-ratio:16/9;object-fit:cover;
-  display:block;background:#0b0b0b;
-}
-.post-content { padding:40px 46px 46px; }
-.post-meta {
-  display:flex;align-items:center;gap:12px;
-  flex-wrap:wrap;margin-bottom:18px;
-}
-.post-category {
-  padding:5px 11px;background:var(--red);
-  border-radius:7px;font-size:.78rem;
-  font-weight:900;letter-spacing:.2px;
-}
-.post-date { color:#888;font-size:.88rem;font-weight:700; }
-.post-title {
-  max-width:850px;font-size:clamp(1.8rem,4vw,2.7rem);
-  line-height:1.2;color:#f1f1f1;
-  margin-bottom:32px;letter-spacing:-.4px;
+  from {
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to {
+    opacity:1;
+    transform:none;
+  }
 }
 
-/* TREŚĆ ARTYKUŁU */
-.post-text {
-  color:#c4c4c4;font-size:1.03rem;
-  line-height:1.85;margin-bottom:36px;
+.post-image {
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+  background:#0b0b0b;
 }
+
+.post-content {
+  padding:40px 46px 46px;
+}
+
+.post-meta {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.post-category {
+  padding:5px 11px;
+  background:var(--red);
+  border-radius:7px;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+
+.post-date {
+  color:#888;
+  font-size:.88rem;
+  font-weight:700;
+}
+
+.post-title {
+  max-width:850px;
+  font-size:clamp(1.8rem,4vw,2.7rem);
+  line-height:1.2;
+  color:#f1f1f1;
+  margin-bottom:32px;
+  letter-spacing:-.4px;
+}
+
+/* =========================
+   TREŚĆ ARTYKUŁU
+========================= */
+
+.post-text {
+  color:#c4c4c4;
+  font-size:1.03rem;
+  line-height:1.85;
+  margin-bottom:36px;
+}
+
 .post-text a {
-  color:#ffb347;text-decoration:underline;
+  color:#ffb347;
+  text-decoration:underline;
   overflow-wrap:anywhere;
 }
+
 .post-intro-heading {
-  display:block;margin-bottom:28px;color:#fff;
-  font-size:1.2rem;font-weight:900;line-height:1.45;
+  display:block;
+  margin-bottom:28px;
+  color:#fff;
+  font-size:1.2rem;
+  font-weight:900;
+  line-height:1.45;
 }
+
 .post-subheading {
-  display:flex;align-items:center;width:100%;
-  margin:34px 0 19px;padding:13px 17px;
+  display:flex;
+  align-items:center;
+  width:100%;
+  margin:34px 0 19px;
+  padding:13px 17px;
   background:linear-gradient(
-    90deg,rgba(201,21,27,.18),rgba(201,21,27,.025)
+    90deg,
+    rgba(201,21,27,.18),
+    rgba(201,21,27,.025)
   );
   border-left:4px solid var(--red);
-  border-radius:7px;color:#f2f2f2;
-  font-size:1.03rem;font-weight:900;
-  line-height:1.45;letter-spacing:.2px;
+  border-radius:7px;
+  color:#f2f2f2;
+  font-size:1.03rem;
+  font-weight:900;
+  line-height:1.45;
+  letter-spacing:.2px;
 }
-.post-paragraph { margin-bottom:22px; }
-.post-line { display:block;min-height:1px; }
 
-/* PRZYCISKI */
-.post-buttons {
-  display:flex;align-items:center;
-  justify-content:flex-start;gap:14px;
-  flex-wrap:wrap;padding-top:4px;
+.post-paragraph {
+  margin-bottom:22px;
 }
+
+.post-line {
+  display:block;
+  min-height:1px;
+}
+
+/* =========================
+   PRZYCISK YOUTUBE
+========================= */
+
+.post-buttons {
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:14px;
+  flex-wrap:wrap;
+  padding-top:4px;
+}
+
 .btn {
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:10px;min-height:54px;padding:11px 22px;
-  background:var(--red);border:1px solid var(--red);
-  border-radius:10px;color:#fff;font-weight:900;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:54px;
+  padding:11px 22px;
+  background:var(--red);
+  border:1px solid var(--red);
+  border-radius:10px;
+  color:#fff;
+  font-weight:900;
   text-decoration:none;
   box-shadow:0 7px 20px rgba(0,0,0,.22);
-  transition:transform .2s,background .2s,box-shadow .2s;
+  transition:
+    transform .2s,
+    background .2s,
+    box-shadow .2s;
 }
+
 .btn:hover {
-  transform:translateY(-2px);background:#dd1b22;
+  transform:translateY(-2px);
+  background:#dd1b22;
   box-shadow:0 10px 28px rgba(150,0,0,.28);
 }
-.btn img { width:30px;height:30px;object-fit:contain; }
 
-/* STEAM — ZACHOWANY STYL */
-.btn-steam {
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:11px;min-height:54px;padding:11px 22px;
-  background:linear-gradient(135deg,#1b2838 0%,#16202d 48%,#0e141b 100%);
-  border:1px solid rgba(102,192,244,.45);
-  border-radius:10px;color:#fff;font-weight:900;
-  text-decoration:none;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),
-             0 6px 20px rgba(0,0,0,.22);
-  transition:transform .2s,border-color .2s,
-             background .2s,box-shadow .2s;
+.btn img {
+  width:30px;
+  height:30px;
+  object-fit:contain;
 }
+
+/* =========================
+   PRZYCISK STEAM
+========================= */
+
+.btn-steam {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:54px;
+  padding:11px 22px;
+  background:linear-gradient(
+    135deg,
+    #1b2838 0%,
+    #16202d 48%,
+    #0e141b 100%
+  );
+  border:1px solid rgba(102,192,244,.45);
+  border-radius:10px;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 6px 20px rgba(0,0,0,.22);
+  transition:
+    transform .2s,
+    border-color .2s,
+    background .2s,
+    box-shadow .2s;
+}
+
 .btn-steam:hover {
   transform:translateY(-2px);
-  background:linear-gradient(135deg,#20364a 0%,#1b4059 50%,#132838 100%);
+  background:linear-gradient(
+    135deg,
+    #20364a 0%,
+    #1b4059 50%,
+    #132838 100%
+  );
   border-color:#66c0f4;
-  box-shadow:0 8px 26px rgba(0,0,0,.35),
-             0 0 18px rgba(102,192,244,.18);
-}
-.btn-steam img {
-  width:30px;height:30px;object-fit:contain;flex-shrink:0;
+  box-shadow:
+    0 8px 26px rgba(0,0,0,.35),
+    0 0 18px rgba(102,192,244,.18);
 }
 
-/* NOWE PRZYCISKI — NEUTRALNE, W STYLU STRONY */
-.btn-extra {
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:10px;min-height:54px;padding:11px 22px;
-  background:linear-gradient(135deg,#252525,#151515);
-  border:1px solid rgba(201,21,27,.65);
-  border-radius:10px;color:#fff;font-weight:900;
-  text-decoration:none;text-align:center;
-  box-shadow:0 7px 20px rgba(0,0,0,.22);
-  transition:transform .2s,background .2s,
-             border-color .2s,box-shadow .2s;
+.btn-steam img {
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  flex-shrink:0;
 }
+
+/* =========================
+   STREFA OMSI
+   AUTOMATYCZNE PRZYCISKI
+   POMARAŃCZOWO-BRĄZOWE
+========================= */
+
+.btn-strefa,
+.post-text a.btn-strefa {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  min-height:58px;
+  max-width:100%;
+  padding:11px 20px;
+
+  background:linear-gradient(
+    135deg,
+    #47210d 0%,
+    #301506 100%
+  );
+
+  border:2px solid #f47716;
+  border-radius:10px;
+
+  color:#ffffff;
+  font-size:.9rem;
+  font-weight:900;
+  line-height:1.3;
+  text-decoration:none;
+  text-align:center;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 7px 20px rgba(0,0,0,.25);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.btn-strefa:hover,
+.post-text a.btn-strefa:hover {
+  transform:translateY(-2px);
+
+  background:linear-gradient(
+    135deg,
+    #e96316 0%,
+    #a9400b 100%
+  );
+
+  border-color:#ff9a3d;
+  color:#ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(244,119,22,.35);
+}
+
+.btn-strefa img,
+.post-text .btn-strefa img {
+  width:105px;
+  height:34px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.strefa-link-wrapper {
+  display:block;
+  margin:12px 0 20px;
+}
+
+/* =========================
+   DODATKOWE PRZYCISKI
+========================= */
+
+.btn-extra {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:54px;
+  padding:11px 22px;
+  background:linear-gradient(
+    135deg,
+    #252525,
+    #151515
+  );
+  border:1px solid rgba(201,21,27,.65);
+  border-radius:10px;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  text-align:center;
+  box-shadow:0 7px 20px rgba(0,0,0,.22);
+  transition:
+    transform .2s,
+    background .2s,
+    border-color .2s,
+    box-shadow .2s;
+}
+
 .btn-extra:hover {
   transform:translateY(-2px);
-  background:linear-gradient(135deg,#343434,#202020);
+  background:linear-gradient(
+    135deg,
+    #343434,
+    #202020
+  );
   border-color:var(--red-light);
   box-shadow:0 8px 24px rgba(201,21,27,.18);
 }
+
 .btn-extra img {
-  width:30px;height:30px;object-fit:contain;flex-shrink:0;
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  flex-shrink:0;
 }
 
-/* STATUS */
-.status { text-align:center;color:#888;padding:80px 20px; }
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  text-align:center;
+  color:#888;
+  padding:80px 20px;
+}
+
 .status-error {
   border:1px solid rgba(201,21,27,.35);
-  border-radius:12px;background:rgba(201,21,27,.06);
+  border-radius:12px;
+  background:rgba(201,21,27,.06);
   padding:24px;
 }
 
-/* STOPKA */
+/* =========================
+   STOPKA
+========================= */
+
 footer {
-  padding:35px 0;text-align:center;
-  border-top:1px solid #222;background:#050505;color:#777;
-}
-.footer-content {
-  display:flex;flex-direction:column;
-  align-items:center;gap:8px;
-}
-.footer-logo {
-  width:140px;max-height:50px;object-fit:contain;display:block;
+  padding:35px 0;
+  text-align:center;
+  border-top:1px solid #222;
+  background:#050505;
+  color:#777;
 }
 
-/* TABLET */
+.footer-content {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+
+.footer-logo {
+  width:140px;
+  max-height:50px;
+  object-fit:contain;
+  display:block;
+}
+
+/* =========================
+   TABLET
+========================= */
+
 @media(max-width:1050px) {
   .nav {
-    flex-direction:column;justify-content:center;
+    flex-direction:column;
+    justify-content:center;
     padding:14px 0 17px;
   }
-  .nav-links { justify-content:center; }
+
+  .nav-links {
+    justify-content:center;
+  }
 }
 
-/* MOBILE */
+/* =========================
+   TELEFONY
+========================= */
+
 @media(max-width:760px) {
-  .nav { padding:15px 0; }
-  .brand-logo { width:145px; }
-  .nav-links { justify-content:center;gap:12px 14px; }
-  .nav-links a { font-size:.86rem; }
-  .post-section { padding:55px 0 75px; }
-  .post-content { padding:27px 22px 32px; }
-  .post-title { font-size:1.65rem;margin-bottom:26px; }
-  .post-text { font-size:.97rem;line-height:1.75; }
-  .post-intro-heading { font-size:1.08rem; }
-  .post-subheading {
-    margin:28px 0 17px;padding:12px 14px;font-size:.96rem;
+  .nav {
+    padding:15px 0;
   }
-  .post-buttons { flex-direction:column;align-items:stretch; }
-  .btn,.btn-steam,.btn-extra { width:100%; }
+
+  .brand-logo {
+    width:145px;
+  }
+
+  .nav-links {
+    justify-content:center;
+    gap:12px 14px;
+  }
+
+  .nav-links a {
+    font-size:.86rem;
+  }
+
+  .post-section {
+    padding:55px 0 75px;
+  }
+
+  .post-content {
+    padding:27px 22px 32px;
+  }
+
+  .post-title {
+    font-size:1.65rem;
+    margin-bottom:26px;
+  }
+
+  .post-text {
+    font-size:.97rem;
+    line-height:1.75;
+  }
+
+  .post-intro-heading {
+    font-size:1.08rem;
+  }
+
+  .post-subheading {
+    margin:28px 0 17px;
+    padding:12px 14px;
+    font-size:.96rem;
+  }
+
+  .post-buttons {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn,
+  .btn-steam,
+  .btn-extra,
+  .btn-strefa,
+  .post-text a.btn-strefa {
+    width:100%;
+  }
+
+  .btn-strefa img {
+    width:90px;
+  }
 }
+
 @media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
+  *,
+  *::before,
+  *::after {
     transition-duration:.01ms!important;
     animation-duration:.01ms!important;
   }
 }
 </style>
 </head>
+
 <body>
 
-<!-- MENU -->
+<!-- =========================
+     MENU
+========================= -->
+
 <nav>
   <div class="container nav">
+
     <a href="index.html" class="brand">
-      <img src="napis-smokol.png?v=30" alt="Smokol" class="brand-logo">
+      <img
+        src="napis-smokol.png?v=30"
+        alt="Smokol"
+        class="brand-logo"
+      >
     </a>
+
     <div class="nav-links">
-      <a href="aktualnosci.html" class="active">Aktualności</a>
+      <a href="aktualnosci.html" class="active">
+        Aktualności
+      </a>
       <a href="index.html#live">Live</a>
-      <a href="transmisje.html">Ostatnie transmisje</a>
+      <a href="transmisje.html">
+        Ostatnie transmisje
+      </a>
       <a href="index.html#serie">Serie</a>
       <a href="index.html#hub">Smokol Hub</a>
       <a href="index.html#baza">Baza Smokola</a>
       <a href="index.html#linki">Linki</a>
     </div>
+
   </div>
 </nav>
 
-<!-- ARTYKUŁ -->
+<!-- =========================
+     ARTYKUŁ
+========================= -->
+
 <main>
   <section class="post-section">
     <div class="container">
       <div class="post-container">
+
         <a href="aktualnosci.html" class="back-link">
           ← Wróć do aktualności
         </a>
+
         <div id="post-area">
-          <div class="status">Ładowanie posta...</div>
+          <div class="status">
+            Ładowanie posta...
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 </main>
 
-<!-- STOPKA -->
+<!-- =========================
+     STOPKA
+========================= -->
+
 <footer>
   <div class="container footer-content">
-    <img src="napis-smokol.png?v=30"
-         alt="Smokol" class="footer-logo">
+    <img
+      src="napis-smokol.png?v=30"
+      alt="Smokol"
+      class="footer-logo"
+    >
     <span>Symulacja to moja pasja</span>
     <span>© 2026 Smokol</span>
   </div>
 </footer>
 
-<!-- POSTS.JSON -->
+<!-- =========================
+     OBSŁUGA POSTS.JSON
+========================= -->
+
 <script>
+
 async function loadPost() {
+
   const area = document.getElementById("post-area");
-  const params = new URLSearchParams(window.location.search);
+
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
   const postId = params.get("id");
 
   if (!postId) {
@@ -335,17 +756,25 @@ async function loadPost() {
   }
 
   try {
+
+    /* POBIERANIE AKTUALNOŚCI */
+
     const response = await fetch(
       "./posts.json?cache=" + Date.now(),
       { cache:"no-store" }
     );
 
     if (!response.ok) {
-      throw new Error("Nie udało się pobrać posts.json");
+      throw new Error(
+        "Nie udało się pobrać posts.json"
+      );
     }
 
     const posts = await response.json();
-    const post = posts.find(item => item.id === postId);
+
+    const post = posts.find(
+      item => item.id === postId
+    );
 
     if (!post) {
       area.innerHTML =
@@ -355,110 +784,352 @@ async function loadPost() {
 
     document.title = `${post.title} | Smokol`;
 
-    /* Bezpieczne wstawianie zawartości */
+    /* SZKIELET ARTYKUŁU */
+
     area.innerHTML = `
       <article class="post-card">
-        <img id="post-image" class="post-image" alt="">
+
+        <img
+          id="post-image"
+          class="post-image"
+          alt=""
+        >
+
         <div class="post-content">
+
           <div class="post-meta">
-            <span id="post-category" class="post-category"></span>
-            <span id="post-date" class="post-date"></span>
+            <span
+              id="post-category"
+              class="post-category"
+            ></span>
+
+            <span
+              id="post-date"
+              class="post-date"
+            ></span>
           </div>
-          <h1 id="post-title" class="post-title"></h1>
-          <div id="post-text" class="post-text"></div>
-          <div id="post-buttons" class="post-buttons"></div>
+
+          <h1
+            id="post-title"
+            class="post-title"
+          ></h1>
+
+          <div
+            id="post-text"
+            class="post-text"
+          ></div>
+
+          <div
+            id="post-buttons"
+            class="post-buttons"
+          ></div>
+
         </div>
+
       </article>
     `;
 
-    const image = document.getElementById("post-image");
+    const image = document.getElementById(
+      "post-image"
+    );
+
     image.src = post.image || "";
     image.alt = post.title || "";
 
-    document.getElementById("post-category").textContent =
-      post.category || "NEWS";
+    document.getElementById(
+      "post-category"
+    ).textContent = post.category || "NEWS";
 
-    document.getElementById("post-date").textContent =
-      post.displayDate || "";
+    document.getElementById(
+      "post-date"
+    ).textContent = post.displayDate || "";
 
-    document.getElementById("post-title").textContent =
-      post.title || "";
+    document.getElementById(
+      "post-title"
+    ).textContent = post.title || "";
 
-    const postText = document.getElementById("post-text");
-    const postButtons = document.getElementById("post-buttons");
+    const postText = document.getElementById(
+      "post-text"
+    );
+
+    const postButtons = document.getElementById(
+      "post-buttons"
+    );
+
     const text = String(post.text || "");
 
     let steamLink = null;
 
-    /* LINKI W TEKŚCIE */
-    function appendTextWithLinks(container, value) {
+    /* =========================
+       AUTOMATYCZNE ROZPOZNAWANIE
+       LINKÓW
+    ========================= */
+
+    function getHostname(url) {
+      try {
+        return new URL(url).hostname.toLowerCase();
+      } catch (error) {
+        return "";
+      }
+    }
+
+    function isSteamUrl(url) {
+      const hostname = getHostname(url);
+
+      return (
+        hostname === "store.steampowered.com" ||
+        hostname === "www.store.steampowered.com"
+      );
+    }
+
+    function isStrefaUrl(url) {
+      const hostname = getHostname(url);
+
+      return (
+        hostname === "strefa-omsi.pl" ||
+        hostname === "www.strefa-omsi.pl"
+      );
+    }
+
+    /* =========================
+       TWORZENIE PRZYCISKU
+    ========================= */
+
+    function createButton(
+      url,
+      label,
+      className,
+      logo
+    ) {
+
+      if (!url || !label) return null;
+
+      let parsed;
+
+      try {
+        parsed = new URL(url);
+      } catch (error) {
+        return null;
+      }
+
+      if (
+        !["https:", "http:"].includes(parsed.protocol)
+      ) {
+        return null;
+      }
+
+      const button = document.createElement("a");
+
+      button.href = parsed.href;
+      button.target = "_blank";
+      button.rel = "noopener noreferrer";
+      button.className = className;
+
+      if (logo) {
+        const img = document.createElement("img");
+
+        img.src = logo;
+        img.alt = "";
+
+        button.appendChild(img);
+      }
+
+      const span = document.createElement("span");
+
+      span.textContent = label;
+
+      button.appendChild(span);
+
+      return button;
+    }
+
+    function addButton(
+      url,
+      label,
+      className,
+      logo
+    ) {
+
+      const button = createButton(
+        url,
+        label,
+        className,
+        logo
+      );
+
+      if (button) {
+        postButtons.appendChild(button);
+      }
+    }
+
+    /* =========================
+       STREFA OMSI
+       AUTOMATYCZNA NAZWA
+       PRZYCISKU
+    ========================= */
+
+    function getStrefaLabel(url) {
+
+      let path = "";
+
+      try {
+        path = decodeURIComponent(
+          new URL(url).pathname
+        ).toLowerCase();
+      } catch (error) {
+        return "ZOBACZ NA STREFIE OMSI";
+      }
+
+      if (path.includes("autosan-h9")) {
+        return "POBIERZ AUTOSAN H9";
+      }
+
+      if (path.includes("jelcz-pks")) {
+        return "POBIERZ JELCZ PKS";
+      }
+
+      if (path.includes("pks-weglin")) {
+        return "POBIERZ PKS WĘGLIN";
+      }
+
+      if (path.includes("fikcyjne-mazury")) {
+        return "POBIERZ FIKCYJNE MAZURY";
+      }
+
+      return "ZOBACZ NA STREFIE OMSI";
+    }
+
+    /* =========================
+       LINKI W TREŚCI ARTYKUŁU
+       AUTOMATYCZNE PRZYCISKI
+    ========================= */
+
+    function appendTextWithLinks(
+      container,
+      value
+    ) {
+
       const urlPattern = /https?:\/\/[^\s<>"']+/g;
+
       let cursor = 0;
 
-      for (const match of value.matchAll(urlPattern)) {
+      for (
+        const match of value.matchAll(urlPattern)
+      ) {
+
         container.appendChild(
-          document.createTextNode(value.slice(cursor, match.index))
+          document.createTextNode(
+            value.slice(cursor, match.index)
+          )
         );
 
         const url = match[0];
-        let parsedUrl = null;
 
-        try {
-          parsedUrl = new URL(url);
-        } catch (error) {
-          parsedUrl = null;
+        /* STEAM */
+
+        if (isSteamUrl(url)) {
+
+          if (!steamLink) {
+            steamLink = url;
+          }
+
         }
 
-        const hostname = parsedUrl
-          ? parsedUrl.hostname.toLowerCase()
-          : "";
+        /* STREFA OMSI */
 
-        const isSteam =
-          hostname === "store.steampowered.com" ||
-          hostname === "www.store.steampowered.com";
+        else if (isStrefaUrl(url)) {
 
-        if (isSteam) {
-          if (!steamLink) steamLink = url;
-        } else {
+          const wrapper = document.createElement(
+            "div"
+          );
+
+          wrapper.className =
+            "strefa-link-wrapper";
+
+          const button = createButton(
+            url,
+            getStrefaLabel(url),
+            "btn-strefa",
+            "logo-strefa-omsi.png"
+          );
+
+          if (button) {
+            wrapper.appendChild(button);
+            container.appendChild(wrapper);
+          }
+
+        }
+
+        /* ZWYKŁE LINKI */
+
+        else {
+
           const link = document.createElement("a");
+
           link.href = url;
           link.textContent = url;
           link.target = "_blank";
           link.rel = "noopener noreferrer";
+
           container.appendChild(link);
+
         }
 
         cursor = match.index + url.length;
+
       }
 
       container.appendChild(
-        document.createTextNode(value.slice(cursor))
+        document.createTextNode(
+          value.slice(cursor)
+        )
       );
+
     }
 
-    /* FORMATOWANIE ARTYKUŁU */
+    /* =========================
+       FORMATOWANIE ARTYKUŁU
+    ========================= */
+
     const lines = text.split("\n");
+
     let introCreated = false;
     let paragraphLines = [];
 
     function flushParagraph() {
-      if (paragraphLines.length === 0) return;
 
-      const paragraph = document.createElement("div");
+      if (paragraphLines.length === 0) {
+        return;
+      }
+
+      const paragraph = document.createElement(
+        "div"
+      );
+
       paragraph.className = "post-paragraph";
 
       paragraphLines.forEach(line => {
-        const element = document.createElement("span");
+
+        const element = document.createElement(
+          "span"
+        );
+
         element.className = "post-line";
+
         appendTextWithLinks(element, line);
+
         paragraph.appendChild(element);
+
       });
 
       postText.appendChild(paragraph);
+
       paragraphLines = [];
+
     }
 
     lines.forEach(rawLine => {
+
       const line = rawLine.trim();
 
       if (!line) {
@@ -466,22 +1137,40 @@ async function loadPost() {
         return;
       }
 
+      /* PIERWSZY NAGŁÓWEK */
+
       if (!introCreated) {
+
         flushParagraph();
-        const intro = document.createElement("div");
-        intro.className = "post-intro-heading";
+
+        const intro = document.createElement(
+          "div"
+        );
+
+        intro.className =
+          "post-intro-heading";
+
         appendTextWithLinks(intro, line);
+
         postText.appendChild(intro);
+
         introCreated = true;
+
         return;
       }
 
+      /* WYKRYWANIE NAGŁÓWKÓW */
+
       const letters = line.replace(
-        /[^A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/g, ""
+        /[^A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/g,
+        ""
       );
+
       const upperLetters = letters.replace(
-        /[^A-ZĄĆĘŁŃÓŚŹŻ]/g, ""
+        /[^A-ZĄĆĘŁŃÓŚŹŻ]/g,
+        ""
       );
+
       const ratio = letters.length
         ? upperLetters.length / letters.length
         : 0;
@@ -495,105 +1184,150 @@ async function loadPost() {
         !line.endsWith(";");
 
       if (isSubheading) {
+
         flushParagraph();
 
-        const heading = document.createElement("div");
-        heading.className = "post-subheading";
+        const heading = document.createElement(
+          "div"
+        );
+
+        heading.className =
+          "post-subheading";
+
         appendTextWithLinks(heading, line);
+
         postText.appendChild(heading);
+
         return;
       }
 
       paragraphLines.push(line);
+
     });
 
     flushParagraph();
 
-    /* WSPÓLNA FUNKCJA TWORZENIA PRZYCISKU */
-    function addButton(url, label, className, logo) {
-      if (!url || !label) return;
+    /* =========================
+       GŁÓWNY PRZYCISK YOUTUBE
+    ========================= */
 
-      let parsed;
-      try {
-        parsed = new URL(url);
-      } catch (error) {
-        return;
-      }
-
-      if (!["https:", "http:"].includes(parsed.protocol)) {
-        return;
-      }
-
-      const button = document.createElement("a");
-      button.href = parsed.href;
-      button.target = "_blank";
-      button.rel = "noopener noreferrer";
-      button.className = className;
-
-      if (logo) {
-        const img = document.createElement("img");
-        img.src = logo;
-        img.alt = "";
-        button.appendChild(img);
-      }
-
-      const span = document.createElement("span");
-      span.textContent = label;
-      button.appendChild(span);
-      postButtons.appendChild(button);
-    }
-
-    /* GŁÓWNY PRZYCISK YOUTUBE */
     if (post.link) {
+
       addButton(
         post.link,
         post.button || "Oglądaj na YouTube",
         "btn",
         "logo-youtube-white.png"
       );
+
     }
 
-    /* DODATKOWE PRZYCISKI */
+    /* =========================
+       DODATKOWE PRZYCISKI
+    ========================= */
+
     if (Array.isArray(post.extraButtons)) {
-      post.extraButtons.forEach(item => {
-        if (!item || !item.url || !item.label) return;
 
-        addButton(
-          item.url,
-          item.label,
-          "btn-extra",
-          "logo-youtube-white.png"
-        );
+      post.extraButtons.forEach(item => {
+
+        if (
+          !item ||
+          !item.url ||
+          !item.label
+        ) {
+          return;
+        }
+
+        /* LINK DO STREFY OMSI */
+
+        if (isStrefaUrl(item.url)) {
+
+          addButton(
+            item.url,
+            item.label,
+            "btn-strefa",
+            "logo-strefa-omsi.png"
+          );
+
+        }
+
+        /* LINK DO STEAM */
+
+        else if (isSteamUrl(item.url)) {
+
+          addButton(
+            item.url,
+            item.label,
+            "btn-steam",
+            "logo-steam.png"
+          );
+
+        }
+
+        /* INNE DODATKOWE LINKI */
+
+        else {
+
+          addButton(
+            item.url,
+            item.label,
+            "btn-extra",
+            "logo-youtube-white.png"
+          );
+
+        }
+
       });
+
     }
 
-    /* STEAM — BEZ ZMIAN W DZIAŁANIU */
+    /* =========================
+       STEAM — DOTYCHCZASOWA
+       AUTOMATYKA
+    ========================= */
+
     if (steamLink) {
+
       addButton(
         steamLink,
         "Zobacz na Steam",
         "btn-steam",
         "logo-steam.png"
       );
+
     }
+
+    /* =========================
+       UKRYWANIE PUSTYCH
+       PRZYCISKÓW
+    ========================= */
 
     if (postButtons.children.length === 0) {
       postButtons.style.display = "none";
     }
 
-  } catch (error) {
+  }
+
+  catch (error) {
+
     console.error(error);
+
     area.innerHTML = `
       <div class="status status-error">
         Nie udało się wczytać posta.
         Odśwież stronę za chwilę.
       </div>
     `;
+
   }
+
 }
 
 loadPost();
+
 </script>
+
 </body>
 </html>
+
 
